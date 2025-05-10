@@ -1,4 +1,4 @@
-# Miden Homepage - Documentation
+# Miden Homepage
 
 ## Getting Started with Content Creation
 
@@ -149,3 +149,7 @@ You can then promote a version to production after verification or roll it out p
 ```sh
 npx wrangler versions deploy
 ```
+
+## License
+
+This project is [MIT licensed](./LICENSE).
