@@ -39,7 +39,7 @@ Account database: This describes the latest state of each account in a tiered sp
 Note database: This captures all notes in an append-only Merkle Mountain Range
 Nullifier database: This captures whether a note was already consumed in a tiered sparse Merkle tree
 
-![](/images/SM1.png)
+![](/images/SM1big.png)
 
 Why does Miden have two databases for notes? The note database is append-only and permanently stores all notes, while the nullifier database stores which notes cannot be consumed anymore. Separating note storage into these two databases gives Miden client-side proving and advanced privacy.
 
