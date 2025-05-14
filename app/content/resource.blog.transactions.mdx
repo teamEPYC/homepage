@@ -21,7 +21,7 @@ In Miden, there are accounts and notes, both of which can hold assets. Transacti
 
 In Miden, accounts hold assets and define rules of how these assets can be transferred. This is quite similar to how accounts work on Ethereum, but there are some important differences.
 
-![](/images/TM1.png)
+![](/images/TM1big.png)
 
 First, in Miden, every account has code, whereas, on Ethereum, externally owned accounts (EOAs) do not. That means all accounts on Miden are smart contracts—the concept is called Account Abstraction. That leads to a better user experience and safer wallets—imagine the ability to rotate keys, rate limit, social recovery, among others.
 
@@ -45,11 +45,11 @@ Consider the following: On Ethereum, sending $5 from one account to another mean
 
 When accounts consume or produce notes, we call that a transaction. A transaction is always executed against a single account, and it causes a state change in that single account.
 
-![](/images/TM2.png)
+![](/images/TM2big.png)
 
 That means sending an asset from one account to another requires two transactions: one transaction to create the note and another transaction to consume that note by another account.
 
-![](/images/TM3.png)
+![](/images/TM3big.png)
 
 Think of the above example: When you put the $5 bill in the lockbox, that’s your individual state transition and the first transaction. However, when this second person takes the $5 bill from the lockbox, her own individual state transition has occurred, plus $5. These are the two transactions for transferring one asset in Miden. This second person could even open several lockboxes simultaneously and “consume” all bills in one transaction.
 
@@ -69,7 +69,7 @@ Basically, an account that needs its state to be public cannot execute and prove
 
 Let’s look at the architecture of how two accounts can swap tokens with a Uniswap-like contract. From left to right, we can break down this sequence into discrete phases.
 
-![](/images/TM4.png)
+![](/images/TM4big.png)
 
 Token Swap Initiation
 
