@@ -49,13 +49,42 @@ export const papers = [
 export const talks = [
   {
     label:
+      "Polygon Miden: A New VM for the ZK Future | Avail Whiteboard Series",
+    link: "https://www.youtube.com/watch?v=QuLhkaszLtA&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=1&t=1s",
+  },
+  {
+    label:
       "ZK Day at SBC - Workshop by Paul-Henry Kajfasz, Senior Protocol Engineer at Polygon Miden",
     link: "https://www.youtube.com/watch?v=RdeIx4LHb2A",
   },
   {
     label:
-      "Polygon Miden: A New VM for the ZK Future | Avail Whiteboard Series",
-    link: "https://www.youtube.com/watch?v=QuLhkaszLtA&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=1&t=1s",
+      "ZK HACK IV - Provable State Changes: Polygon Miden Transaction Kernel",
+    link: "https://www.youtube.com/watch?v=V4fzsti11qU&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=7",
+  },
+  {
+    label:
+      "Miden & the Future of Privacy Preserving Protocols presented by Paul-Henry Kajfasz of Polygon Miden",
+    link: "https://www.youtube.com/watch?v=GC4jR2rh-5U&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=13&t=3s",
+  },
+  {
+    label:
+      "Provable Compliance on Polygon Miden and beyond / Anne-Grace Kleczewski",
+    link: "https://www.youtube.com/watch?v=t6NQ8nFDMvg",
+  },
+  {
+    label: "Privacy Scales Better by Dominik Schmid, Polygon | L2con Brussels",
+    link: "https://www.youtube.com/watch?v=gmamoa8N_N0",
+  },
+  {
+    label:
+      "Mass adoption with private and asynchronous blockchains, by Bobbin Threadbare of Polygon Miden",
+    link: "https://www.youtube.com/watch?v=pfX6T29TolY",
+  },
+  {
+    label:
+      "ZK7: Miden VM: a STARK-friendly VM for blockchains - Bobbin Threadbare – Polygon",
+    link: "https://www.youtube.com/watch?v=81UAaiIgIYA&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=16",
   },
   {
     label:
@@ -79,11 +108,6 @@ export const talks = [
     label:
       "ZK Whiteboard Sessions - Module Four: SNARKs vs STARKs with Bobbin Threadbare",
     link: "https://www.youtube.com/watch?v=qUrA97TG2YU&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=6",
-  },
-  {
-    label:
-      "ZK HACK IV - Provable State Changes: Polygon Miden Transaction Kernel",
-    link: "https://www.youtube.com/watch?v=V4fzsti11qU&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=7",
   },
   {
     label:
@@ -111,11 +135,6 @@ export const talks = [
     link: "https://www.youtube.com/watch?v=8Rk2DOD4ba8&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=12",
   },
   {
-    label:
-      "Miden & the Future of Privacy Preserving Protocols presented by Paul-Henry Kajfasz of Polygon Miden",
-    link: "https://www.youtube.com/watch?v=GC4jR2rh-5U&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=13&t=3s",
-  },
-  {
     label: "Recursion in the Miden VM, by Augusto Hack of Polygon Miden",
     link: "https://www.youtube.com/watch?v=P1ZM6Ead6fo&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=14",
   },
@@ -123,11 +142,6 @@ export const talks = [
     label:
       "Polygon Miden VM | Avail's Hot Take Series: The Execution Race (EthDenver)",
     link: "https://www.youtube.com/watch?v=fl51Cer7-bY&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=15",
-  },
-  {
-    label:
-      "ZK7: Miden VM: a STARK-friendly VM for blockchains - Bobbin Threadbare – Polygon",
-    link: "https://www.youtube.com/watch?v=81UAaiIgIYA&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=16",
   },
   {
     label: "09 Miden VM architecture overview",
@@ -139,13 +153,13 @@ export const talks = [
   },
   {
     label:
-      "Polygon Miden: Extending Ethereum’s Feature Set | Dominik Schmid (April 2023)",
-    link: "https://www.youtube.com/watch?v=jMTMidok9sA&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=19",
+      "Using a Hybrid UTXO and Account-based State Model in a ZK Rollup by Bobbin Threadbare",
+    link: "https://www.youtube.com/watch?v=TEPY19-hie4&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=20",
   },
   {
     label:
-      "Using a Hybrid UTXO and Account-based State Model in a ZK Rollup by Bobbin Threadbare",
-    link: "https://www.youtube.com/watch?v=TEPY19-hie4&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=20",
+      "Polygon Miden: Extending Ethereum’s Feature Set | Dominik Schmid (April 2023)",
+    link: "https://www.youtube.com/watch?v=jMTMidok9sA&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=19",
   },
   {
     label: "Miden: Ethereum Extended",
@@ -158,24 +172,6 @@ export const talks = [
   {
     label: "Episode 210: The Road to STARKs and Miden with Bobbin Threadbare",
     link: "https://www.youtube.com/watch?v=cpGb6daIKm4&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=23",
-  },
-  {
-    label:
-      "Provable Compliance on Polygon Miden and beyond / Anne-Grace Kleczewski",
-    link: "https://www.youtube.com/watch?v=t6NQ8nFDMvg",
-  },
-  {
-    label: "LAMBDA Class: How Polygon Miden works by Ignacio Amigo",
-    link: "https://www.youtube.com/watch?v=CtBTOw5385Y",
-  },
-  {
-    label: "Privacy Scales Better by Dominik Schmid, Polygon | L2con Brussels",
-    link: "https://www.youtube.com/watch?v=gmamoa8N_N0",
-  },
-  {
-    label:
-      "Mass adoption with private and asynchronous blockchains, by Bobbin Threadbare of Polygon Miden",
-    link: "https://www.youtube.com/watch?v=pfX6T29TolY",
   },
 ];
 
