@@ -53,9 +53,23 @@ export const talks = [
     link: "https://www.youtube.com/watch?v=QuLhkaszLtA&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=1&t=1s",
   },
   {
+    label: "Privacy Scales Better by Dominik Schmid, Polygon | L2con Brussels",
+    link: "https://www.youtube.com/watch?v=gmamoa8N_N0",
+  },
+  {
     label:
       "ZK Day at SBC - Workshop by Paul-Henry Kajfasz, Senior Protocol Engineer at Polygon Miden",
     link: "https://www.youtube.com/watch?v=RdeIx4LHb2A",
+  },
+  {
+    label:
+      "Provable Compliance on Polygon Miden and beyond / Anne-Grace Kleczewski",
+    link: "https://www.youtube.com/watch?v=t6NQ8nFDMvg",
+  },
+  {
+    label:
+      "Mass adoption with private and asynchronous blockchains, by Bobbin Threadbare of Polygon Miden",
+    link: "https://www.youtube.com/watch?v=pfX6T29TolY",
   },
   {
     label:
@@ -68,18 +82,21 @@ export const talks = [
     link: "https://www.youtube.com/watch?v=GC4jR2rh-5U&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=13&t=3s",
   },
   {
-    label:
-      "Provable Compliance on Polygon Miden and beyond / Anne-Grace Kleczewski",
-    link: "https://www.youtube.com/watch?v=t6NQ8nFDMvg",
+    label: "09 Miden VM architecture overview",
+    link: "https://www.youtube.com/watch?v=mO5ZDrjtb3I&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=17",
   },
   {
-    label: "Privacy Scales Better by Dominik Schmid, Polygon | L2con Brussels",
-    link: "https://www.youtube.com/watch?v=gmamoa8N_N0",
+    label: "Miden: Ethereum Extended",
+    link: "https://www.youtube.com/watch?v=FEh7mYASia4&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=21",
+  },
+  {
+    label: "Bobbin Threadbare - Miden VM: the heart of Polygon Miden",
+    link: "https://www.youtube.com/watch?v=S2NfpC8cJog&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=18&t=1137s",
   },
   {
     label:
-      "Mass adoption with private and asynchronous blockchains, by Bobbin Threadbare of Polygon Miden",
-    link: "https://www.youtube.com/watch?v=pfX6T29TolY",
+      "Polygon Miden: Extending Ethereum’s Feature Set | Dominik Schmid (April 2023)",
+    link: "https://www.youtube.com/watch?v=jMTMidok9sA&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=19",
   },
   {
     label:
@@ -144,26 +161,9 @@ export const talks = [
     link: "https://www.youtube.com/watch?v=fl51Cer7-bY&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=15",
   },
   {
-    label: "09 Miden VM architecture overview",
-    link: "https://www.youtube.com/watch?v=mO5ZDrjtb3I&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=17",
-  },
-  {
-    label: "Bobbin Threadbare - Miden VM: the heart of Polygon Miden",
-    link: "https://www.youtube.com/watch?v=S2NfpC8cJog&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=18&t=1137s",
-  },
-  {
     label:
       "Using a Hybrid UTXO and Account-based State Model in a ZK Rollup by Bobbin Threadbare",
     link: "https://www.youtube.com/watch?v=TEPY19-hie4&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=20",
-  },
-  {
-    label:
-      "Polygon Miden: Extending Ethereum’s Feature Set | Dominik Schmid (April 2023)",
-    link: "https://www.youtube.com/watch?v=jMTMidok9sA&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=19",
-  },
-  {
-    label: "Miden: Ethereum Extended",
-    link: "https://www.youtube.com/watch?v=FEh7mYASia4&list=PLslsfan1R_z20bEgUU_ZyY64AHx5C6vgg&index=21",
   },
   {
     label: "Polygon Miden - a STARK based ZK Rollup",
