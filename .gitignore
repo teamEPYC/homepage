@@ -1,2 +1,14 @@
-node_modules
-.react-router/
+.DS_Store
+/node_modules/
+*.tsbuildinfo
+
+# React Router
+/.react-router/
+/build/
+
+# Cloudflare
+.mf
+.wrangler
+*.env
+*.vars
+.idea
