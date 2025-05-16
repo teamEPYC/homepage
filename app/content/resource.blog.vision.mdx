@@ -59,7 +59,7 @@ Last but not least, privacy is a natural outcome of edge execution. When users e
 
 Rearchitecting a chain for the edge aligns incentives correctly: the more work users are willing to do themselves (to prove their own transactions, manage their own state), the less work the network needs to do. Not only does this lower the cost of using the network, the edge blockchain brings scale without compromising self-custody, censorship resistance, or privacy.
 
-## Miden architecture: To the edge and beyond
+## Miden architecture: to the edge and beyond
 
 At the core of Miden’s design is the Actor Model, a proven framework for scaling concurrent and distributed systems. In this model, independent entities called actors communicate by exchanging asynchronous messages. Each actor is a “little” state machine which manages its own state and exposes a well-defined interface to the world. When an actor receives a message, it can update its state and send messages that trigger changes in other actors. Miden’s key innovation is combining the Actor Model with ZK proofs, making all state transitions provable.
 

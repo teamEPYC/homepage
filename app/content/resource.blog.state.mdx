@@ -7,7 +7,7 @@ featured: true
 
 import Scribble from "../components/scribble";
 
-# State Model
+# Miden State Model
 
 <span className="author">Bobbin Threadbare & Dominik Schmid</span>
 
@@ -19,7 +19,7 @@ This post will cover the design and implementation of Miden’s state model and 
 
 Miden continues progressing toward a public testnet, expected in Q4 of this year. The core goal is to extend the feature set of the EVM to create a forward-looking scaling solution that still inherits Ethereum’s security.
 
-## What Is State and Why Does it Bloat?
+## What is state and why does it bloat?
 
 State is the description of everything that is the case. On a blockchain, state describes who owns what and the condition of all smart contracts at a certain point in time. This is true for Miden as it is with other rollups and smart contract blockchains.
 
@@ -59,7 +59,7 @@ However, Miden also pushes some responsibilities regarding data storage onto the
 
 Similarly, users are incentivized to take care of account state storage themselves instead of storing everything publicly with the operator. Again, the operator stores the commitment and ensures the correctness of any changes. However, there is always the option to store the account and note data publicly with the operator.
 
-## How Miden Manages Bloat
+## How Miden manages bloat
 
 Because operators don’t need to know the entire state to verify or produce a new block, no operator is required to store the entire state. So how is block verification and block production possible?
 
