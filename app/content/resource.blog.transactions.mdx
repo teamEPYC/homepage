@@ -13,7 +13,10 @@ import Scribble from "../components/scribble";
 
 Miden, a ZK-optimized rollup that extends Ethereum’s feature set, will complement existing zero-knowledge solutions aiming to become the internet's value layer. This post is the second in a series meant to introduce Miden, the motivations behind its design, and the one-of-a-kind features it offers.
 
-Last month, Miden’s goals and core features were outlined. What follows will focus on the core concepts of Miden: Accounts, Notes, and Transactions.
+Last month, Miden’s goals and core features were outlined. What follows will focus on the core concepts of Miden:
+- Accounts
+- Notes
+- Transactions
 
 In Miden, there are accounts and notes, both of which can hold assets. Transactions can be understood as facilitating account state changes. Basically, they take one single account and some notes as input and output the same account at a new state together with some other notes. This is quite different from what we see on Ethereum, and it allows Miden to extend Ethereum’s feature set.
 
@@ -51,11 +54,9 @@ That means sending an asset from one account to another requires two transaction
 
 ![](/images/TM3-Newest.png)
 
-Think of the above example: When you put the $5 bill in the lockbox, that’s your individual state transition and the first transaction. However, when this second person takes the $5 bill from the lockbox, her own individual state transition has occurred, plus $5. These are the two transactions for transferring one asset in Miden. This second person could even open several lockboxes simultaneously and “consume” all bills in one transaction.
+Think of the earlier example: When you put the $5 bill in the lockbox, that’s your individual state transition and the first transaction. However, when this second person takes the $5 bill from the lockbox, her own individual state transition has occurred, plus $5. These are the two transactions for transferring one asset in Miden. This second person could even open several lockboxes simultaneously and “consume” all bills in one transaction.
 
-Here are some compelling things that can be done with this transaction model:
-
-Transactions can be executed and proven locally because they only involve one single account. This provides privacy and lowers the costs of complex computations because there is no re-execution by several network participants.
+There are some compelling things that can be done with this transaction model. Transactions can be executed and proven locally because they only involve one single account. This provides privacy and lowers the costs of complex computations because there is no re-execution by several network participants.
 
 Furthermore, until another account has consumed a note, the creator of that note can update it. Updating a note can be done by revealing a hashed part of the note’s script. A note’s script could say, “Consume this 5 ETH AND send Bob 10 MATIC OR 0x213 …”. Then, if no one consumes this note, the creator could reveal “0x213 = Consume this 5 ETH AND send Bob 9 MATIC”. In our analogy, you can update the lock. Think of market makers updating an on-chain order book for free and in no time.
 
@@ -71,13 +72,13 @@ Let’s look at the architecture of how two accounts can swap tokens with a Unis
 
 ![](/images/TM4-Newest.png)
 
-Token swap initiation: Acct1 and Acct2 want to trade on a Uniswap-like contract.
+1. Token swap initiation: Acct1 and Acct2 want to trade on a Uniswap-like contract.
 - Tx1 creates Note1 and can be locally executed by Acct1.
 - Tx2 creates Note2 and can be locally executed by Acct2.
 
-Uniswap Execution: In Tx3, Uniswap consumes Note1 and Note2 (and all the other notes that are in its inbox) and creates Note3 and Note4 in the same transaction.
+2. Uniswap Execution: In Tx3, Uniswap consumes Note1 and Note2 (and all the other notes that are in its inbox) and creates Note3 and Note4 in the same transaction.
 Because Uniswap’s state must be publicly visible, this state change is performed by the Miden operator.
 
-Token swap finalization: Acct1 and Acct2 now get their swapped tokens back.
+3. Token swap finalization: Acct1 and Acct2 now get their swapped tokens back.
 - Tx4 consumes Note3 and can again be locally executed by Acct1.
 - Tx5 consumes Note4 and can again be locally executed by Acct2.
