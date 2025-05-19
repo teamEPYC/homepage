@@ -42,7 +42,7 @@ In Miden, accounts communicate with one another by producing and consuming notes
 
 The concept of notes is a key difference between Ethereum’s Account-based model and Miden, which uses a hybrid UTXO- and Account-based state-model.
 
-Consider the following: On Ethereum, sending $5 from one account to another means taking $5 out of your wallet and putting it directly into the receiver's wallet. When you have the other person’s wallet in your hand, no one else can put something in there—there is a global lock. On Miden, there are bills, or notes. In this mental model, you take a $5 bill out of your wallet and put it into a lockbox. Regardless of what happens next, you are $5 poorer. For someone to retrieve the bill, she needs to know the lock's combination. And if she does, she can put the bill in her wallet. Your action (putting the bill into the lockbox) and her action (taking the bill from the box) are distinct.
+Consider the following: On Ethereum, sending 3 ETH from one account to another means taking 3 ETH out of your wallet and putting it directly into the receiver's wallet. When you have the other person’s wallet in your hand, no one else can put something in there—there is a global lock. On Miden, there are bills, or notes. In this mental model, you take a 3 ETH bill out of your wallet and put it into a lockbox. Regardless of what happens next, you are 3 ETH poorer. For someone to retrieve the bill, she needs to know the lock's combination. And if she does, she can put the bill in her wallet. Your action (putting the bill into the lockbox) and her action (taking the bill from the box) are distinct.
 
 ## Transactions: producing and consuming notes
 
@@ -52,9 +52,9 @@ When accounts consume or produce notes, we call that a transaction. A transactio
 
 That means sending an asset from one account to another requires two transactions: one transaction to create the note and another transaction to consume that note by another account.
 
-![](/images/TM3-Newest.png)
+![](/images/transaction.gif)
 
-Think of the earlier example: When you put the $5 bill in the lockbox, that’s your individual state transition and the first transaction. However, when this second person takes the $5 bill from the lockbox, her own individual state transition has occurred, plus $5. These are the two transactions for transferring one asset in Miden. This second person could even open several lockboxes simultaneously and “consume” all bills in one transaction.
+Think of the earlier example: When you put the 3 ETH bill in the lockbox, that’s your individual state transition and the first transaction. However, when this second person takes the 3 ETH bill from the lockbox, her own individual state transition has occurred, plus 3 ETH. These are the two transactions for transferring one asset in Miden. This second person could even open several lockboxes simultaneously and “consume” all bills in one transaction.
 
 There are some compelling things that can be done with this transaction model. Transactions can be executed and proven locally because they only involve one single account. This provides privacy and lowers the costs of complex computations because there is no re-execution by several network participants.
 
@@ -70,15 +70,15 @@ Basically, an account that needs its state to be public cannot execute and prove
 
 Let’s look at the architecture of how two accounts can swap tokens with a Uniswap-like contract. From left to right, we can break down this sequence into discrete phases.
 
-![](/images/TM4-Newest.png)
+![](/images/public-shared-state.gif)
 
-1. Token swap initiation: Acct1 and Acct2 want to trade on a Uniswap-like contract.
-- Tx1 creates Note1 and can be locally executed by Acct1.
-- Tx2 creates Note2 and can be locally executed by Acct2.
+1. Token swap initiation: Acc1 and Acc2 want to trade on a Uniswap-like contract.
+- Tx1 creates Note1 and can be locally executed by Acc1.
+- Tx2 creates Note2 and can be locally executed by Acc2.
 
 2. Uniswap Execution: In Tx3, Uniswap consumes Note1 and Note2 (and all the other notes that are in its inbox) and creates Note3 and Note4 in the same transaction.
 Because Uniswap’s state must be publicly visible, this state change is performed by the Miden operator.
 
-3. Token swap finalization: Acct1 and Acct2 now get their swapped tokens back.
-- Tx4 consumes Note3 and can again be locally executed by Acct1.
-- Tx5 consumes Note4 and can again be locally executed by Acct2.
+3. Token swap finalization: Acc1 and Acc2 now get their swapped tokens back.
+- Tx4 consumes Note4 and can again be locally executed by Acc2.
+- Tx5 consumes Note3 and can again be locally executed by Acc1.
