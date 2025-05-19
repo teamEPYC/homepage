@@ -75,7 +75,7 @@ export function Navigation() {
               </DrawerTitle>
               <DrawerDescription className="text-base">
                 Miden is a privacy-preserving blockchain platform that enables
-                secure and scalable transactions.
+                safe and scalable transactions.
               </DrawerDescription>
             </DrawerHeader>
             <ul className="flex flex-col gap-2 pb-6 text-lg">

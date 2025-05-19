@@ -23,7 +23,7 @@ export function PageHome({
         </p>
         <p>
           By pushing execution and state to the edge, on the client side, Miden
-          overcomes the limitations of scalability, privacy and security that
+          overcomes the limitations of scalability, privacy and safety that
           hold back traditional blockchains.
         </p>
         <Link
@@ -54,7 +54,7 @@ export function PageHome({
             </p>
           </li>
           <li>
-            <h4 className="mb-1 font-bold text-primary">It’s secure</h4>
+            <h4 className="mb-1 font-bold text-primary">It’s safe</h4>
             <p>
               Miden enables safe smart contract development with Rust and
               built-in account abstraction, while also minimizing attack surface

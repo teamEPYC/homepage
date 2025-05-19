@@ -1,13 +1,13 @@
 ---
 title: State Model
 author: Bobbin Threadbare & Dominik Schmid
-date: 17.03.25
+date: 02.06.23
 featured: true
 ---
 
 import Scribble from "../components/scribble";
 
-# State Model
+# Miden State Model
 
 <span className="author">Bobbin Threadbare & Dominik Schmid</span>
 
@@ -19,7 +19,7 @@ This post will cover the design and implementation of Miden’s state model and 
 
 Miden continues progressing toward a public testnet, expected in Q4 of this year. The core goal is to extend the feature set of the EVM to create a forward-looking scaling solution that still inherits Ethereum’s security.
 
-## What Is State and Why Does it Bloat?
+## What is state and why does it bloat?
 
 State is the description of everything that is the case. On a blockchain, state describes who owns what and the condition of all smart contracts at a certain point in time. This is true for Miden as it is with other rollups and smart contract blockchains.
 
@@ -34,12 +34,11 @@ For block verification, this was achieved with Zero-Knowledge (ZK) proofs. That�
 As covered in previous blog posts, on Miden, there are accounts and notes. Notes are how accounts send and receive assets. Accounts consume and produce notes. In doing so, accounts change their state. Accounts and notes have individual states—i.e., their particular conditions at a point in time. The current state of the rollup is the state of all accounts and notes at a certain point in time.
 
 The rollup’s global state is captured in three databases:
+- Account database: This describes the latest state of each account in a tiered sparse Merkle tree.
+- Note database: This captures all notes in an append-only Merkle Mountain Range.
+- Nullifier database: This captures whether a note was already consumed in a tiered sparse Merkle tree.
 
-Account database: This describes the latest state of each account in a tiered sparse Merkle tree
-Note database: This captures all notes in an append-only Merkle Mountain Range
-Nullifier database: This captures whether a note was already consumed in a tiered sparse Merkle tree
-
-![](/images/01.jpg)
+![](/images/SM1-Newest.png)
 
 Why does Miden have two databases for notes? The note database is append-only and permanently stores all notes, while the nullifier database stores which notes cannot be consumed anymore. Separating note storage into these two databases gives Miden client-side proving and advanced privacy.
 
@@ -53,13 +52,13 @@ Before revealing how Miden further manages state bloat, let’s first describe h
 
 ## Operators
 
-On Miden, the global state is managed by operators. Operators run Miden Nodes and ensure the integrity of the three databases. To prevent double spending, operators are responsible for ensuring nullifiers created in a transaction are not yet present in the nullifier database. That is why operators store a complete nullifier database.
+On Miden, the global state is managed by operators. Operators run Miden nodes and ensure the integrity of the three databases. To prevent double spending, operators are responsible for ensuring nullifiers created in a transaction are not yet present in the nullifier database. That is why operators store a complete nullifier database.
 
 However, Miden also pushes some responsibilities regarding data storage onto the user. In Miden, users are incentivized to keep notes data locally and only store commitments publicly. This allows operators to aggressively prune the note database and store only commitments to the notes.
 
 Similarly, users are incentivized to take care of account state storage themselves instead of storing everything publicly with the operator. Again, the operator stores the commitment and ensures the correctness of any changes. However, there is always the option to store the account and note data publicly with the operator.
 
-## How Miden Manages Bloat
+## How Miden manages bloat
 
 Because operators don’t need to know the entire state to verify or produce a new block, no operator is required to store the entire state. So how is block verification and block production possible?
 
@@ -73,9 +72,9 @@ As mentioned, operators must still store the full nullifier database for block v
 
 So, in Miden, there are epochs, and a new nullifier database is created after every epoch. The operator stores the last two full trees and all historical nullifiers’ tree roots. That means older notes can still be spent; only there is a bit more work to be done by the user. By adding this epoch parameter to the nullifier database, the primary driver of state bloat becomes transactions per second.
 
-![](/images/01.jpg)
+![](/images/SM2-Newest.png)
 
-Block production with only part of the state is possible with Miden’s concurrent state model. A block contains the newly created notes and nullifiers. Notes are simply appended to the Notes Database. For nullifiers, the operator needs to update a Merkle Tree, which, as mentioned, requires knowledge of the full tree.
+Block production with only part of the state is possible with Miden’s concurrent state model. A block contains the newly created notes and nullifiers. Notes are simply appended to the Notes Database. For nullifiers, the operator needs to update a Merkle tree, which, as mentioned, requires knowledge of the full tree.
 
 But the operator does not need to know the contents of that account to update it—the same way Ethereum does not need to know exactly what is happening on a rollup to update the rollup’s state root in the respective smart contract. This means that, in Miden, every account can be considered a Layer 3.
 
