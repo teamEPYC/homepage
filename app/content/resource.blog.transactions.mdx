@@ -42,19 +42,19 @@ In Miden, accounts communicate with one another by producing and consuming notes
 
 The concept of notes is a key difference between Ethereum’s Account-based model and Miden, which uses a hybrid UTXO- and Account-based state-model.
 
-Consider the following: On Ethereum, sending 3 ETH from one account to another means taking 3 ETH out of your wallet and putting it directly into the receiver's wallet. When you have the other person’s wallet in your hand, no one else can put something in there—there is a global lock. On Miden, there are bills, or notes. In this mental model, you take a 3 ETH bill out of your wallet and put it into a lockbox. Regardless of what happens next, you are 3 ETH poorer. For someone to retrieve the bill, she needs to know the lock's combination. And if she does, she can put the bill in her wallet. Your action (putting the bill into the lockbox) and her action (taking the bill from the box) are distinct.
+Consider the following: On Ethereum, sending 3 ETH from one account to another means taking 3 ETH out of your wallet and putting it directly into the receiver's wallet. When you have the other person’s wallet in your hand, no one else can put something in there—there is a global lock. On Miden, there are bills, or notes. In this mental model, you take a 3 ETH bill out of your wallet and put it into a lockbox. Regardless of what happens next, you are 3 ETH poorer. For someone to retrieve the bill, they needs to know the lock's combination. And if they do, they can put the bill in their wallet. Your action (putting the bill into the lockbox) and their action (taking the bill from the box) are distinct.
 
 ## Transactions: producing and consuming notes
 
 When accounts consume or produce notes, we call that a transaction. A transaction is always executed against a single account, and it causes a state change in that single account.
 
-![](/images/TM2-Newest.png)
+![](/images/transaction-diagram-wide.png)
 
 That means sending an asset from one account to another requires two transactions: one transaction to create the note and another transaction to consume that note by another account.
 
 ![](/images/transaction.gif)
 
-Think of the earlier example: When you put the 3 ETH bill in the lockbox, that’s your individual state transition and the first transaction. However, when this second person takes the 3 ETH bill from the lockbox, her own individual state transition has occurred, plus 3 ETH. These are the two transactions for transferring one asset in Miden. This second person could even open several lockboxes simultaneously and “consume” all bills in one transaction.
+Think of the earlier example: When you put the 3 ETH bill in the lockbox, that’s your individual state transition and the first transaction. However, when this second person takes the 3 ETH bill from the lockbox, their own individual state transition has occurred, plus 3 ETH. These are the two transactions for transferring one asset in Miden. This second person could even open several lockboxes simultaneously and “consume” all bills in one transaction.
 
 There are some compelling things that can be done with this transaction model. Transactions can be executed and proven locally because they only involve one single account. This provides privacy and lowers the costs of complex computations because there is no re-execution by several network participants.
 
