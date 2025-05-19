@@ -23,7 +23,7 @@ export function PageHome({
         </p>
         <p>
           By pushing execution and state to the edge, on the client side, Miden
-          overcomes the limitations of scalability, privacy and security that
+          overcomes the limitations of scalability, privacy and safety that
           hold back traditional blockchains.
         </p>
         <Link

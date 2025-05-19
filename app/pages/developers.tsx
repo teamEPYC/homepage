@@ -18,7 +18,7 @@ export function PageDevelopers({ items }: { items: ItemType[] }) {
           and public transactions.
         </p>
         <p>
-          Miden offers the flexibility and security guarantees needed to build
+          Miden offers the flexibility and safety guarantees needed to build
           previously impossible products through account abstraction,
           self-custodied state, and smart contracts written in Rust.
         </p>
