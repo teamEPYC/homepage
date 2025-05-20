@@ -51,14 +51,14 @@ export function PageResources({
             <ul className="flex flex-col">
               {posts
                 .slice(0, showMorePosts ? posts.length : LIMIT)
-                .map((item) => (
+                .map((item, index) => (
                   <li key={item.slug}>
                     <ListItem
                       to={`/resource/blog/${item.slug}`}
                       prefetch="intent"
                     >
                       <time className="text-primary">{item.date}</time>
-                      <h4 className="!font-normal text-muted-foreground truncate">
+                      <h4 className={`${index === 0 ? 'bg-orange-200 !font-bold' : '!font-normal'} text-muted-foreground truncate`}>
                         {item.title}
                       </h4>
                     </ListItem>
