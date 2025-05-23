@@ -12,3 +12,6 @@
 *.env
 *.vars
 .idea
+
+# VSCode
+.vscode/

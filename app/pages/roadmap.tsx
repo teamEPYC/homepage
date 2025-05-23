@@ -755,7 +755,7 @@ function SvgComponent(props: SVGProps<SVGSVGElement>) {
           }}
         >
           <tspan x={382} y={669}>
-            {"Source-code mapping"}
+            {"Source code mapping"}
           </tspan>
         </text>
         <path
@@ -1319,7 +1319,7 @@ function SvgComponent(props: SVGProps<SVGSVGElement>) {
           }}
         >
           <tspan x={40.094} y={49}>
-            {"User experience"}
+            {"Core protocol"}
           </tspan>
         </text>
         <path
@@ -1351,7 +1351,7 @@ function SvgComponent(props: SVGProps<SVGSVGElement>) {
           }}
         >
           <tspan x={380} y={109}>
-            {"Transcript sdk"}
+            {"Typescript SDK"}
           </tspan>
         </text>
         <path
@@ -1455,7 +1455,7 @@ function SvgComponent(props: SVGProps<SVGSVGElement>) {
           }}
         >
           <tspan x={380} y={220}>
-            {"WebGPU Proving"}
+            {"WebGPU proving"}
           </tspan>
         </text>
         <path
@@ -1774,7 +1774,7 @@ function SvgComponent(props: SVGProps<SVGSVGElement>) {
           }}
         >
           <tspan x={630} y={2950}>
-            {"LxLy-Bridge / DA"}
+            {"LxLy bridge / DA"}
           </tspan>
         </text>
         <path
@@ -1937,7 +1937,7 @@ function SvgComponent(props: SVGProps<SVGSVGElement>) {
           }}
         >
           <tspan x={382} y={2950}>
-            {"Efficient keccak"}
+            {"Efficient Keccak"}
           </tspan>
         </text>
         <path
@@ -2207,7 +2207,7 @@ function SvgComponent(props: SVGProps<SVGSVGElement>) {
           }}
         >
           <tspan x={382} y={2722}>
-            {"CUDA accerlerat-ion"}
+            {"CUDA acceleration"}
           </tspan>
         </text>
         <path
