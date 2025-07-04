@@ -15,6 +15,8 @@ export default [
     route("/ecosystem", "routes/ecosystem.tsx"),
     route("/resources", "routes/resources.tsx"),
     route("/resources/:category", "routes/overview.tsx"),
+    route("/careers", "routes/careers.tsx"),
+    route("/career/:slug", "routes/career-details.tsx")
   ]),
 
   ...(await flatRoutes({ rootDirectory: "content" })),

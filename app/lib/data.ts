@@ -28,3 +28,34 @@ export interface MDXModule {
   default: (props: any) => ReactElement;
   headings: Heading[];
 }
+
+export interface CareerMDXModule {
+  frontmatter: CareerFrontmatter;
+  default: (props: any) => ReactElement;
+  headings: Heading[];
+}
+
+export type CareerFrontmatter = {
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  experience: string;
+  posted: string;
+  salary?: string;
+  slug: string;
+  headings: any[];
+};
+
+export type Career = CareerFrontmatter & {
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  experience: string;
+  posted: string;
+  salary?: string;
+  slug: string;
+  headings: any[];
+  component: (props: any) => React.ReactElement
+}

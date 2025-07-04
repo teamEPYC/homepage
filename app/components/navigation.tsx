@@ -32,6 +32,10 @@ const items = [
     label: "Developers",
     href: "/developers",
   },
+  {
+    label: "Careers",
+    href: "/careers",
+  },
 ];
 
 export function Navigation() {
