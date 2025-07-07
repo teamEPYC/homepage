@@ -6,11 +6,27 @@ import {
   LogoLeo,
 } from "~/components/logo";
 import { PageEcosystem } from "~/pages/ecosystem";
+import type { Route } from "../+types/root";
+import { buildMeta } from "~/lib/meta";
 
 export type Item = (typeof items)[0];
 
-export function meta() {
-  return [{ title: "Ecosystem – Miden" }];
+export function loader({ request }: Route.LoaderArgs) {
+  const url = new URL(request.url);
+  return {
+    url,
+  };
+}
+
+export function meta({ data }: Route.MetaArgs) {
+  const canonical = data.url.origin + data.url.pathname;
+  return buildMeta({
+    title: "Ecosystem – Miden",
+    description:
+      "Miden is a privacy-focused execution layer for the modular blockchain stack.",
+    url: canonical,
+    image: `${data.url.origin}/images/home.png`,
+  });
 }
 
 const items = [
