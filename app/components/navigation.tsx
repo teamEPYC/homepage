@@ -36,6 +36,10 @@ const items = [
     label: "Careers",
     href: "/careers",
   },
+  {
+    label: "Press Release",
+    href: "/press-release",
+  },
 ];
 
 export function Navigation() {
