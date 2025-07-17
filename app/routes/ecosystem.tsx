@@ -1,6 +1,5 @@
 import {
   LogoArcane,
-  LogoComposabilityLabs,
   LogoPragma,
   LogoLinum,
   LogoLeo,
@@ -27,12 +26,6 @@ const items = [
     link: "https://github.com/arcane-finance-defi/miden-bridge-mono",
   },
   {
-    icon: <LogoComposabilityLabs className="size-6" />,
-    label: "Composability Labs",
-    description: "Compliant Dark Pool as extension of their perp DEX on Aptos",
-    link: "https://github.com/compolabs/miden-dark-pool/tree/dev/tcp",
-  },
-  {
     icon: <LogoLinum className="size-6" />,
     label: "Linum Labs",
     description: "Compliant Dark Pool using MPC",
@@ -40,9 +33,9 @@ const items = [
   },
   {
     icon: <LogoLeo className="size-6" />,
-    label: "Leo Wallet",
+    label: "Miden Wallet",
     description: "Wallet and WebClient SDK",
-    link: "https://www.leo.app/miden",
+    link: "https://miden.fi/",
   },
 ];
 
