@@ -55,51 +55,24 @@ export function LogoLinum(props: SVGProps<SVGSVGElement>) {
 export function LogoLeo(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 35 22"
+      width="96"
+      height="79"
+      viewBox="0 0 96 79"
       fill="none"
+      xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
       <title>Leo</title>
-      <path
-        fill="#020434"
-        d="m18.589 1.566 7.552 13.992-.351 1.35-7.552 4.664h-1.004l-7.552-4.665-.35-1.349 7.55-13.992h1.707Zm-7.093 14.119 6.24 3.854 6.24-3.854-6.24-11.563-6.24 11.563Z"
-        style={{
-          fill: "color(display-p3 .0078 .0157 .2039)",
-          fillOpacity: 1,
-        }}
-      />
-      <path
-        fill="#020434"
-        d="m34.736 11.382-17 10.5-17-10.5 17-10.5 17 10.5Zm-30.207 0 13.207 8.157 13.206-8.157-13.206-8.157-13.207 8.157Z"
-        style={{
-          fill: "color(display-p3 .0078 .0157 .2039)",
-          fillOpacity: 1,
-        }}
-      />
-      <path
-        fill="#020434"
-        d="M18.712 3.608V20.71H16.76V3.608h1.952Z"
-        style={{
-          fill: "color(display-p3 .0078 .0157 .2039)",
-          fillOpacity: 1,
-        }}
-      />
-    </svg>
-  );
-}
-export function LogoComposabilityLabs(props: SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 23 23"
-      fill="none"
-      {...props}
-    >
-      <title>Composability Labs</title>
-      <path fill="#F76D00" d="M0 .86h23v4.041H0z" />
-      <path fill="#00E813" d="M0 9.874h23v4.041H0z" />
-      <path fill="#5D6FEF" d="M0 18.888h23v4.041H0z" />
+      <g clipPath="url(#clip0_1_8529)">
+        <path d="M84 54.6924C77.3733 54.6924 72 60.1346 72 66.8462C72 73.5579 77.3733 79.0001 84 79.0001C90.6267 79.0001 96 73.5579 96 66.8462C96 60.1346 90.6267 54.6924 84 54.6924Z" fill="#634CFF"/>
+        <path d="M24 79H0V30.3846C0 13.6326 13.46 0 30 0C46.54 0 60 13.6326 60 30.3846V48.6154H36V30.3846C36 27.0356 33.3067 24.3077 30 24.3077C26.6933 24.3077 24 27.0356 24 30.3846V79Z" fill="#634CFF"/>
+        <path d="M60 79H36V30.3846C36 13.6326 49.46 0 66 0C82.54 0 96 13.6326 96 30.3846V48.6154H72V30.3846C72 27.0356 69.3067 24.3077 66 24.3077C62.6933 24.3077 60 27.0356 60 30.3846V79Z" fill="#634CFF"/>
+      </g>
+      <defs>
+        <clipPath id="clip0_1_8529">
+          <rect width="96" height="79" fill="white"/>
+        </clipPath>
+      </defs>
     </svg>
   );
 }
