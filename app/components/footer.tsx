@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import { Logo } from "./logo";
 
 const socials = [
   {
@@ -36,7 +37,11 @@ const socials = [
 export function Footer() {
   return (
     <footer className="flex justify-between items-center gap-4 p-6 !border-neutral-200 border-t w-miden">
-      <div className="flex items-center gap-4" />
+      <div className="flex items-center gap-4" >
+        <Link to="/" prefetch="intent" className="m-0">
+          <Logo className="h-5 shrink-0" />
+        </Link>
+      </div>
       <ul className="flex justify-end items-center text-neutral-400">
         {socials.map((item) => (
           <li key={item.label}>

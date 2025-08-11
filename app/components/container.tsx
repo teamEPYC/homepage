@@ -17,7 +17,7 @@ export function Header(props: HtmlHTMLAttributes<HTMLElement>) {
     <header
       {...props}
       className={cn(
-        "w-miden flex flex-col gap-6 [&_p]:text-muted-foreground [&_h2]:text-4xl [&_h2]:text-balance",
+        "w-miden flex flex-col gap-6 [&_p]:text-muted-foreground [&_p]:text-base [&_h2]:text-4xl [&_h2]:text-balance",
         props.className,
       )}
     >
