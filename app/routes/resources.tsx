@@ -20,7 +20,7 @@ export function meta({ data }: Route.MetaArgs) {
     description:
       "Miden is a privacy-focused execution layer for the modular blockchain stack.",
     url: canonical,
-    image: `${data.url.origin}/images/home.png`,
+    image: `${data.url.origin}/images/miden.webp`,
   });
 }
 
