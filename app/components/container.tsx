@@ -5,7 +5,7 @@ export function Container(props: HtmlHTMLAttributes<HTMLElement>) {
   return (
     <section
       {...props}
-      className={cn("my-12 px-6 flex-1 w-miden", props.className)}
+      className={cn("my-6 mt-12 md:my-12 px-6 flex-1 w-miden", props.className)}
     >
       {props.children}
     </section>

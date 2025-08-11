@@ -36,8 +36,8 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="flex justify-between items-center gap-4 p-6 !border-neutral-200 border-t w-miden">
-      <div className="flex items-center gap-4" >
+    <footer className="flex justify-center md:justify-between items-center gap-4 p-6 !border-neutral-200 md:border-t w-miden">
+      <div className="hidden md:flex items-center gap-4" >
         <Link to="/" prefetch="intent" className="m-0">
           <Logo className="h-5 shrink-0" />
         </Link>
@@ -49,7 +49,7 @@ export function Footer() {
               to={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="block px-2 hover:text-black transition-colors"
+              className="block px-2 text-primary hover:text-black transition-colors"
               aria-label={item.label}
             >
               <svg
