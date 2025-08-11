@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { Container, Header } from "~/components/container";
+import Newsletter from "~/components/newsletter";
 import { cn } from "~/lib/utils";
 
 export type Investor = {
@@ -82,6 +83,9 @@ export function PageHome({
           ))}
         </ul>
       </div>
+
+
+      <Newsletter />
     </Container>
   );
 }

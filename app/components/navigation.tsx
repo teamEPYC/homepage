@@ -32,6 +32,10 @@ const items = [
     label: "Developers",
     href: "/developers",
   },
+  {
+    label: "About",
+    href: "/about",
+  },
 ];
 
 export function Navigation() {
