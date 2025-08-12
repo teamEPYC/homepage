@@ -11,7 +11,7 @@ export default function PageCareerDetails({ job }: { job: Career }) {
   return (
     <div className="my-12">
       <div className="relative gap-6 px-6 xl:grid grid-cols-[1fr_848px_1fr] w-full w-miden max-w-[calc(848px+256px+256px) xl:max-w-full font-dm-mono">
-        <ul className="hidden top-0 sticky xl:flex flex-col ml-auto p-6 w-full max-w-32 h-fit text-muted-foreground">
+        <ul className="hidden top-0 sticky xl:flex flex-col ml-auto px-6 w-full max-w-32 h-fit text-muted-foreground">
           <li>
             <Link to="/careers" className="block py-1.5 hover:text-primary text-balance transition-colors">
               <span className="block">↵ Back</span>

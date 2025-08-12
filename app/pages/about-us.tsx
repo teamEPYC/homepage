@@ -16,12 +16,12 @@ export function PageAboutUs() {
                 <h3 className="mt-2">THE TEAM</h3>
                 <p>The Miden team is a collective of engineers, cryptographers, and product thinkers pushing zero-knowledge tech to the edge — enabling secure, client-side execution without compromise.</p>
                 <div className="mb-6 md:mb-10">
-                    <img src="/images/about-us.png" alt="The Miden team" className="w-full object-contain" />
+                    <img src="/images/about-us.png" alt="The Miden team" className="w-full object-contain" width={800} height={169} />
                 </div>
 
             </Header>
 
-            <div className="border-t !border-gray-300/60 pt-8 pb-8">
+            <div className="border-t !border-gray-300/60 pt-8 pb-8 [&_h3]:text-2xl text-black [&_p]:text-base">
                 <h3 className="mb-6">MEDIA KIT</h3>
                 <p className="mb-6">A quick places for you to find brand and media assets</p>
 
@@ -30,7 +30,7 @@ export function PageAboutUs() {
                 </div>
             </div>
 
-            <div className="border-t !border-gray-300/60 pt-8 pb-8">
+            <div className="border-t !border-gray-300/60 pt-8 pb-8 [&_h3]:text-2xl text-black [&_p]:text-base">
                 <h3 className="mb-6">CAREERS</h3>
                 <p className=" mb-6">We're always looking for the best talent in engineering, content, and research! Explore open roles and contribute to the future of the blockchain</p>
                 <div className="mt-6">
@@ -38,7 +38,7 @@ export function PageAboutUs() {
                 </div>
             </div>
 
-            <div className="border-t !border-gray-300/60 pt-8">
+            <div className="border-t !border-gray-300/60 pt-8 [&_h3]:text-2xl text-black [&_p]:text-base">
                 <h3 className="mb-6">CONTACT US</h3>
                 <p>
                     Have any questions that you don't see answered here? Then please reach out to the team by emailing

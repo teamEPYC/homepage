@@ -17,10 +17,6 @@ const items = [
     href: "/testnet",
   },
   {
-    label: "Roadmap",
-    href: "/roadmap",
-  },
-  {
     label: "Resources",
     href: "/resources",
   },
