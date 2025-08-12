@@ -9,24 +9,24 @@ import {
   LogoSymbolicCapital,
 } from "~/components/logo";
 import { PageHome, type Investor } from "~/pages/homepage";
-import type { Route } from "../+types/root";
 import { buildMeta } from "~/lib/meta";
+import type { LoaderData } from "~/lib/data";
 
-export function loader({ request }: Route.LoaderArgs) {
+export function loader({ request }: { request: Request }): LoaderData {
   const url = new URL(request.url);
   return {
     url,
   };
 }
 
-export function meta({ data }: Route.MetaArgs) {
+export function meta({ data }: { data: LoaderData }) {
   const canonical = data.url.origin + data.url.pathname;
   return buildMeta({
     title: "Miden is the Edge Blockchain",
     description:
       "Miden is a privacy-focused execution layer for the modular blockchain stack.",
     url: canonical,
-    image: `${data.url.origin}/images/home.png`,
+    image: `${data.url.origin}/images/miden.webp`,
   });
 }
 

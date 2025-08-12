@@ -40,6 +40,10 @@ const items = [
     label: "Press Release",
     href: "/press-release",
   },
+  {
+    label: "About",
+    href: "/about",
+  },
 ];
 
 export function Navigation() {

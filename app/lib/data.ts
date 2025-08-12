@@ -57,5 +57,9 @@ export type Career = CareerFrontmatter & {
   salary?: string;
   slug: string;
   headings: any[];
-  component: (props: any) => React.ReactElement
-}
+  component: (props: any) => React.ReactElement;
+};
+
+export type LoaderData = {
+  url: URL;
+};
