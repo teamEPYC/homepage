@@ -478,7 +478,7 @@ export function NewsLetterIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg width={20} height={20} fill="none" stroke="currentColor" viewBox="0 0 24 24" {...props}>
       <title>Newsletter</title>
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
     </svg>
   );
 }

@@ -37,10 +37,6 @@ const items = [
     href: "/careers",
   },
   {
-    label: "Press Release",
-    href: "/press-release",
-  },
-  {
     label: "About",
     href: "/about",
   },

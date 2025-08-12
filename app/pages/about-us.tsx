@@ -1,5 +1,5 @@
-import { href, Link } from "react-router";
-import { Container, Header, Wrapper } from "~/components/container";
+import { Link } from "react-router";
+import { Container, Header } from "~/components/container";
 import Newsletter from "~/components/newsletter";
 
 export function PageAboutUs() {
@@ -26,7 +26,7 @@ export function PageAboutUs() {
                 <p className="mb-6">A quick places for you to find brand and media assets</p>
 
                 <div className="mt-6">
-                    <a href="#" className="text-primary/90 hover:text-primary italic underline text-base font-medium">CLICK HERE</a>
+                    <Link to="https://drive.google.com/drive/folders/1jRxP0LtQHwO389h5vfysigNTSkuuGBKa?usp=drive_link" target="_blank" className="text-primary/90 hover:text-primary italic underline text-base font-medium">CLICK HERE</Link>
                 </div>
             </div>
 
@@ -34,7 +34,7 @@ export function PageAboutUs() {
                 <h3 className="mb-6">CAREERS</h3>
                 <p className=" mb-6">We're always looking for the best talent in engineering, content, and research! Explore open roles and contribute to the future of the blockchain</p>
                 <div className="mt-6">
-                    <a href="#" className="text-primary/90 hover:text-primary italic underline text-base font-medium">OPEN ROLES</a>
+                    <Link to="/careers" className="text-primary/90 hover:text-primary italic underline text-base font-medium">OPEN ROLES</Link>
                 </div>
             </div>
 
@@ -42,7 +42,7 @@ export function PageAboutUs() {
                 <h3 className="mb-6">CONTACT US</h3>
                 <p>
                     Have any questions that you don't see answered here? Then please reach out to the team by emailing
-                    <a href="mailto:contact@miden.team" className="text-primary/90 hover:text-primary font-medium"> contact@miden.team </a>
+                    <Link to="mailto:contact@miden.team" className="text-primary/90 hover:text-primary font-medium"> contact@miden.team </Link>
                     and put your reason for contacting in there.
                 </p>
             </div>

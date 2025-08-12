@@ -40,9 +40,6 @@ export type CareerFrontmatter = {
   department: string;
   location: string;
   type: string;
-  experience: string;
-  posted: string;
-  salary?: string;
   slug: string;
   headings: any[];
 };

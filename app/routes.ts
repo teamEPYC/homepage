@@ -17,7 +17,6 @@ export default [
     route("/resources/:category", "routes/overview.tsx"),
     route("/careers", "routes/careers.tsx"),
     route("/career/:slug", "routes/career-details.tsx"),
-    route("/press-release", "routes/press-release.tsx"),
     route("/about", "routes/about-us.tsx"),
   ]),
 

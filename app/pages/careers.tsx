@@ -1,39 +1,38 @@
 import { Link } from "react-router";
 import { Container, Wrapper } from "~/components/container";
-import { ListItem } from "~/components/list";
 import type { Career } from "~/lib/data";
 
 export function PageCareers({ Jobs }: { Jobs: Career[] }) {
   return (
     <>
       <Container>
-        <div className="flex flex-col gap-6 [&_p]:text-muted-foreground [&_h2]:text-4xl [&_h2]:text-balance">
-          <h2>Our Openings</h2>
+        <div className="flex flex-col gap-6 [&_p]:text-black [&_h2]:text-black [&_p]:text-base [&_h2]:text-4xl [&_h2]:text-balance">
+          <h2>CAREERS</h2>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s
+            We’re building the future of private, scalable computation on the edge.
           </p>
+          <p>We are looking for engineers who are looking for a place that will challenge them. We expect you to be able to turn around a medium-hard-level ticket in a few days, scope appropriately, have tight review cycles, and ship.</p>
         </div>
 
-        <div className="mt-16">
-          <div className="mb-6 font-bold">Hiring</div>
+        <div className="mt-4 md:mt-10">
           <Wrapper>
-            {Jobs.map((item, index) => (
+            {Jobs.map((item) => (
               <Link
                 key={item.slug}
-                className="group flex flex-col justify-between py-6 border-t"
+                className="group flex flex-col justify-between py-4 border-t !border-gray-300/60"
                 to={`/career/${item.slug}`}
               >
                 <span className="flex items-center gap-3">
-                  <h4 className="group-hover:text-primary transition-colors">
-                    {item.title} | {item.type}
+                  <h4 className="uppercase transition-colors text-base !font-medium md:!font-normal text-black">
+                    {item.title}
                   </h4>
                 </span>
-                <p className="mt-4 text-muted-foreground">
-                  Posted: {item.posted} | Department: {item.department} |
-                  Experience: {item.experience} | Location: {item.location}
-                </p>
+
+                <ul className="mt-1 text-primary text-xs flex flex-row gap-2">
+                  <li>{item.department}</li>
+                  <li>• {item.location}</li>
+                  <li>• {item.type} </li>
+                </ul>
               </Link>
             ))}
           </Wrapper>
