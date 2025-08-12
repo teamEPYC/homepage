@@ -15,7 +15,7 @@ export function meta({ data }: Route.MetaArgs) {
     title: "Miden | Hiring",
     description: "Miden | Description",
     url: canonical,
-    image: `${data.url.origin}/images/home.png`,
+    image: `${data.url.origin}/images/miden.webp`,
   });
 }
 

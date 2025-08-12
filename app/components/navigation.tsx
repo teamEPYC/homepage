@@ -17,8 +17,8 @@ const items = [
     href: "/testnet",
   },
   {
-    label: "Resources",
-    href: "/resources",
+    label: "Publications",
+    href: "/publications",
   },
   {
     label: "Ecosystem",
@@ -52,7 +52,7 @@ export function Navigation() {
             <NavLink
               to={item.href}
               prefetch="intent"
-              className="px-3 aria-[current='page']:text-primary"
+              className="px-3 aria-[current='page']:text-primary uppercase"
             >
               {item.label}
             </NavLink>

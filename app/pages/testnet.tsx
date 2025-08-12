@@ -10,7 +10,7 @@ import type { Item as ItemType } from "~/routes/testnet";
 export function PageTestnet({ items }: { items: ItemType[] }) {
   return (
     <Container>
-      <Header>
+      <Header className="[&_h2]:uppercase">
         <h2>Miden Testnet</h2>
         <p>
           The current version is Alpha Testnet v07. It is ready for builders to
