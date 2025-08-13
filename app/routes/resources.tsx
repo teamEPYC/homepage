@@ -24,6 +24,41 @@ export function meta({ data }: Route.MetaArgs) {
   });
 }
 
+export const press = [
+  {
+    label: "Miden VM: Revolutionizing Zero-Knowledge Proofs in Blockchain",
+    link: "https://miden.xyz/",
+  },
+  {
+    label: "Unlocking the Potential of Miden: A Deep Dive into its Architecture",
+    link: "https://miden.xyz/",
+  },
+  {
+    label: "Exploring Miden: The Future of Scalable Cryptographic Solutions",
+    link: "https://miden.xyz/",
+  },
+  {
+    label: "Why Miden is the Game Changer in the World of Decentralized Apps",
+    link: "https://miden.xyz/",
+  },
+  {
+    label: "Innovations in Miden: Building Trust with Zero-Knowledge Technology",
+    link: "https://miden.xyz/",
+  },
+  {
+    label: "Miden and the Rise of Privacy-Centric Blockchain Applications",
+    link: "https://miden.xyz/",
+  },
+  {
+    label: "How Miden is Shaping the Next Generation of Smart Contracts",
+    link: "https://miden.xyz/",
+  },
+  {
+    label: "The Impact of Miden on the Evolution of Decentralized Finance",
+    link: "https://miden.xyz/",
+  },
+];
+
 export const papers = [
   {
     label:
@@ -188,5 +223,5 @@ export const talks = [
 export default function RouteResources({
   loaderData: { posts },
 }: Route.ComponentProps) {
-  return <PageResources posts={posts} papers={papers} talks={talks} />;
+  return <PageResources posts={posts} papers={papers} talks={talks} press={press} />;
 }

@@ -29,6 +29,25 @@ export interface MDXModule {
   headings: Heading[];
 }
 
+export interface CareerMDXModule {
+  frontmatter: CareerFrontmatter;
+  default: (props: any) => ReactElement;
+  headings: Heading[];
+}
+
+export type CareerFrontmatter = {
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  slug: string;
+  headings: any[];
+};
+
+export type Career = CareerFrontmatter & {
+  component?: (props: any) => React.ReactElement;
+};
+
 export type LoaderData = {
   url: URL;
 };

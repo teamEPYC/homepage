@@ -17,7 +17,7 @@
 
 @theme {
   --font-mono: "IBM Plex Mono", monospace;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+  --font-dm-mono: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-script: "Biro Script", cursive;
   --font-dm-mono: "DM Mono", monospace;
@@ -52,7 +52,7 @@ h4 {
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.676 0.217 38.802);
+  --primary: #FF5500;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
