@@ -12,14 +12,17 @@ export async function loader({ request }: Route.LoaderArgs) {
   const job = getJob(slug);
   if (!job) throw new Response("Not Found", { status: 404 });
 
+  // console.log(job);
+
   return { job, slug, url };
 }
 
 export function meta({ data }: Route.MetaArgs) {
   const canonical = data.url.origin + data.url.pathname;
+  const job = data.job;
   return buildMeta({
-    title: "Miden | Hiring",
-    description: "Miden | Description",
+    title: job.title,
+    description: job.description,
     url: canonical,
     image: `${data.url.origin}/images/miden.webp`,
   });

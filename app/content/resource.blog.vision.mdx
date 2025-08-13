@@ -1,6 +1,6 @@
 ---
-title: "Miden: The Edge Blockchain"
-description: "Miden: The Edge Blockchain | If Bitcoin and Ethereum were designed today, they would look a lot like Miden."
+title: "Miden Vision"
+description: "Our vision for Miden: an Edge Blockchain enabling scalable, private, and safe applications built for the real world."
 author: By Bobbin, Dominik, and Azeem
 date: 28.04.25
 featured: true
@@ -41,6 +41,7 @@ Both state and execution bloat force network execution chains into a tradeoff: t
 Third, providing a satisfactory level of privacy or confidentiality in traditional blockchains is practically impossible. The fundamental limit here again is that to re-execute transactions, nodes need to know all underlying transaction data, and thus, transaction details must be made public. The lack of privacy is sometimes treated as a selling point: transparency. But transparency is a bug, not a feature.
 
 Traditional blockchains have attempted to work around the privacy problem, but each approach comes with trade-offs:
+
 - Pseudo-anonymity: While interactions between blockchain accounts are public, the connection to real-world identities stay private - at least in theory. In practice, firms like Chainalysis can easily trace most accounts back to owners.
 - ZK-based add-ons: Tools like Tornado Cash add real privacy to existing protocols, but at a high cost to users (both in UX and monetary terms). These costs deter regular activity and lead to adverse selection.
 
@@ -72,7 +73,7 @@ But there’s an important difference: in Miden, all assets are native and are s
 
 Accounts on Miden can be public or private. Public accounts are stored entirely on-chain, similar to how most accounts work in other blockchains. Private accounts are stored off-chain - only their commitments go on-chain. This option creates remarkable efficiency: a commitment to a private account is just 32 bytes, regardless of how much data it actually contains.
 
-With this architecture, Miden can support billions of private accounts while maintaining a manageable state size without compromising security or verifiability. 
+With this architecture, Miden can support billions of private accounts while maintaining a manageable state size without compromising security or verifiability.
 
 Accounts communicate with each other by message passing. Messages on Miden are called notes and are implemented as UTXOs under the hood. Just as accounts, notes can store assets. Notes also have “spend scripts” which define who can consume a note and how. These scripts are Turing-complete programs and can access blockchain state - this makes them very powerful. For example, a script can define a “recallable transaction” (i.e., a note which can be claimed back by the sender after some time) or a native atomic swap. Another way to look at notes is that they are on-chain intents - a note defines a set of conditions which needs to be fulfilled by someone to claim the note.
 
@@ -90,7 +91,7 @@ While Miden emphasizes edge execution and self-custodied state, it also accommod
 
 Shared public state on Miden is facilitated via “network accounts.” These are public accounts that are managed and updated by the network. Users can interact with network accounts by emitting notes from their private accounts. Once such notes are detected by the network, block producers will apply them to network accounts without any further involvement from users.
 
-A good illustration of this mechanism is an AMM contract. Similar to how it works on  Ethereum, the code and the asset pool of the AMM account will be publicly visible on Miden (the AMM account will be a “network account”). But now any private account will be able to interact with the AMM by creating notes that represent the trading intents. Users could create such notes in local transactions. The network will then consume all incoming notes in a network transaction to facilitate the trades, and will produce outgoing notes carrying the swapped asset back to the senders.
+A good illustration of this mechanism is an AMM contract. Similar to how it works on Ethereum, the code and the asset pool of the AMM account will be publicly visible on Miden (the AMM account will be a “network account”). But now any private account will be able to interact with the AMM by creating notes that represent the trading intents. Users could create such notes in local transactions. The network will then consume all incoming notes in a network transaction to facilitate the trades, and will produce outgoing notes carrying the swapped asset back to the senders.
 
 ![PublicSharedState](/images/public-shared-state.gif)
 
@@ -106,7 +107,7 @@ One such language is Rust, and it will be the primary smart contract development
 
 As the edge blockchain, Miden presents a fundamental shift in blockchain architecture which addresses the core limitations of traditional blockchains. But how exactly does this benefit builders and users? Our goal is to expand the set of use cases blockchains can address by enabling applications which are difficult - if not impossible - to deploy on traditional chains, while at the same time making user experience simpler and safer.
 
-Take, for example, applications that integrate complex logic which otherwise would be too expensive on traditional chains. Moving computations offchain has two primary benefits. First, there is no practical limit on how complex a smart contract can be. This means you could run sophisticated order matching algorithms, evaluate complex financial formulas, or compute AI model inferences in smart contracts, all while keeping fees at a minimum. Second, computational complexity of one contract does not affect other contract execution. 
+Take, for example, applications that integrate complex logic which otherwise would be too expensive on traditional chains. Moving computations offchain has two primary benefits. First, there is no practical limit on how complex a smart contract can be. This means you could run sophisticated order matching algorithms, evaluate complex financial formulas, or compute AI model inferences in smart contracts, all while keeping fees at a minimum. Second, computational complexity of one contract does not affect other contract execution.
 
 So as applications gain traction, they will not cause performance degradation for the rest of the network; this leads to more predictable network behavior for users, and makes for a more attractive environment for applications that might have compliance requirements.
 
