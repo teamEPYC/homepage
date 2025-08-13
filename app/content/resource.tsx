@@ -11,6 +11,7 @@ import { getPaper } from "~/lib/papers.server";
 import { getPost, getRelatedPosts } from "~/lib/posts.server";
 import { getTalk } from "~/lib/talks.server";
 import type { Route } from "./+types/resource";
+import { buildMeta } from "~/lib/meta";
 
 export function loader({ request }: Route.LoaderArgs) {
   const url = new URL(request.url);
@@ -54,11 +55,23 @@ export function loader({ request }: Route.LoaderArgs) {
 
   const relatedPosts = getRelatedPosts(data.slug);
 
-  return { data, category, relatedPosts };
+  return {
+    data,
+    category,
+    relatedPosts,
+    url: url,
+  };
 }
 
-export function meta({ data: { data } }: Route.MetaArgs) {
-  return [{ title: `${data.title} – Miden` }];
+export function meta({ data }: Route.MetaArgs) {
+  const canonical = data.url.origin + data.url.pathname;
+
+  return buildMeta({
+    title: data?.data?.title,
+    description: "Miden is a privacy-focused execution layer for the modular blockchain stack.",
+    url: canonical,
+    image: `${data.url.origin}/images/miden.webp`,
+  });
 }
 
 export default function Layout({

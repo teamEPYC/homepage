@@ -28,3 +28,7 @@ export interface MDXModule {
   default: (props: any) => ReactElement;
   headings: Heading[];
 }
+
+export type LoaderData = {
+  url: URL;
+};

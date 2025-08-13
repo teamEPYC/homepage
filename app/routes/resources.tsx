@@ -1,17 +1,27 @@
 import { getFeaturedPosts } from "~/lib/posts.server";
 import { PageResources } from "~/pages/resources";
 import type { Route } from "./+types/resources";
+import { buildMeta } from "~/lib/meta";
 
-export function meta() {
-  return [{ title: "Resources – Miden" }];
-}
-
-export function loader() {
+export function loader({ request }: Route.LoaderArgs) {
+  const url = new URL(request.url);
   const posts = getFeaturedPosts();
 
   return {
     posts,
+    url,
   };
+}
+
+export function meta({ data }: Route.MetaArgs) {
+  const canonical = data.url.origin + data.url.pathname;
+  return buildMeta({
+    title: "Resources – Miden",
+    description:
+      "Miden is a privacy-focused execution layer for the modular blockchain stack.",
+    url: canonical,
+    image: `${data.url.origin}/images/miden.webp`,
+  });
 }
 
 export const papers = [
