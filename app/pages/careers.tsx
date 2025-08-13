@@ -6,7 +6,7 @@ export function PageCareers({ Jobs }: { Jobs: Career[] }) {
   return (
     <>
       <Container>
-        <div className="flex flex-col gap-6 [&_p]:text-black [&_h2]:text-black [&_p]:text-base [&_h2]:text-4xl [&_h2]:text-balance">
+        <div className="flex flex-col gap-4 [&_p]:text-black [&_h2]:text-black [&_p]:text-base [&_h2]:text-4xl [&_h2]:text-balance">
           <h2>CAREERS</h2>
           <p>
             We’re building the future of private, scalable computation on the edge.
