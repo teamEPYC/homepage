@@ -2,6 +2,7 @@ import type { ReactElement } from "react";
 
 export type Frontmatter = {
   title: string;
+  description: string;
   author: string;
   date: string;
   featured?: boolean;
@@ -37,6 +38,7 @@ export interface CareerMDXModule {
 
 export type CareerFrontmatter = {
   title: string;
+  description: string;
   department: string;
   location: string;
   type: string;
