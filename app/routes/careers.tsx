@@ -12,8 +12,8 @@ export function loader({ request }: Route.LoaderArgs) {
 export function meta({ data }: Route.MetaArgs) {
   const canonical = data.url.origin + data.url.pathname;
   return buildMeta({
-    title: "Miden | Hiring",
-    description: "Miden | Description",
+    title: "Miden Careers",
+    description: "Check our open roles and join the Miden team to help shape the future of the Edge Blockchain.",
     url: canonical,
     image: `${data.url.origin}/images/miden.webp`,
   });

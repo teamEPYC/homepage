@@ -21,9 +21,9 @@ export function loader({ request }: { request: Request }): LoaderData {
 export function meta({ data }: { data: LoaderData }) {
   const canonical = data.url.origin + data.url.pathname;
   return buildMeta({
-    title: "Ecosystem – Miden",
+    title: "Miden Ecosystem",
     description:
-      "Miden is a privacy-focused execution layer for the modular blockchain stack.",
+      "Explore projects and partners building real-world applications on top of Miden.",
     url: canonical,
     image: `${data.url.origin}/images/miden.webp`,
   });

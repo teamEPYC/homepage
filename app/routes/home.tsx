@@ -22,9 +22,9 @@ export function loader({ request }: { request: Request }): LoaderData {
 export function meta({ data }: { data: LoaderData }) {
   const canonical = data.url.origin + data.url.pathname;
   return buildMeta({
-    title: "Miden is the Edge Blockchain",
+    title: "Miden",
     description:
-      "Miden is a privacy-focused execution layer for the modular blockchain stack.",
+      "The Edge Blockchain for scalable applications with public and private transactions.",
     url: canonical,
     image: `${data.url.origin}/images/miden.webp`,
   });

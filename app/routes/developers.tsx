@@ -14,9 +14,9 @@ export function loader({ request }: { request: Request }): LoaderData {
 export function meta({ data }: { data: LoaderData }) {
   const canonical = data.url.origin + data.url.pathname;
   return buildMeta({
-    title: "Developers – Miden",
+    title: "Miden Developers",
     description:
-      "Miden is a privacy-focused execution layer for the modular blockchain stack.",
+      "Build scalable apps on Miden with privacy-preserving smart contracts and built-in safety.",
     url: canonical,
     image: `${data.url.origin}/images/miden.webp`,
   });
