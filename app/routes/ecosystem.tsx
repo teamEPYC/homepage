@@ -8,8 +8,11 @@ import {
   LogoInicio,
   LogoNethermind,
   LogoMidenbrowserwallet,
+  LogoOpenzeppelin,
+  LogoLambdaclass,
 } from "~/components/logo";
 import { PageEcosystem } from "~/pages/ecosystem";
+import type { Partner } from "~/pages/ecosystem";
 
 export type Item = (typeof items)[0];
 
@@ -60,20 +63,16 @@ const items = [
     description: "Miden Playground (WIP)",
     link: "https://github.com/walnuthq/miden-playground",
   }, 
-  {
-    icon: <LogoLeo className="size-6" />,
-    label: "Demox Labs",
-    description: "Wallet and WebClient SDK",
-    link: "https://miden.fi/",
-  },
-  {
-    icon: <LogoNethermind className="size-6" />,
-    label: "Nethermind",
-    description: "Private Transport Bus",
-    link: "https://github.com/0xMiden/miden-private-transport",
-  }, 
+];
+
+const partners: Partner[] = [
+  { icon: <LogoLambdaclass />, label: "LambdaClass", size: "large", link: "https://lambdaclass.com/" },
+  { icon: <LogoNethermind />, label: "Nethermind", size: "large", link: "https://nethermind.io/" },
+  { icon: <LogoLeo />, label: "Demox Labs", size: "large", link: "https://www.miden.fi/" },
+  { icon: <LogoOpenzeppelin />, label: "OpenZeppelin", size: "large", link: "https://www.openzeppelin.com//" },
+
 ];
 
 export default function RouteEcosystem() {
-  return <PageEcosystem items={items} />;
+  return <PageEcosystem items={items} partners={partners} />;
 }
