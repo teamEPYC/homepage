@@ -1,5 +1,5 @@
 ---
-title: The Future of Blockchains Is Off-Chain
+title: The Future of Blockchains Is offchain
 author: Bobbin Threadbare & Dominik Schmid
 date: 23.03.23
 featured: true
@@ -7,17 +7,17 @@ featured: true
 
 import Scribble from "../components/scribble";
 
-# The Future of Blockchains Is Off-Chain
+# The Future of Blockchains Is offchain
 
 <span className="author">Bobbin Threadbare & Dominik Schmid</span>
 
-The future of blockchains is off-chain. Blockchain is one of the most transformative technologies of our generation. However, no L1 or L2 is currently ready for mass adoption. Either because they do not scale, cannot provide privacy, are difficult to develop on, or sacrifice fundamental principles of web3 (self-custody and censorship-resistance). The underlying cause is that virtually all current blockchains were designed before the advent of the Zero-Knowledge (ZK) technology. Even the existing ZK-based solutions are frequently just carbon-copies of pre-ZK designs with ZK technology added on, and thus, carry over design limitations of the previous generations.
+The future of blockchains is offchain. Blockchain is one of the most transformative technologies of our generation. However, no L1 or L2 is currently ready for mass adoption. Either because they do not scale, cannot provide privacy, are difficult to develop on, or sacrifice fundamental principles of web3 (self-custody and censorship-resistance). The underlying cause is that virtually all current blockchains were designed before the advent of the Zero-Knowledge (ZK) technology. Even the existing ZK-based solutions are frequently just carbon-copies of pre-ZK designs with ZK technology added on, and thus, carry over design limitations of the previous generations.
 
 Miden prioritizes ZK-friendliness over EVM compatibility. It also uses a novel state model to exploit the full power of a ZK-centric design. These design decisions allow developers to create applications that are currently difficult or impractical to build on account-based systems.
 
 Miden is the next-generation blockchain protocol engineered to leverage the full potential of ZK technology, pushing both execution and state to the edge (i.e., the client side). This resolves fundamental issues in blockchain scalability, privacy, and safety, ensuring a new level of performance and user experience. The three main benefits of the Miden design are:
 
-1. **Unbounded scalability**: Through client-side proving, Miden allows users to execute and prove transactions locally without requiring the network to re-execute them. This enables the network to verify massive volumes of transactions concurrently and drastically reduces on-chain state storage requirements.
+1. **Unbounded scalability**: Through client-side proving, Miden allows users to execute and prove transactions locally without requiring the network to re-execute them. This enables the network to verify massive volumes of transactions concurrently and drastically reduces onchain state storage requirements.
 2. **Privacy by default**: With client-side execution and a self-custodied state, users maintain complete control over their data and transaction details. The network only needs to know commitments to states, enabling private transactions and applications.
 3. **Safe development for the masses**: Miden prioritizes developer safety and accessibility by leveraging Rust as the primary smart contract language and incorporating in-protocol safeguards like account abstraction and self-custodied state. These features make smart contracts more safe, reducing attack surfaces and making blockchain development more approachable for crypto-native and traditional developers alike.
 
@@ -54,7 +54,7 @@ Another important point regarding privacy is that users should not have to pay e
 
 We understand that privacy is a complex area in the public domain. Privacy is a complex subject requiring careful study and consideration. We plan to enable privacy on Miden in stages. Initially, users can maintain privacy from other users but not from the operators (similar to Web2 privacy). This will give us time to figure out how to enable stronger levels of privacy without opening floodgates to potential abuses.
 
-## Architecture: actor-based model with concurrent off-chain state
+## Architecture: actor-based model with concurrent offchain state
 
 Miden’s architecture departs considerably from typical blockchain designs to support the above mentioned features. In future blog posts, we will cover this in much more detail, but two foundational aspects are worth covering even now.
 
@@ -68,9 +68,9 @@ Miden’s architecture takes the actor model further and combines it with zero-k
 
 The actor-based execution model requires a radically different approach to recording the system's state. Actors and the messages they exchange must be treated as first-class citizens. Miden addresses this by combining the state models of account-based systems like Ethereum and UTXO-based systems like Bitcoin and Zcash.
 
-Additionally, Miden accounts can live either on-chain or off-chain. For on-chain accounts, the full account state is always recorded on-chain (meaning on Miden). For off-chain accounts, only the commitment to the account state (i.e., state hash) is recorded on-chain. This is possible because, as described before, in the actor-based model, users can apply updates to their accounts locally and then send a zero-knowledge proof to the network attesting that the commitment to the account state was updated correctly. The network can verify the correctness of the transition without knowing the details of an off-chain account’s state.
+Additionally, Miden accounts can live either onchain or offchain. For onchain accounts, the full account state is always recorded onchain (meaning on Miden). For offchain accounts, only the commitment to the account state (i.e., state hash) is recorded onchain. This is possible because, as described before, in the actor-based model, users can apply updates to their accounts locally and then send a zero-knowledge proof to the network attesting that the commitment to the account state was updated correctly. The network can verify the correctness of the transition without knowing the details of an offchain account’s state.
 
-Having on-chain and off-chain account data combined with the ability to prove state changes locally or by the network leaves us with flexible transaction modes.
+Having onchain and offchain account data combined with the ability to prove state changes locally or by the network leaves us with flexible transaction modes.
 
 ![](/images/FOBC1-Newest.png)
 

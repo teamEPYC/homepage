@@ -29,7 +29,7 @@ export function PageEcosystem({
         <h2>Miden Pioneer Program</h2>
         <p>
           The Miden Pioneer Program gives top teams critical support and funding
-          to build the future of on-chain economies.
+          to build the future of onchain economies.
         </p>
         <p>
           Created to expand the Miden ecosystem, this accelerator brings

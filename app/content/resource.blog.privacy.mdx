@@ -39,7 +39,7 @@ Traditionally, there is no privacy on a blockchain. With its immutable and trans
 
 But ensuring computational integrity by absolute transparency and recomputation has a tradeoff: It limits the scale of blockchains. If everyone needs to know everything to be sure everything is correct, it simply doesn’t scale.
 
-Miden aims to provide strong privacy rather than pseudonymity. Theoretically, it can provide absolute privacy. It uses client-side proofs and off-chain data storage. This means that Miden users can store their data locally and prove their own individual state transitions, as explained in the overview of Miden’s transaction model. In doing so, users don’t disclose their transaction details or state to the network, thus remaining private.
+Miden aims to provide strong privacy rather than pseudonymity. Theoretically, it can provide absolute privacy. It uses client-side proofs and offchain data storage. This means that Miden users can store their data locally and prove their own individual state transitions, as explained in the overview of Miden’s transaction model. In doing so, users don’t disclose their transaction details or state to the network, thus remaining private.
 
 It’s also more computationally efficient to verify a proof than to recompute. This is why ZK rollups can scale Ethereum in the first place. That efficiency advantage of ZK rollups actually grows as network activity increases. Verifying batches of user-generated proofs is even cheaper than recomputing batches of individual state transitions.
 
@@ -51,22 +51,22 @@ Beyond simple private transactions, Miden’s architecture enables expressive pr
 
 Private smart contracts can interact seamlessly with public smart contracts. For example, private rate-limited wallets can make calls to public DEXs. This means businesses and financial institutions can build and execute their business logic on Miden, keeping their information hidden from competitors but visible to auditors.
 
-In DeFi, it makes more sense not to reveal a trading strategy or disclose your full portfolio to everyone. This also solves a “centralization” issue—on-chain order book exchanges in DeFi can only compete with exchanges with centralized order books when they provide at least the same level of privacy and throughput.
+In DeFi, it makes more sense not to reveal a trading strategy or disclose your full portfolio to everyone. This also solves a “centralization” issue—onchain order book exchanges in DeFi can only compete with exchanges with centralized order books when they provide at least the same level of privacy and throughput.
 
-For wallets, holding assets off-chain makes even more sense if the balance can be hidden from hackers and competitors. Mass adoption seems far away if everyone can see everything a user buys online with crypto. No one would use credit cards if anyone could go online and see what their neighbor bought.
+For wallets, holding assets offchain makes even more sense if the balance can be hidden from hackers and competitors. Mass adoption seems far away if everyone can see everything a user buys online with crypto. No one would use credit cards if anyone could go online and see what their neighbor bought.
 
 And finally, for gaming, privacy can mean that not all players see each other's moves or cards. This is crucial for large, open-world multiplayer games and poker.
 
-## Enabling privacy through off-chain data and local proofs
+## Enabling privacy through offchain data and local proofs
 
 As described in the overview of Miden’s state model, users have the option to store their account and note data in three ways:
 - Publicly
 - Encrypted
-- Off-chain
+- offchain
 
-Public storage implies no privacy, as all data is stored on-chain and visible to everyone. Encrypted data storage also means all data is on-chain, but it only provides visibility to those with the decryption key without offering scalability gains. Off-chain storage ensures the network only knows a commitment to the real data, with users storing the data elsewhere. This approach—combined with client-side proofs—significantly boosts privacy and scalability, as the network has fewer storage and computation requirements.
+Public storage implies no privacy, as all data is stored onchain and visible to everyone. Encrypted data storage also means all data is onchain, but it only provides visibility to those with the decryption key without offering scalability gains. offchain storage ensures the network only knows a commitment to the real data, with users storing the data elsewhere. This approach—combined with client-side proofs—significantly boosts privacy and scalability, as the network has fewer storage and computation requirements.
 
-Users can modify the stored data (public, encrypted, or off-chain) through transactions. By executing and proving transactions locally, Miden ensures user privacy. With private data storage (encrypted or off-chain) and local transaction execution, transaction data is visible only to the direct participants.
+Users can modify the stored data (public, encrypted, or offchain) through transactions. By executing and proving transactions locally, Miden ensures user privacy. With private data storage (encrypted or offchain) and local transaction execution, transaction data is visible only to the direct participants.
 
 Using relay accounts, for example, could even obscure the sender of an asset from the receiver. This makes absolute privacy possible on Miden.
 
@@ -76,15 +76,15 @@ Using relay accounts, for example, could even obscure the sender of an asset fro
 
 This claim of absolute privacy raises a question: Can an experienced observer gain some information by monitoring the network's state and its changes?
 
-As noted, in Miden, there are accounts and notes. The data of which can be stored off-chain, and the observer only sees a commitment. However, every note in Miden has a unique nullifier that points to either 0 or 1, depending on whether the note is already consumed. Now, the observer could watch the nullifier database and observe with which transaction a certain nullifier changes.
+As noted, in Miden, there are accounts and notes. The data of which can be stored offchain, and the observer only sees a commitment. However, every note in Miden has a unique nullifier that points to either 0 or 1, depending on whether the note is already consumed. Now, the observer could watch the nullifier database and observe with which transaction a certain nullifier changes.
 
-For public notes, it is possible to watch the nullifier database and gain information about who consumes a note. In this case, the note data is publicly visible, and the network knows the sender, the recipient, and the assets involved. However, for notes that are stored off-chain, the network only knows the sender and the note hash, with even the sender being mask-able. Outsiders cannot compute and know the nullifier with this information.
+For public notes, it is possible to watch the nullifier database and gain information about who consumes a note. In this case, the note data is publicly visible, and the network knows the sender, the recipient, and the assets involved. However, for notes that are stored offchain, the network only knows the sender and the note hash, with even the sender being mask-able. Outsiders cannot compute and know the nullifier with this information.
 
 ![](/images/Privacy2-Final.png)
 
 There remain aspects of the network that could inhibit absolute privacy, such as operators gaining knowledge from user requests. Addressing this issue is an active area of design for the researchers working on Miden, with potential solutions including having users request more notes than needed and applying local filters.
 
-Another challenge for Miden and its users is management of the off-chain state.
+Another challenge for Miden and its users is management of the offchain state.
 
 ## The road to enhanced privacy
 
