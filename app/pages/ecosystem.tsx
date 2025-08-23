@@ -86,7 +86,7 @@ export function PageEcosystem({
         <h3 className="font-sans font-semibold text-2xl text-balance">
           Partners
         </h3>
-        <ul className="gap-4 grid grid-cols-2 md:grid-cols-4 mt-6">
+        <ul className="gap-4 grid grid-cols-2 md:grid-cols-3 mt-6">
           {partners.map((p) => (
             <li
               key={p.label}
