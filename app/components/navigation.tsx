@@ -29,10 +29,6 @@ const items = [
     href: "/developers",
   },
   {
-    label: "Careers",
-    href: "/careers",
-  },
-  {
     label: "About",
     href: "/about",
   },

@@ -2,7 +2,7 @@ import { NewsLetterIcon } from "./logo";
 
 export default function Newsletter() {
     return (
-        <div className="!border-gray-300/60 border-t mt-6 pt-14 md:pt-8 pb-2 md:border-0">
+        <div className="!border-gray-300/60 border-t mt-6 md:mt-16 pt-14 md:pt-0 pb-2 md:border-0">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2 md:gap-6">
                 <div className="">
                     <p className="!text-black/50">

@@ -19,7 +19,7 @@ export function PageCareers({ Jobs }: { Jobs: Career[] }) {
             {Jobs.map((item) => (
               <Link
                 key={item.slug}
-                className="group flex flex-col justify-between py-4 border-t !border-gray-300/60"
+                className="group flex flex-col justify-between py-4 border-t !border-gray-300/60 hover:bg-secondary transition-colors duration-300 hover:duration-100"
                 to={`/career/${item.slug}`}
               >
                 <span className="flex items-center gap-3">
