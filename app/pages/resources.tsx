@@ -30,8 +30,8 @@ export function PageResources({
         {[
           { id: "press", label: "Press" },
           { id: "blog", label: "Blog" },
-          { id: "papers", label: "Research papers" },
           { id: "talks", label: "Talks" },
+          { id: "papers", label: "Research papers" },
         ].map((heading) => (
           <li key={heading.id}>
             <Link
