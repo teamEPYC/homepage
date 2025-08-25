@@ -72,7 +72,7 @@ const partners: Partner[] = [
   { icon: <LogoNethermind />, label: "Nethermind", size: "large", link: "https://nethermind.io/" },
   { icon: <LogoOpenzeppelin />, label: "OpenZeppelin", size: "large", link: "https://www.openzeppelin.com//" },
   { icon: <LogoReilabs />, label: "Reilabs", size: "large", link: "https://reilabs.io/" },
-  { icon: <LogoMassa />, label: "Massa Labas", size: "large", link: "https://massa.net/" },
+  { icon: <LogoMassa />, label: "Massa Labs", size: "large", link: "https://massa.net/" },
   { icon: <LogoLeo />, label: "Demox Labs", size: "large", link: "https://www.miden.fi/" },
 
 ];
