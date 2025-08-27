@@ -24,28 +24,16 @@ export function meta() {
 
 const items = [
   {
-    icon: <LogoDome className="size-6" />,
-    label: "Dome",
-    description: "Compliant Onchain Mixer",
-    link: "https://github.com/arcane-finance-defi/miden-bridge-mono",
-  },
-  {
     icon: <LogoQash className="size-6" />,
     label: "Qash",
     description: "Programmable Private Payments",
     link: "https://www.qash.finance/",
   },
   {
-    icon: <LogoInicio className="size-6" />,
-    label: "Inicio Labs",
-    description: "Private Multisig Solution",
-    link: "https://github.com/inicio-labs/miden-multi-sig",
-  },
-  {
     icon: <LogoZoro className="size-6" />,
     label: "Zoro",
     description: "Public/Private Oracle-informed AMM",
-    link: "https://www.nabla.fi/",
+    link: "https://zoroswap.com/",
   },
   {
     icon: <LogoMidenbrowserwallet className="size-6" />,
@@ -57,8 +45,20 @@ const items = [
     icon: <LogoLinum className="size-6" />,
     label: "Lumina Engine",
     description: "Institutional-grade Programmable Dark Pool",
-    link: "https://www.linumlabs.com/",
+    link: "https://www.luminaengine.ai/",
   },
+  {
+    icon: <LogoDome className="size-6" />,
+    label: "Dome",
+    description: "Compliant Onchain Mixer",
+    link: "https://github.com/arcane-finance-defi/miden-bridge-mono",
+  },
+  {
+    icon: <LogoInicio className="size-6" />,
+    label: "Inicio Labs",
+    description: "Private Multisig Solution",
+    link: "https://github.com/0xMiden/MultiSig",
+  },  
   {
     icon: <LogoWalnut className="size-6" />,
     label: "Walnut",
