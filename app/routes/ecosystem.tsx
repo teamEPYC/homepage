@@ -55,8 +55,8 @@ const items = [
   },
   {
     icon: <LogoLinum className="size-6" />,
-    label: "Linum Labs",
-    description: "Compliant Dark Pool Using MPC",
+    label: "Lumina Engine",
+    description: "Institutional-grade Programmable Dark Pool",
     link: "https://www.linumlabs.com/",
   },
   {
@@ -70,7 +70,7 @@ const items = [
 const partners: Partner[] = [
   { icon: <LogoLambdaclass />, label: "LambdaClass", size: "large", link: "https://lambdaclass.com/" },
   { icon: <LogoNethermind />, label: "Nethermind", size: "large", link: "https://nethermind.io/" },
-  { icon: <LogoOpenzeppelin />, label: "OpenZeppelin", size: "large", link: "https://www.openzeppelin.com//" },
+  { icon: <LogoOpenzeppelin />, label: "OpenZeppelin", size: "large", link: "https://www.openzeppelin.com/" },
   { icon: <LogoReilabs />, label: "Reilabs", size: "large", link: "https://reilabs.io/" },
   { icon: <LogoMassa />, label: "Massa Labs", size: "large", link: "https://massa.net/" },
   { icon: <LogoLeo />, label: "Demox Labs", size: "large", link: "https://www.miden.fi/" },
