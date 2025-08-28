@@ -37,7 +37,7 @@ const socials = [
 export function Footer() {
   return (
     <footer className="bg-light-gray">
-      <div className="flex justify-center md:justify-between items-center gap-4 p-5 !border-neutral-200 md:border-t w-miden">
+      <div className="flex justify-center md:justify-between items-center gap-4 p-5 !border-neutral-200 w-miden">
         <div className="hidden md:flex items-center gap-4" >
           <Link to="/" prefetch="intent" className="m-0">
             <Logo className="h-5 shrink-0" />

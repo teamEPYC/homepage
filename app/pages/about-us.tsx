@@ -4,7 +4,7 @@ import Newsletter from "~/components/newsletter";
 
 export function PageAboutUs() {
     return (
-        <Container>
+        <Container className="!mb-6">
             <Header className="text-black [&_h2]:text-3xl md:[&_h2]:text-4xl [&_h3]:text-2xl [&_p]:text-black">
                 <h2>ABOUT</h2>
                 <p>

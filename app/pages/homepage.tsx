@@ -15,7 +15,7 @@ export function PageHome({
   items: Investor[];
 }) {
   return (
-    <Container className="flex-1">
+    <Container className="flex-1 !mb-6">
       <Header className="[&_h2]:uppercase">
         <h2>Miden is the Edge Blockchain</h2>
         <p>
