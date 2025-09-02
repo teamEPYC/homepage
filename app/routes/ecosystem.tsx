@@ -8,10 +8,15 @@ import {
   LogoInicio,
   LogoNethermind,
   LogoMidenbrowserwallet,
+  LogoOpenzeppelin,
+  LogoLambdaclass,
+  LogoMassa,
+  LogoReilabs
 } from "~/components/logo";
 import { PageEcosystem } from "~/pages/ecosystem";
 import { buildMeta } from "~/lib/meta";
 import type { LoaderData } from "~/lib/data";
+import type { Partner } from "~/pages/ecosystem";
 
 export type Item = (typeof items)[0];
 
@@ -35,28 +40,16 @@ export function meta({ data }: { data: LoaderData }) {
 
 const items = [
   {
-    icon: <LogoDome className="size-6" />,
-    label: "Dome",
-    description: "Compliant Onchain Mixer",
-    link: "https://github.com/arcane-finance-defi/miden-bridge-mono",
-  },
-  {
     icon: <LogoQash className="size-6" />,
     label: "Qash",
     description: "Programmable Private Payments",
     link: "https://www.qash.finance/",
   },
   {
-    icon: <LogoInicio className="size-6" />,
-    label: "Inicio Labs",
-    description: "Private Multisig Solution",
-    link: "https://github.com/inicio-labs/miden-multi-sig",
-  },
-  {
     icon: <LogoZoro className="size-6" />,
     label: "Zoro",
     description: "Public/Private Oracle-informed AMM",
-    link: "https://www.nabla.fi/",
+    link: "https://zoroswap.com/",
   },
   {
     icon: <LogoMidenbrowserwallet className="size-6" />,
@@ -66,30 +59,40 @@ const items = [
   },
   {
     icon: <LogoLinum className="size-6" />,
-    label: "Linum Labs",
-    description: "Compliant Dark Pool Using MPC",
-    link: "https://www.linumlabs.com/",
+    label: "Lumina Engine",
+    description: "Institutional-grade Programmable Dark Pool",
+    link: "https://www.luminaengine.ai/",
   },
+  {
+    icon: <LogoDome className="size-6" />,
+    label: "Dome",
+    description: "Compliant Onchain Mixer",
+    link: "https://github.com/arcane-finance-defi/miden-bridge-mono",
+  },
+  {
+    icon: <LogoInicio className="size-6" />,
+    label: "Inicio Labs",
+    description: "Private Multisig Solution",
+    link: "https://github.com/0xMiden/MultiSig",
+  },  
   {
     icon: <LogoWalnut className="size-6" />,
     label: "Walnut",
     description: "Miden Playground (WIP)",
     link: "https://github.com/walnuthq/miden-playground",
   }, 
-  {
-    icon: <LogoLeo className="size-6" />,
-    label: "Demox Labs",
-    description: "Wallet and WebClient SDK",
-    link: "https://miden.fi/",
-  },
-  {
-    icon: <LogoNethermind className="size-6" />,
-    label: "Nethermind",
-    description: "Private Transport Bus",
-    link: "https://github.com/0xMiden/miden-private-transport",
-  }, 
+];
+
+const partners: Partner[] = [
+  { icon: <LogoLambdaclass />, label: "LambdaClass", size: "large", link: "https://lambdaclass.com/" },
+  { icon: <LogoNethermind />, label: "Nethermind", size: "large", link: "https://nethermind.io/" },
+  { icon: <LogoOpenzeppelin />, label: "OpenZeppelin", size: "large", link: "https://www.openzeppelin.com/" },
+  { icon: <LogoReilabs />, label: "Reilabs", size: "large", link: "https://reilabs.io/" },
+  { icon: <LogoMassa />, label: "Massa Labs", size: "large", link: "https://massa.net/" },
+  { icon: <LogoLeo />, label: "Demox Labs", size: "large", link: "https://www.miden.fi/" },
+
 ];
 
 export default function RouteEcosystem() {
-  return <PageEcosystem items={items} />;
+  return <PageEcosystem items={items} partners={partners} />;
 }

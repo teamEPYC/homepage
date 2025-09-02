@@ -60,7 +60,7 @@ Think of the earlier example: When you put the 3 ETH bill in the lockbox, that�
 
 There are some compelling things that can be done with this transaction model. Transactions can be executed and proven locally because they only involve one single account. This provides privacy and lowers the costs of complex computations because there is no re-execution by several network participants.
 
-Furthermore, until another account has consumed a note, the creator of that note can update it. Updating a note can be done by revealing a hashed part of the note’s script. A note’s script could say, “Consume this 5 ETH AND send Bob 10 MATIC OR 0x213 …”. Then, if no one consumes this note, the creator could reveal “0x213 = Consume this 5 ETH AND send Bob 9 MATIC”. In our analogy, you can update the lock. Think of market makers updating an on-chain order book for free and in no time.
+Furthermore, until another account has consumed a note, the creator of that note can update it. Updating a note can be done by revealing a hashed part of the note’s script. A note’s script could say, “Consume this 5 ETH AND send Bob 10 MATIC OR 0x213 …”. Then, if no one consumes this note, the creator could reveal “0x213 = Consume this 5 ETH AND send Bob 9 MATIC”. In our analogy, you can update the lock. Think of market makers updating an onchain order book for free and in no time.
 
 Another interesting wrinkle is that if a note is sent to the wrong address, the creator could recall it. Think of those many users who accidentally sent something to the wrong address on Ethereum or Bitcoin. On Miden, the creator of a given transaction can configure it such that a note can be recalled if it hasn’t yet been consumed.
 
