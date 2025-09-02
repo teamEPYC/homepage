@@ -13,7 +13,7 @@ export function PageDevelopers({ items }: { items: ItemType[] }) {
       <Header className="[&_h2]:uppercase">
         <h2>Why build on Miden?</h2>
         <p>
-          Edge execution enables what traditional blockchains can’t provide: An
+          Edge execution enables what traditional blockchains can’t provide: an
           environment to create and deploy scalable applications with private
           and public transactions.
         </p>

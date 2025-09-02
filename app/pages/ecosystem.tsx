@@ -7,15 +7,29 @@ import {
   ItemTitle,
 } from "~/components/list";
 import type { Item as ItemType } from "~/routes/ecosystem";
+import { cn } from "~/lib/utils";
 
-export function PageEcosystem({ items }: { items: ItemType[] }) {
+export type Partner = {
+  icon: React.ReactNode;
+  label: string;
+  size?: "large" | "small";
+  link?: string;
+};
+
+export function PageEcosystem({
+  items,
+  partners,
+}: {
+  items: ItemType[];
+  partners: Partner[];
+}) {
   return (
     <Container>
       <Header className="[&_h2]:uppercase">
         <h2>Miden Pioneer Program</h2>
         <p>
           The Miden Pioneer Program gives top teams critical support and funding
-          to build the future of on-chain economies.
+          to build the future of onchain economies.
         </p>
         <p>
           Created to expand the Miden ecosystem, this accelerator brings
@@ -46,7 +60,10 @@ export function PageEcosystem({ items }: { items: ItemType[] }) {
       </Header>
 
       <div className="mt-16">
-        <div className="mb-6 font-bold">Projects</div>
+        <h3 className="font-sans font-semibold text-2xl text-balance">
+          Projects
+        </h3>
+        <br></br>
         <Wrapper>
           {items.map((item) => (
             <Item
@@ -63,6 +80,38 @@ export function PageEcosystem({ items }: { items: ItemType[] }) {
             </Item>
           ))}
         </Wrapper>
+      </div>
+
+      <div className="mt-16">
+        <h3 className="font-sans font-semibold text-2xl text-balance">
+          Partners
+        </h3>
+        <ul className="gap-4 grid grid-cols-2 md:grid-cols-3 mt-6">
+          {partners.map((p) => (
+            <li
+              key={p.label}
+              className={cn(
+                "flex items-center justify-center w-full h-24 border",
+                p.size === "large" && "h-44",
+              )}
+            >
+              {p.link ? (
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-full h-full"
+                  aria-label={p.label}
+                  title={p.label}
+                >
+                  {p.icon}
+                </a>
+              ) : (
+                p.icon
+              )}
+            </li>
+          ))}
+        </ul>
       </div>
     </Container>
   );

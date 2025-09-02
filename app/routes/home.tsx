@@ -35,41 +35,49 @@ const items: Investor[] = [
     icon: <LogoA16zcrypto />,
     label: "A16zcrypto",
     size: "large",
+    link: "https://a16zcrypto.com/",
   },
   {
     icon: <Logo1kx />,
     label: "1k(x)",
     size: "large",
+    link: "https://1kx.network/",
   },
   {
     icon: <LogoHackVC />,
     label: "HackVC",
     size: "large",
+    link: "https://www.hack.vc/",
   },
   {
     icon: <LogoFinality />,
     label: "Finality",
     size: "large",
+    link: "https://finality.capital/",
   },
   {
     icon: <LogoSymbolicCapital />,
     label: "Symbolic Capital",
     size: "small",
+    link: "https://symbolic.capital/",
   },
   {
     icon: <LogoDelta />,
     label: "Delta",
     size: "small",
+    link: "https://deltafund.io/",
   },
   {
     icon: <LogoMHVentures />,
     label: "MH Ventures",
     size: "small",
+    link: "https://www.mhventures.io/",
   },
   {
     icon: <LogoP2Ventures />,
     label: "P2 Ventures",
     size: "small",
+    link: "https://www.p2v.ventures/",
   },
 ];
 

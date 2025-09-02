@@ -7,6 +7,7 @@ export type Investor = {
   icon: React.ReactNode;
   label: string;
   size?: "large" | "small";
+  link?: string;
 };
 
 export function PageHome({
@@ -78,7 +79,20 @@ export function PageHome({
                 item.size === "large" && "h-44",
               )}
             >
-              {item.icon}
+              {item.link ? (
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center w-full h-full"
+                  aria-label={item.label}
+                  title={item.label}
+                >
+                  {item.icon}
+                </a>
+              ) : (
+                item.icon
+              )}
             </li>
           ))}
         </ul>
