@@ -43,7 +43,7 @@ Traditional blockchains have attempted to work around the privacy problem, but e
 - Pseudo-anonymity: While interactions between blockchain accounts are public, the connection to real-world identities stay private - at least in theory. In practice, firms like Chainalysis can easily trace most accounts back to owners.
 - ZK-based add-ons: Tools like Tornado Cash add real privacy to existing protocols, but at a high cost to users (both in UX and monetary terms). These costs deter regular activity and lead to adverse selection.
 
-Absent affordable on-chain privacy options, users frequently resort to using centralized exchanges such as Binance and Coinbase as their mixers, or worse yet, stay within web2-like ecosystems of these exchanges. While this does provide a measure of privacy, it also directly undermines core tenets of web3: self-custody and censorship-resistance.
+Absent affordable onchain privacy options, users frequently resort to using centralized exchanges such as Binance and Coinbase as their mixers, or worse yet, stay within web2-like ecosystems of these exchanges. While this does provide a measure of privacy, it also directly undermines core tenets of web3: self-custody and censorship-resistance.
 
 ### The case for edge execution
 
@@ -69,13 +69,13 @@ But there’s an important difference: in Miden, all assets are native and are s
 
 ![Account](/images/account.png)
 
-Accounts on Miden can be public or private. Public accounts are stored entirely on-chain, similar to how most accounts work in other blockchains. Private accounts are stored off-chain - only their commitments go on-chain. This option creates remarkable efficiency: a commitment to a private account is just 32 bytes, regardless of how much data it actually contains.
+Accounts on Miden can be public or private. Public accounts are stored entirely onchain, similar to how most accounts work in other blockchains. Private accounts are stored offchain - only their commitments go onchain. This option creates remarkable efficiency: a commitment to a private account is just 32 bytes, regardless of how much data it actually contains.
 
 With this architecture, Miden can support billions of private accounts while maintaining a manageable state size without compromising security or verifiability. 
 
-Accounts communicate with each other by message passing. Messages on Miden are called notes and are implemented as UTXOs under the hood. Just as accounts, notes can store assets. Notes also have “spend scripts” which define who can consume a note and how. These scripts are Turing-complete programs and can access blockchain state - this makes them very powerful. For example, a script can define a “recallable transaction” (i.e., a note which can be claimed back by the sender after some time) or a native atomic swap. Another way to look at notes is that they are on-chain intents - a note defines a set of conditions which needs to be fulfilled by someone to claim the note.
+Accounts communicate with each other by message passing. Messages on Miden are called notes and are implemented as UTXOs under the hood. Just as accounts, notes can store assets. Notes also have “spend scripts” which define who can consume a note and how. These scripts are Turing-complete programs and can access blockchain state - this makes them very powerful. For example, a script can define a “recallable transaction” (i.e., a note which can be claimed back by the sender after some time) or a native atomic swap. Another way to look at notes is that they are onchain intents - a note defines a set of conditions which needs to be fulfilled by someone to claim the note.
 
-Similar to accounts, notes can be either public (fully on-chain) or private (only note commitment and metadata are on-chain). In the future, Miden will also enable encrypted notes, where the full note data goes on-chain but this data is encrypted.
+Similar to accounts, notes can be either public (fully onchain) or private (only note commitment and metadata are onchain). In the future, Miden will also enable encrypted notes, where the full note data goes onchain but this data is encrypted.
 
 A transaction on Miden is defined as a state transition of a single account. It can consume and produce many notes, read states of many accounts, but always updates only one account. This approach decouples account updates and makes it possible for independent users to execute their transactions concurrently.
 
@@ -109,7 +109,7 @@ Take, for example, applications that integrate complex logic which otherwise wou
 
 So as applications gain traction, they will not cause performance degradation for the rest of the network; this leads to more predictable network behavior for users, and makes for a more attractive environment for applications that might have compliance requirements.
 
-Miden is an ideal environment for compliant, privacy-oriented market participants who value confidentiality and recognize the security and business risks of broadcasting their financial activity on-chain. Among existing web3 participants, these include treasuries, foundations, VCs, whales, and retail users. But in a broader context, enabling privacy while allowing users to be provably compliant is an absolute necessity for bringing institutions into web3 in any meaningful way, such as putting blockchain rails on payment systems or tokenizing real world assets.
+Miden is an ideal environment for compliant, privacy-oriented market participants who value confidentiality and recognize the security and business risks of broadcasting their financial activity onchain. Among existing web3 participants, these include treasuries, foundations, VCs, whales, and retail users. But in a broader context, enabling privacy while allowing users to be provably compliant is an absolute necessity for bringing institutions into web3 in any meaningful way, such as putting blockchain rails on payment systems or tokenizing real world assets.
 
 In fact, Miden creates a new design space: privacy at scale, where applications can be hybrids of public and private components, all while maintaining composability. The simplest example of this are private wallets trading on a public DEXs while maintaining user confidentiality. But Miden is flexible enough to support more complex scenarios, where private payments or lending transactions are conditional on the states of public oracles; stablecoins which are able to impose transaction restrictions without the need to keep exhaustive ownership records; or even identity-based ownership, e.g., only users who are over 18 can own a certain asset - all without revealing any personally-identifiable information to the public.
 
