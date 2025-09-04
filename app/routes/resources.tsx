@@ -1,4 +1,4 @@
-import { getFeaturedPosts } from "~/lib/posts.server";
+import { getPosts } from "~/lib/posts.server";
 import { PageResources } from "~/pages/resources";
 import type { Route } from "./+types/resources";
 
@@ -7,7 +7,7 @@ export function meta() {
 }
 
 export function loader() {
-  const posts = getFeaturedPosts();
+  const posts = getPosts();
 
   return {
     posts,

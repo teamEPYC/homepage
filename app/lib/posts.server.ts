@@ -1,5 +1,11 @@
 import type { Article, MDXModule } from "./data";
 
+function parseDDMMYY(d: string): Date {
+  const [dd, mm, yy] = d.split(".");
+  const year = yy.length === 2 ? 2000 + Number(yy) : Number(yy);
+  return new Date(year, Number(mm) - 1, Number(dd));
+}
+
 export function getPosts(): Article[] {
   const modules = import.meta.glob<MDXModule>(
     "../content/resource.blog.*.mdx",
@@ -16,10 +22,13 @@ export function getPosts(): Article[] {
       slug: id,
       headings: mod.headings,
       component: mod.default,
-    };
+    } as Article;
   });
 
-  return posts ?? [];
+  // sort newest → oldest
+  return (posts ?? []).sort(
+    (a, b) => parseDDMMYY(b.date).getTime() - parseDDMMYY(a.date).getTime()
+  );
 }
 
 const format = (dateStr: string): string => {
