@@ -21,6 +21,7 @@
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-script: "Biro Script", cursive;
   --font-dm-mono: "DM Mono", monospace;
+  --height-88: 88px;
 }
 
 * {
@@ -54,6 +55,8 @@ h4 {
   --popover-foreground: oklch(0.145 0 0);
   --primary: #FF5500;
   --light-gray: #fcfcfcfc;
+  --dark-gray: #D9D9D9;
+  --light-gray-md: rgba(126, 126, 126, 0.08);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -130,6 +133,8 @@ h4 {
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-light-gray: var(--light-gray);
+  --color-light-gray-md: var(--light-gray-md);
+  --color-dark-gray: var(--dark-gray);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
