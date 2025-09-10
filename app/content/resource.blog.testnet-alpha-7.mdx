@@ -1,0 +1,85 @@
+---
+title: Miden Testnet Update - Private Notes, Multi-Sig, Rust Compiler
+author: Ben Schiller & Dominik Schmid
+date: 10.09.25
+featured: true
+---
+
+# Miden Testnet Update: Private Notes, Multi-Sig, Rust Compiler
+
+The Miden team is proud to announce a new testnet release. 
+
+We are making steady progress. This update brings a suite of new features and architectural refinements. Most notably, builders can now use a multi-sig component on Miden. This is a fundamental building block for Miden to become the private asset management layer. 
+We are still in alpha testnet, so still a bit rough around the edges, but everything is usable.
+
+From this release, check out:
+
+- There is a new easy way to interact with Miden: [midenbrowserwallet.com](https://midenbrowserwallet.com/)
+- Check out our [new faucet](https://faucet.testnet.miden.io/). We added some features to ensure everyone gets tokens.
+    <img src="/images/new-faucet.png" alt="faucet" style={{ width: "350px" }} />
+---
+
+The versions referenced for this release are:
+- miden-base: v0.11
+- miden-vm: v0.17
+- miden-client: v0.11
+- miden-crypto: v0.14
+- compiler: v0.4
+
+---
+# New User-Facing Capabilities
+
+Here are the most significant changes that directly impact the builder experience.
+
+## Introducing the `Address` Struct, and a New Approach to Accounts
+Ever wondered how you send a private Miden note to a private account deployed on Miden? 
+
+Yes, we did as well. 
+
+You would want to encrypt it before sending it over any transport layer and you would want to ensure that the receiving account can actually consume that note. In other words, your note script does invoke procedures that exist on that account. 
+With this release, we introduce a new `Address` struct. An Address is an account identifier that facilitates sending and receiving of notes. It will encapsulate the information how the Address-owner can receive a note.
+The main account identifier - Miden's `AccountID` - which is derived from the initial state of the underlying account doesn’t reveal any information about how this account wants to receive notes. But, for private accounts, the network stores only the AccountID on-chain. That makes it hard to know for senders how to direct a note towards it. There is no encryption key and no interface information available. 
+This is where the `Address` comes in handy. `Addresses` encode an address type and an address interface, whereas the type points to an `AccountID` or, in the future, a public key, and the interface informs senders of the capabilities of the receiver’s account, e.g., they can receive standard P2ID notes. 
+
+In this release, `Addresses` already encapsulate the `AccountID` and the interface information. In the next release, we will add encryption keys to it. Then a single account can even have multiple addresses. Further explanation, see [here](https://0xmiden.github.io/miden-docs/imported/miden-base/src/account/address.html).
+
+## Multi-Signature Support Comes to Life
+
+Miden is for private asset management. Asset management needs multi-sig wallets. 
+
+This release lays the groundwork for full private multi-signature (multi-sig) functionality. Multi-sig is enabled by a combination of new features across the stack, allowing users to define a set of signers and a corresponding signature threshold. 
+Builders add a multisig authentication component to their smart contract. That means, any transaction against this smart contract requires m out of n signatures. To collect m signatures, users can now execute the transaction up to a certain break point to retrieve a TransactionSummary. The summary can then be signed off-chain by m signers and after the threshold is reached, anyone can execute the full transaction by injecting the signed summary into it.
+
+The key enablers are:
+
+- `TransactionSummary`: The protocol now provides a `TransactionSummary` object that encapsulates the state changes of a transaction without executing them fully. Users can execute a transaction up to a pre-defined breakpoint (an event) to retrieve this summary. This allows multiple parties to review and sign the same state transition off-chain without the need for blind signing - i.e. users always know what the message they sign will do.
+- **Signing Arbitrary Data**: The client has been upgraded to support the signing of arbitrary data, not just hardcoded transaction IDs. This is critical for the multi-sig workflow, as multiple signers can apply their signature to the `TransactionSummary` object.
+- `AuthMultisigRPOFalcon512`: The protocol now includes the `AuthMultisigRPOFalcon512` procedure, a new authentication component that verifies the multi-sig threshold on-chain. When the threshold of signatures (m of n) are collected, the complete, signed transaction can be submitted to the network. In a given smart contract, users can even define the necessary threshold per procedure. Some procedures might require only one signature, e.g., changing a specific storage slot, whereas others require m out of n signatures, e.g., sending out assets.
+
+This new workflow is a significant leap forward in enabling secure, collaborative private asset management on Miden. In the upcoming releases builders will be able to set thresholds per procedure. We are also working on a private state management solution that allows for convenient trustless usage of private multi-sigs. A demo website is in-flight. 
+
+## A New Rust Compiler for End-to-End Development
+
+The release of the compiler v0.4.0 is a monumental step for the Miden ecosystem. This is the first-ever release of our Rust compiler, enabling an end-to-end development flow for simple smart contracts. Developers can now write Account code, Note scripts, and Transaction scripts in Rust and compile them directly to Miden Assembly. 
+
+See here for a simple [counter contract](https://github.com/partylikeits1983/miden-rust-demo).
+While this compiler doesn't yet support the full transaction kernel API, it already handles basic operations, making it an invaluable tool for experimentation. This is a huge milestone for developer tooling and sets the stage for a more robust and accessible development environment. The compiler is still in its early stages, and developers are advised to use it for exploration rather than for building production-ready products.
+Read more about it [here](https://miden.xyz/resource/blog/compiler-release-04).
+
+## Asynchronous Transaction Execution
+
+And now for a major architectural change in the miden-client:  asynchronous transaction execution. In v0.11.1, we dropped `#[maybe_async]` in favor of a single, consistent asynchronous interface. This refactoring is a prerequisite for more secure and responsive WebClient implementations. 
+By making `TransactionSummary` generation and signing asynchronous, the client can handle sensitive operations in a non-blocking manner, which is crucial for handling private key operations safely, especially in a browser environment.
+
+## Underlying Protocol Enhancements
+
+This release includes critical, less conspicuous, protocol changes that enhance the network's long-term viability.
+
+- **Protocol Fees**: The protocol now includes a fee mechanism, though it is currently set to zero. This is a foundational addition that will allow for a sustainable, incentive-driven network model in the future.
+- **Structured VM Errors**: miden-vm v0.17 introduces more precise error handling, with the `AdviceProvider` now returning its own dedicated error type. This granular approach to error reporting will be invaluable for debugging complex VM behaviors.
+- **Parallel Cryptographic Operations**: In miden-crypto v0.14, performance was boosted through the parallelization of Smt::compute_mutations and Smt::process_sorted_pairs_to_leaves. This leverages multi-core CPUs to accelerate cryptographic operations, which are fundamental to the Miden rollup's efficiency.
+---
+
+Next up:
+- A fully working Rust compiler where builders can build anything our transaction kernel allows. The experience might still be a bit rough around the edges, but it will be feature complete. Then we optimize.
+- We provide a canonical private note distribution layer. Users will be able to encrypt, send, and retrieve private notes to their target using a dedicated server.
