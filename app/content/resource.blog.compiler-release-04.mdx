@@ -1,0 +1,126 @@
+---
+title: The Miden Compiler v0.4.0 – A Major Milestone
+author: Ben Schiller & Paul Schönfelder
+date: 04.09.25
+featured: true
+---
+
+# The Miden Compiler v0.4.0 – A Major Milestone
+
+We just released the **Miden Compiler v0.4.0** – a milestone we’ve been working towards since 2023.  
+
+For the first time, developers can now write a full Miden account (basic wallet) and a note script (P2ID) in **Rust**, and successfully compile them all the way down to **Miden Assembly**.  
+
+Working with a familiar and stable language, developers will soon create real-world apps more easily, more quickly, and more safely.  
+*(Note: the new version is still an intermediary step; developers will be able to create full applications in Rust with the next release.)*
+
+Below we describe what a compiler is, what it does within Miden, and what this enables for developers. Then we give an example of how it works in practice, and show you how you can start using it.  
+
+---
+
+## Q: What is a Rust compiler?
+
+**A:** A compiler is a translator. It takes code written in a human-friendly language and turns it into instructions for a machine (in our case, the **Miden Virtual Machine**).  
+
+Without a compiler, developers need to write directly in low-level code (the machine instructions). That is doable, but impractical. The compiler bridges that gap, making it easier, faster, and safer to build real-world apps on Miden.  
+
+---
+
+## Q: What does the Rust compiler do?
+
+The compiler first turns Rust code into WebAssembly (WASM), which is a widely used intermediate format. From there, it gets translated into our intermediate representation HIR. Think of HIR as a map of your program where every step and data dependency is explicit.  Finally, it gets lowered into Miden Assembly (MASM) – Miden’s low-level language designed specifically for the Miden VM. MASM is what the Miden VM actually understands and executes.
+
+Actually, the compiler emits a Miden Package (.masp), which encapsulates the final Miden Assembly code along with metadata. Miden Packages are the fundamental building blocks for on-chain logic. With version v0.4.0, developers can produce packages that can serve as:
+
+- **Account components** – reusable modules that define smart contract functionality.  
+- **Note scripts** – such as Pay-to-ID (P2ID), enabling expressive asset transfer logic.  
+- **Transaction scripts** – for custom execution flows.  
+
+All this means developers can write in Rust, and the toolchain handles the translation all the way down to MASM, so programs can run inside the VM and produce proofs.  
+
+This release marks the **first time the full lifecycle is supported**: from high-level Rust code to production-ready Miden Assembly artifacts.  
+
+To enable arbitrary account code logic and note/transaction scripts, we need to support the full API of the **Miden transaction kernel**. The kernel defines how account state transitions happen in the VM, and each transition is verified with a zkProof.  
+
+In this release we target only a subset of the kernel API. The next release will expose the **entire API in Rust**.  
+
+---
+
+## Q: Why did Miden choose Rust (vs Solidity, Move, Typescript, COBOL)?
+
+Rust is modern, memory-safe, and already popular in the on-chain world. It has traction across **cloud infra, finance, and embedded systems**. Many crypto teams use it for performance-critical components, so there’s a strong talent pool.  
+
+Solidity was considered, but the EVM is not compatible with Miden’s **actor-based state and asset model**. Rust gives developers a proven, reliable language without compromising on speed or safety.  
+
+---
+
+## Q: Was the Rust compiler on the roadmap?
+
+No. Initially, the focus was on the core VM, with MASM as the interface. But over time, it became clear that expecting developers to write MASM directly was too limiting.  
+
+The Rust compiler was a **pragmatic choice** to make the VM usable for real builders – a good illustration of Miden’s approach overall.  
+
+---
+
+## Q: What does it mean for developers building on Miden?
+
+With Rust, developers can write in a familiar high-level language. That makes onboarding new teams easier, reduces errors, and enables building more complex apps. It also opens the door to performance and safety optimizations that are harder to achieve at the assembly level. In short: faster iteration, better DevEx, and a much bigger developer pool.
+
+---
+
+## Q: Can you give an example of how the compiler works?
+
+We are thrilled to show you. Here’s a basic Miden wallet in Rust:
+
+```rust
+#[component]
+struct MyWallet;
+
+impl basic_wallet::Guest for MyWallet {
+    /// Adds an asset to the account.
+    fn receive_asset(asset: Asset) {
+        miden::account::add_asset(asset);
+    }
+
+    /// Moves an asset from the account to a note.
+    fn move_asset_to_note(asset: Asset, note_idx: NoteIdx) {
+        let asset = miden::account::remove_asset(asset);
+        miden::tx::add_asset_to_note(asset, note_idx);
+    }
+}
+```
+
+That’s it! Just 11 lines of code (3 are just brackets). This is a **Miden smart contract** for a basic wallet that can receive and send assets.  
+
+The Rust code now compiles to WASM because the Miden-specific bindings live in the Miden SDK. See [here](https://github.com/0xMiden/compiler/blob/fa9854534d4d18c21e3971ac8a4e8a45ef949931/sdk/base-sys/src/bindings/account.rs?plain=1#L31-L53) for an example. The compiled WebAssembly code gets lifted into our HIR. This produces a hierarchical graph where WASM instructions become operations (nodes), data dependencies are expressed as values (edges), and control flow is organized into regions. 
+
+This regionalized data-flow graph can now be analyzed, restructured (re-written), and optimized to lower it to Miden Assembly.  As a result, the user gets a Miden package, which basically is the Miden Assembly code together with some metadata. 
+
+
+---
+
+## How do I try it out?
+
+You can try the Miden Rust compiler yourself by cloning the [**demo repository**](https://github.com/partylikeits1983/miden-rust-demo) and following the instructions in the `README.md`.  
+
+The demo walks through two end-to-end flows on **Miden testnet**:  
+
+1. Deploying a counter contract written in Rust and incrementing it via a note calling `increment_count`.  
+2. Creating two basic wallets that send a **P2ID note** from one account to another.  
+
+Heads up: There is still some boilerplate code (e.g. `bindings.rs`) that will be abstracted away in future releases.  
+
+---
+
+## What’s next for the compiler team?
+
+- **Debugging tooling**  
+- **Performance optimizations**  
+- **Support for more languages** in the future  
+
+But remember: the compiler is just a **means to an end**. The long-term goal is to make Miden accessible to developers regardless of their preferred language.  
+
+In about a month, we will:  
+- Support the **full transaction kernel** (so any account code, note, or transaction script can be written in Rust).  
+- Provide **cleaner generated code**.  
+- Release **`midenup`**, a tool to easily set up a full Miden project ready for testnet deployment.  

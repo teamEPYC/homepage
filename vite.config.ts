@@ -1,4 +1,5 @@
 import mdx from "@mdx-js/rollup";
+import rehypePrettyCode from 'rehype-pretty-code';
 import { reactRouter } from "@react-router/dev/vite";
 import { cloudflareDevProxy } from "@react-router/dev/vite/cloudflare";
 import tailwindcss from "@tailwindcss/vite";
@@ -28,7 +29,10 @@ export default defineConfig(({ isSsrBuild }) => ({
       },
     }),
     mdx({
-      rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, remarkInjectHeadings],
+      rehypePlugins: [rehypeSlug, rehypeAutolinkHeadings, remarkInjectHeadings, [rehypePrettyCode, {
+        theme: 'github-dark',      // or 'one-dark-pro', 'nord', etc.
+        keepBackground: false,     // let your site’s CSS set the bg
+      }]],
       remarkPlugins: [remarkFrontmatter, remarkMdxFrontmatter],
       providerImportSource: "@mdx-js/react",
     }),

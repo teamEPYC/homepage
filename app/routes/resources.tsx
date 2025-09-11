@@ -1,11 +1,11 @@
-import { getFeaturedPosts } from "~/lib/posts.server";
+import { getPosts } from "~/lib/posts.server";
 import { PageResources } from "~/pages/resources";
 import type { Route } from "./+types/resources";
 import { buildMeta } from "~/lib/meta";
 
 export function loader({ request }: Route.LoaderArgs) {
   const url = new URL(request.url);
-  const posts = getFeaturedPosts();
+  const posts = getPosts();
 
   return {
     posts,
