@@ -24,14 +24,14 @@ export function RoadmapConnectionLine({
     >
       <svg
         width="100%"
-        height="100%"
+        height="100%" 
         style={{ position: 'absolute', top: 0, left: 0 }}
       >
         <line
           x1={fromPosition.x}
-          y1={fromPosition.y - 0}
+          y1={fromPosition.y}
           x2={toPosition.x}
-          y2={toPosition.y + -10}
+          y2={toPosition.y}
           stroke="#00000033"
           strokeWidth="2"
           className="transition-opacity duration-300"

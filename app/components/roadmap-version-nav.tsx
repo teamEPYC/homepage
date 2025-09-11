@@ -6,6 +6,7 @@ interface RoadmapVersionNavProps {
   onVersionChange: (version: string) => void;
   roadmapData: any;
   activeItem?: string | null;
+  mobileVariant?: 'default' | 'roadmap'; // New prop to choose mobile variant
 }
 
 export function RoadmapVersionNav({
@@ -14,6 +15,7 @@ export function RoadmapVersionNav({
   onVersionChange,
   roadmapData,
   activeItem,
+  mobileVariant = 'default',
 }: RoadmapVersionNavProps) {
   const currentIndex = versions.indexOf(currentVersion);
   const isFirst = currentIndex === 0;
@@ -30,6 +32,79 @@ export function RoadmapVersionNav({
       onVersionChange(versions[currentIndex + 1]);
     }
   };
+
+  // Mobile Navigation - Default variant (for general use)
+  const renderMobileDefault = () => (
+    <div className="lg:hidden flex items-center justify-between mb-6 px-4">
+      <button
+        onClick={handlePrevious}
+        disabled={isFirst}
+        className={`p-2 rounded-full transition-colors ${isFirst
+          ? 'text-muted-foreground/50 cursor-not-allowed'
+          : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+          }`}
+        aria-label="Previous version"
+      >
+        <ChevronLeft className="w-5 h-5" />
+      </button>
+
+      <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-50">
+        <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
+          <span className="text-primary-foreground text-sm font-bold">M</span>
+        </div>
+        <span className="font-medium text-lg">{currentVersion}</span>
+      </div>
+
+      <button
+        onClick={handleNext}
+        disabled={isLast}
+        className={`p-2 rounded-full transition-colors ${isLast
+          ? 'text-muted-foreground/50 cursor-not-allowed'
+          : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+          }`}
+        aria-label="Next version"
+      >
+        <ChevronRight className="w-5 h-5" />
+      </button>
+    </div>
+  );
+
+  // Mobile Navigation - Roadmap variant (for roadmap page)
+  const renderMobileRoadmap = () => (
+    <div className="lg:hidden flex items-center justify-between mb-6 pt-6 border-t !border-black/10">
+      <button
+        onClick={handlePrevious}
+        disabled={isFirst}
+        className={`p-2 rounded-full transition-colors ${isFirst
+          ? 'text-muted-foreground/50 cursor-not-allowed'
+          : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+          }`}
+        aria-label="Previous version"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      <div className="flex items-center gap-2 px-4 py-2">
+        <span className="font-medium text-base text-primary">{currentVersion}</span>
+      </div>
+
+      <button
+        onClick={handleNext}
+        disabled={isLast}
+        className={`p-2 rounded-full transition-colors ${isLast
+          ? 'text-muted-foreground/50 cursor-not-allowed'
+          : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+          }`}
+        aria-label="Next version"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  );
 
   return (
     <>
@@ -73,38 +148,7 @@ export function RoadmapVersionNav({
         </div>
       </div>
 
-      <div className="lg:hidden flex items-center justify-between mb-6 px-4">
-        <button
-          onClick={handlePrevious}
-          disabled={isFirst}
-          className={`p-2 rounded-full transition-colors ${isFirst
-            ? 'text-muted-foreground/50 cursor-not-allowed'
-            : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-            }`}
-          aria-label="Previous version"
-        >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
-
-        <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-50">
-          <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
-            <span className="text-primary-foreground text-sm font-bold">M</span>
-          </div>
-          <span className="font-medium text-lg">{currentVersion}</span>
-        </div>
-
-        <button
-          onClick={handleNext}
-          disabled={isLast}
-          className={`p-2 rounded-full transition-colors ${isLast
-            ? 'text-muted-foreground/50 cursor-not-allowed'
-            : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-            }`}
-          aria-label="Next version"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
-      </div>
+      {mobileVariant === 'roadmap' ? renderMobileRoadmap() : renderMobileDefault()}
     </>
   );
 }

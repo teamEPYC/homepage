@@ -30,14 +30,23 @@ export function RoadmapModal({
       }
     };
 
+    const preventScroll = (e: Event) => {
+      e.preventDefault();
+    };
+
     if (isOpen) {
       document.addEventListener("keydown", handleEscape);
-      document.body.style.overflow = "hidden";
+      // Prevent all scrolling on the document
+      document.addEventListener("wheel", preventScroll, { passive: false });
+      document.addEventListener("touchmove", preventScroll, { passive: false });
+      document.addEventListener("scroll", preventScroll, { passive: false });
     }
 
     return () => {
       document.removeEventListener("keydown", handleEscape);
-      document.body.style.overflow = "unset";
+      document.removeEventListener("wheel", preventScroll);
+      document.removeEventListener("touchmove", preventScroll);
+      document.removeEventListener("scroll", preventScroll);
     };
   }, [isOpen, onClose]);
 
@@ -53,12 +62,12 @@ export function RoadmapModal({
   const getModalPosition = () => {
     if (position) {
       const { x, y } = position;
-      const modalWidth = 400; // Approximate modal width
-      const modalHeight = 300; // Approximate modal height
+      const modalWidth = 400;
+      const modalHeight = 300;
 
-      // Use the exact position passed from parent (already calculated with offset)
+      // Use the exact position passed from parent (already calculated with smart positioning)
       let left = x - modalWidth / 2; // Center the modal horizontally on the x position
-      let top = y - modalHeight / 2; // Center the modal vertically on the y position
+      let top = y; // Use the calculated Y position directly
 
       // Ensure modal stays within viewport
       const viewportWidth = window.innerWidth;
@@ -66,7 +75,9 @@ export function RoadmapModal({
 
       if (left < 20) left = 20;
       if (left + modalWidth > viewportWidth - 20) left = viewportWidth - modalWidth - 20;
-      if (top < 20) top = 20;
+      // Allow modal to go above viewport for bottom elements, but keep it reasonable
+      if (top < -200) top = -200; // Allow above viewport but not too far
+      // Don't clamp top position for bottom elements - let them position above the grid item
       if (top + modalHeight > viewportHeight - 20) top = viewportHeight - modalHeight - 20;
 
       return { left, top };
