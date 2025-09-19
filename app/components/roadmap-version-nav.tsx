@@ -56,7 +56,6 @@ export function RoadmapVersionNav({
       </div>
 
       <button
-        onClick={handleNext}
         disabled={isLast}
         className={`p-2 rounded-full transition-colors ${isLast
           ? 'text-muted-foreground/50 cursor-not-allowed'
@@ -71,9 +70,8 @@ export function RoadmapVersionNav({
 
   // Mobile Navigation - Roadmap variant (for roadmap page)
   const renderMobileRoadmap = () => (
-    <div className="lg:hidden flex items-center justify-between mb-6 pt-6 border-t !border-black/10">
+    <div className="lg:hidden flex items-center justify-between mb-6 pt-6 border-t !border-black/5">
       <button
-        onClick={handlePrevious}
         disabled={isFirst}
         className={`p-2 rounded-full transition-colors ${isFirst
           ? 'text-muted-foreground/50 cursor-not-allowed'
@@ -91,7 +89,6 @@ export function RoadmapVersionNav({
       </div>
 
       <button
-        onClick={handleNext}
         disabled={isLast}
         className={`p-2 rounded-full transition-colors ${isLast
           ? 'text-muted-foreground/50 cursor-not-allowed'
@@ -109,8 +106,8 @@ export function RoadmapVersionNav({
   return (
     <>
       <div className="hidden lg:block">
-        <div className={`grid grid-cols-5 gap-0 overflow-hidden ${activeItem ? '' : 'border-b !border-black/5'}`}>
-          <div className={`col-span-1 p-4 bg-muted/20 min-h-88 ${activeItem ? '' : 'border-r !border-black/5'}`}>
+        <div className={`grid grid-cols-5 gap-0 overflow-hidden !border-black/5 ${activeItem ? '' : 'border border-t-0'}`}>
+          <div className={`col-span-1 p-4 min-h-88 bg-transparent ${activeItem ? '' : 'border-r !border-black/5'}`}>
             <div className="flex items-center justify-center">
               <div className="w-28 h-10 flex items-center justify-center">
                 <img src="/images/roadmap-logo.svg" alt="Roadmap Logo" className="w-full object-contain" width={107} height={40} />
@@ -126,10 +123,9 @@ export function RoadmapVersionNav({
             return (
               <button
                 key={version}
-                onClick={() => onVersionChange(version)}
                 className={`
-                  col-span-1 p-4 transition-colors
-                  ${activeItem ? '' : 'border-r !border-black/5 last:border-r-0'}
+                  col-span-1 p-4 transition-colors !border-black/5
+                  ${activeItem ? '' : 'border-r last:border-r-0'}
                   ${isCurrent
                     ? 'text-primary'
                     : 'text-muted-foreground/60'

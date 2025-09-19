@@ -58,32 +58,51 @@ export function RoadmapModal({
 
   if (!isOpen) return null;
 
-  // Calculate modal position
   const getModalPosition = () => {
     if (position) {
       const { x, y } = position;
-      const modalWidth = 400;
-      const modalHeight = 300;
+      const padding = 20;
 
-      // Use the exact position passed from parent (already calculated with smart positioning)
-      let left = x - modalWidth / 2; // Center the modal horizontally on the x position
-      let top = y; // Use the calculated Y position directly
-
-      // Ensure modal stays within viewport
       const viewportWidth = window.innerWidth;
       const viewportHeight = window.innerHeight;
 
-      if (left < 20) left = 20;
-      if (left + modalWidth > viewportWidth - 20) left = viewportWidth - modalWidth - 20;
-      // Allow modal to go above viewport for bottom elements, but keep it reasonable
-      if (top < -200) top = -200; // Allow above viewport but not too far
-      // Don't clamp top position for bottom elements - let them position above the grid item
-      if (top + modalHeight > viewportHeight - 20) top = viewportHeight - modalHeight - 20;
+      let modalWidth = 448;
+      let modalHeight = 300;
+      
+      if (viewportWidth >= 1280) {
+        modalWidth = 576;
+      } else if (viewportWidth >= 768) {
+        modalWidth = 384;
+      }
 
-      return { left, top };
+      let left = x - modalWidth / 2;
+      let top = y;
+
+      // Ensure popup stays within viewport
+      if (left + modalWidth > viewportWidth - padding) {
+        left = viewportWidth - modalWidth - padding;
+      }
+      
+      if (left < padding) {
+        left = padding;
+      }
+
+      left = Math.max(padding, left);
+      left = Math.min(left, viewportWidth - modalWidth - padding);
+
+
+      // Vertical positioning
+      if (top < -200) {
+        top = -200;
+      } else if (top + modalHeight > viewportHeight - padding) {
+        top = viewportHeight - modalHeight - padding;
+      }
+
+      top = Math.max(-200, top);
+
+      return { left, top, originalX: x, originalY: y };
     }
 
-    // Fallback to center
     return { left: '50%', top: '50%', transform: 'translate(-50%, -50%)' };
   };
 
@@ -101,7 +120,7 @@ export function RoadmapModal({
       {/* Modal */}
       <div
         ref={modalRef}
-        className="absolute bg-white border !border-black/10 max-w-md w-full focus:outline-none lg:max-w-md md:max-w-sm sm:max-w-xs"
+        className="absolute bg-white border !border-black/5 max-w-md w-full focus:outline-none xl:max-w-xl md:max-w-sm"
         style={{
           left: typeof modalPosition.left === 'number' ? `${modalPosition.left}px` : modalPosition.left,
           top: typeof modalPosition.top === 'number' ? `${modalPosition.top}px` : modalPosition.top,
@@ -112,21 +131,17 @@ export function RoadmapModal({
         aria-modal="true"
         aria-labelledby="modal-title"
       >
-        {/* Content */}
-        <div className="p-6">
-          {/* Category at top in orange */}
+        <div className="p-4 xl:pr-17">
           {category && (
             <div className="text-[8px] font-medium text-primary uppercase mb-1">
               {category}
             </div>
           )}
           
-          {/* Title */}
-          <h2 id="modal-title" className="text-xl font-medium text-black uppercase mb-1">
+          <h2 id="modal-title" className="text-base xl:text-xl font-medium text-black uppercase mb-1">
             {title}
           </h2>
           
-          {/* Description */}
           <p className="text-xs text-black">
             {content}
           </p>
