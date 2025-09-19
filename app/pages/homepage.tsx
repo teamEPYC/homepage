@@ -37,10 +37,10 @@ export function PageHome({
       </Header>
 
       <div className="mt-16">
-        <h3 className="font-dm-mono font-semibold text-2xl text-balance">
+        <h3 className="font-dm-mono font-semibold text-2xl text-balance uppercase">
           The way blockchains were always meant to work
         </h3>
-        <ol className="flex flex-col gap-8 mt-6">
+        <ol className="flex flex-col gap-4 md:gap-6 mt-6 text-base">
           <li>
             <h4 className="mb-1 font-bold text-primary">It scales</h4>
             <p>
@@ -67,7 +67,7 @@ export function PageHome({
       </div>
 
       <div className="mt-16">
-        <h3 className="font-dm-mono font-semibold text-2xl text-balance">
+        <h3 className="font-dm-mono font-semibold text-2xl text-balance uppercase">
           Our investors
         </h3>
         <ul className="gap-4 grid grid-cols-2 md:grid-cols-4 mt-6">

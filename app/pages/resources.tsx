@@ -46,7 +46,7 @@ export function PageResources({
 
       <Container className="flex-1">
 
-        <h1 className="text-3xl md:text-4xl font-medium uppercase text-black mb-8">PUBLICATIONS</h1>
+        <h1 className="text-28 font-medium uppercase text-black mb-8">PUBLICATIONS</h1>
 
 
         {

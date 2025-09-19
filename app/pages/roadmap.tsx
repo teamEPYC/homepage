@@ -5,7 +5,6 @@ import { RoadmapVersionNav } from "~/components/roadmap-version-nav";
 import { RoadmapConnectionLine } from "~/components/roadmap-connection-line";
 import { roadmapData, type RoadmapData, type RoadmapCategory, type RoadmapItem as RoadmapItemType } from "../lib/data-roadmap";
 
-// Reusable Grid Cell Component
 interface GridCellProps {
     gridNumber: number;
     categoryTitle: string;
@@ -77,34 +76,31 @@ export function PageRoadmap() {
     const versions = Object.keys(roadmapData.versions);
     const currentVersionData = roadmapData.versions[currentVersion];
 
-    // Check if current version has any content
     const hasContent = currentVersionData.categories.some((category: RoadmapCategory) => category.items.length > 0);
 
-    // Helper function to check if specific grid cell contains active item
     const isGridCellActive = (gridNumber: number, categoryTitle: string) => {
         if (!activeItem) return false;
-
         const gridItems = itemsByGrid[gridNumber]?.filter(({ category: itemCategory }) => itemCategory === categoryTitle) || [];
         return gridItems.some(({ item }) => item.id === activeItem);
     };
 
-    // Helper function to get grid cell classes
     const getGridCellClasses = (gridNumber: number, categoryTitle: string) => {
-        const baseClasses = "col-span-1 p-4 flex items-center justify-center min-h-88";
+        const gridItems = itemsByGrid[gridNumber]?.filter(({ category: itemCategory }) => itemCategory === categoryTitle) || [];
+        const hasMultipleItems = gridItems.length > 1;
+        const justifyClass = hasMultipleItems ? "justify-start" : "justify-center";
+        const baseClasses = `col-span-1 p-4 flex items-center ${justifyClass} min-h-88`;
 
         if (isGridCellActive(gridNumber, categoryTitle)) {
-            return `${baseClasses} bg-white border !border-black/10 z-50`;
+            return `${baseClasses} bg-white border !border-black/5 z-50`;
         }
 
-        // When popup is active, make borders transparent instead of removing them
         if (activeItem) {
             return `${baseClasses} border-r !border-transparent`;
         }
 
-        return `${baseClasses} border-r !border-black/10`;
+        return `${baseClasses} border-r !border-black/5`;
     };
 
-    // Group items by grid number for the current version
     const itemsByGrid: Record<number, Array<{ item: RoadmapItemType; category: string }>> = {};
     currentVersionData.categories.forEach((category: RoadmapCategory) => {
         category.items.forEach((item: RoadmapItemType) => {
@@ -115,7 +111,6 @@ export function PageRoadmap() {
         });
     });
 
-    // Handle grid item click
     const handleGridItemClick = (gridNumber: number, itemId: string, event: React.MouseEvent) => {
         if (window.innerWidth < 1024) {
             setActiveGrid(gridNumber);
@@ -153,9 +148,8 @@ export function PageRoadmap() {
         setClickedItemPosition(null);
     };
 
-
     return (
-        <div className={`min-h-screen bg-background ${activeItem ? 'bg-light-gray-md' : ''}`}>
+        <div className={`min-h-screen bg-background ${activeItem ? 'lg:bg-light-gray-md' : ''}`}>
             {clickedItemPosition && modalPosition && (
                 <RoadmapConnectionLine
                     fromPosition={clickedItemPosition}
@@ -166,7 +160,7 @@ export function PageRoadmap() {
 
             <Container className="max-w-[1440px]">
                 <div className="lg:hidden text-center mb-4">
-                    <h1 className="text-4xl font-bold">ROADMAP</h1>
+                    <h1 className="text-28 !font-normal">ROADMAP</h1>
                 </div>
                 <div className="lg:hidden">
                     <RoadmapVersionNav
@@ -186,9 +180,9 @@ export function PageRoadmap() {
                                 if (category.items.length === 0) return null;
 
                                 return (
-                                    <div key={category.id} className="space-y-3">
-                                        <div className="flex justify-center">
-                                            <div className={`w-full p-3  border !border-black/10`}>
+                                    <div key={category.id} className="mb-4">
+                                        <div className="flex justify-center mb-4">
+                                            <div className={`w-full p-4 border !border-black/5 bg-white-dark/80 font-medium`}>
                                                 <h2 className="text-sm font-medium text-primary uppercase tracking-wider text-center">
                                                     {category.title}
                                                 </h2>
@@ -196,20 +190,21 @@ export function PageRoadmap() {
                                         </div>
                                         <div className="space-y-2">
                                             {category.items.map((item: RoadmapItemType) => (
-                                                <div key={item.id} className="flex justify-center mb-0">
+                                                <div key={item.id} className="flex justify-center mb-2">
                                                     <div className="w-full space-y-2">
                                                         <button
                                                             onClick={(e) => handleGridItemClick(item.grid, item.id, e)}
                                                             className="w-full p-2 transition-all duration-200"
                                                         >
                                                             <div className="flex items-center justify-center gap-2">
-                                                                <div className={`w-1 h-1 rounded-full flex-shrink-0 ${activeItem === item.id ? 'bg-primary' : 'bg-foreground'
-                                                                    }`}></div>
+                                                                
                                                                 <h3 className={`
-                                                                    font-normal text-sm uppercase tracking-wider text-center
+                                                                    !font-normal text-sm uppercase tracking-wider text-center
                                                                     ${activeItem === item.id ? 'text-primary' : 'text-foreground'}
                                                                 `}>
-                                                                    {item.title}
+                                                                    <span className={`inline-block relative -top-1 right-1.5 min-w-1 min-h-1 text-black rounded-full flex-shrink-0 ${activeItem === item.id ? 'bg-primary' : 'bg-foreground'
+                                                                    }`}></span>
+                                                                    <span>{item.title}</span>
                                                                 </h3>
                                                             </div>
                                                         </button>
@@ -217,8 +212,8 @@ export function PageRoadmap() {
                                                         {activeItem === item.id && (
                                                             <div className="relative pt-2">
                                                                 <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 w-px h-4 bg-black/20"></div>
-                                                                <div className="w-full p-4 border-t border-l border-r border-b !border-black/10 bg-white">
-                                                                    <p className="text-sm text-foreground text-center">
+                                                                <div className="w-full p-4 border-t border-l border-r border-b !border-black/5 bg-white-dark">
+                                                                    <p className="text-xs text-center text-black">
                                                                         {item.content}
                                                                     </p>
                                                                 </div>
@@ -333,8 +328,6 @@ export function PageRoadmap() {
                         )}
                     </div>
                 </div>
-
-
 
                 <div className="hidden lg:block">
                     <RoadmapVersionNav

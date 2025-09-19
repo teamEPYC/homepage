@@ -22,6 +22,7 @@
   --font-script: "Biro Script", cursive;
   --font-dm-mono: "DM Mono", monospace;
   --height-88: 88px;
+  --text-28: 28px;
 }
 
 * {
@@ -56,6 +57,7 @@ h4 {
   --primary: #FF5500;
   --light-gray: #fcfcfcfc;
   --dark-gray: #D9D9D9;
+  --white-dark: #FAFAFA;
   --light-gray-md: rgba(126, 126, 126, 0.08);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
@@ -136,6 +138,7 @@ h4 {
   --color-light-gray-md: var(--light-gray-md);
   --color-dark-gray: var(--dark-gray);
   --color-secondary: var(--secondary);
+  --color-white-dark: var(--white-dark);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
