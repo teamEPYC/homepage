@@ -109,7 +109,7 @@ export function PageResources({
                       prefetch="intent"
                     >
                       <time className="text-primary">{item.date}</time>
-                      <h4 className={`${index === 0 ? 'bg-orange-200 !font-bold' : '!font-normal'} text-muted-foreground`}>
+                      <h4 className="!font-normal text-muted-foreground">
                         {item.title}
                       </h4>
                     </ListItem>
