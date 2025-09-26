@@ -54,10 +54,6 @@ export const press = [
     link: "https://crypto.news/miden-raises-25m-to-launch-edge-blockchain-for-private-scalable-apps?utm_source=miden&utm_medium=website",
   },
   {
-    label: "[Modular Crypto] Miden levanta US$25 milhões para criar a primeira Edge Blockchain",
-    link: "https://x.com/ModularCrypto/status/1917302966903582739?utm_source=miden&utm_medium=website",
-  },
-  {
     label: "[The Defiant] Miden secures $25M seed funding led by a16z, Hack VC, and 1kx for ZK-Rollup on Ethereum",
     link: "https://thedefiant.io/news/blockchains/miden-secures-25m-seed-funding-led-a16z-hack-vc-1kx-zk-rollup-on-ethereum-01e3c7ae?utm_source=miden&utm_medium=website",
   },
