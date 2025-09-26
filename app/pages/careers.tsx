@@ -9,9 +9,14 @@ export function PageCareers({ Jobs }: { Jobs: Career[] }) {
         <div className="flex flex-col gap-4 [&_p]:text-black [&_h2]:text-black [&_p]:text-base [&_h2]:text-4xl [&_h2]:text-balance">
           <h2>CAREERS</h2>
           <p>
-            We’re building the future of private, scalable computation on the edge.
+            Miden is the edge blockchain – private by default, scalable, built for real-world builders.
           </p>
-          <p>We are looking for engineers who are looking for a place that will challenge them. We expect you to be able to turn around a medium-hard-level ticket in a few days, scope appropriately, have tight review cycles, and ship.</p>
+          <p>
+            We don’t have active openings right now, but we’re always interested in hearing from exceptional people who want to help build the future of the internet for private finance.
+          </p>
+          <p>
+            If you think you belong at Miden, share your background and tell us what you’d like to build.
+          </p>
         </div>
 
         <div className="mt-4 md:mt-10">
