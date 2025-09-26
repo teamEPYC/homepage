@@ -25,7 +25,7 @@ export const roadmapData: RoadmapData = {
       categories: [
         {
           id: "compiler & toolchain",
-          title: "Compiler & Toolchain",
+          title: "Compiler & toolchain",
           items: [
             {
               id: "basic-compiler",
@@ -71,7 +71,7 @@ export const roadmapData: RoadmapData = {
             },
             {
               id: "fpi-network-tx",
-              title: "FPI and public notes",
+              title: "FPI & public notes",
               content: "Foreign Procedure Invocation in network transactions (i.e., using public notes), allowing accounts to read external data during execution. Also includes issuance of public and network notes as transaction outputs.",
               grid: 3
             },
@@ -102,7 +102,7 @@ export const roadmapData: RoadmapData = {
             {
               id: "multisig-auth-component",
               title: "Multisig auth component",
-              content: "Protocol support for private multi-signature wallets with transaction introspection. The Transaction Kernel outputs a proposed TransactionSummary instead of a proof, which can then be signed by the threshold.",
+              content: "Protocol support for private multisig wallets with transaction introspection. The Transaction Kernel outputs a proposed TransactionSummary instead of a proof, which can then be signed by the threshold.",
               grid: 2
             },
             {
@@ -149,7 +149,7 @@ export const roadmapData: RoadmapData = {
           items: [
             {
               id: "standards-fungible-nfts",
-              title: "Standards for fungible tokens + NFTs",
+              title: "Standards for fungible tokens & NFTs",
               content: "Standards for fungible and non-fungible tokens to ensure interoperability and consistency across the Miden ecosystem.",
               grid: 3
             },
@@ -181,7 +181,7 @@ export const roadmapData: RoadmapData = {
         },
         {
           id: "block-building-settlement",
-          title: "Block building and settlement",
+          title: "Block building & settlement",
           items: [
             {
               id: "agglayer-contracts",
@@ -197,8 +197,8 @@ export const roadmapData: RoadmapData = {
             },
             {
               id: "batch-block-kernel",
-              title: "Batch and block MASM kernel & DA layer integration",
-              content: "Batch/block kernel functionality using recursive verification for better performance. Integration of Agglayer with a Data Availability (DA) layer for scalability, security, and data availability guarantees.",
+              title: "Batch-and-block MASM kernel & DA layer integration",
+              content: "Kernel functionality at the batch and block levels using recursive verification. Integration of Agglayer with a Data Availability (DA) layer for scalability, security, and data availability guarantees.",
               grid: 5
             },
           ]
