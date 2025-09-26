@@ -29,20 +29,20 @@ export const roadmapData: RoadmapData = {
           items: [
             {
               id: "basic-compiler",
-              title: "Write basic contracts in Rust",
-              content: "For the first time, developers can now write a full Miden accountm a note and transaction script in Rust, and successfully compile them all the way down to Miden Assembly.",
+              title: "Rust compiler for basic scripts",
+              content: "First usable Rust-to-MASM compiler. Provides support for writing Miden accounts, notes, and transaction scripts in Rust and compiling them into working Miden Assembly code.",
               grid: 2
             },
             {
               id: "use-midenup",
-              title: "midenup",
-              content: "midenup is the the Miden toolchain installer. It installs all components to test, run and interact with Miden programs, locally and on the network",
+              title: "midenup installer",
+              content: "Toolchain installer for Miden. Provides all components needed to test, run, and interact with Miden programs locally or on the network.",
               grid: 3
             },
             {
               id: "testing-framework",
               title: "Integrated testing framework",
-              content: "A comprehensive integrated testing framework for Miden smart contracts to improve development workflow and code quality.",
+              content: "Built-in framework for testing Miden scripts. Improves workflow and code quality.",
               grid: 5
             }
           ]
@@ -54,7 +54,7 @@ export const roadmapData: RoadmapData = {
             {
               id: "atomic-transaction-chains",
               title: "Atomic transaction chains",
-              content: "Support the ability for users to submit proven batches of transactions (rather than individual transactions). This enables atomic execution of multiple transactions - that is, all transactions in a batch must be applied to the chain state as a single unit.",
+              content: "Support for proven batches of transactions instead of single transactions. Enables atomic execution, where all transactions in a batch are applied to chain state as a single unit.",
               grid: 2
             }
           ]
@@ -66,13 +66,13 @@ export const roadmapData: RoadmapData = {
             {
               id: "retry-strategies",
               title: "Retry strategies",
-              content: "Implement robust retry mechanisms for failed network transactions to improve reliability and user experience. This includes exponential backoff, circuit breakers, and intelligent retry logic.",
+              content: "Robust retry mechanisms for failed network transactions. Includes exponential backoff, circuit breakers, and intelligent retry logic to improve reliability and user experience.",
               grid: 2
             },
             {
               id: "fpi-network-tx",
-              title: "FPI and public notes for network tx",
-              content: "Implement FPI (Foreign Procedure Invocation) for network transactions to allow network notes and accounts to read foreign account data (oracles) during transaction execution. Also, allow issuance of public and network notes as a result of network transactions.",
+              title: "FPI and public notes",
+              content: "Foreign Procedure Invocation in network transactions (i.e., using public notes), allowing accounts to read external data during execution. Also includes issuance of public and network notes as transaction outputs.",
               grid: 3
             },
           ]
@@ -84,37 +84,37 @@ export const roadmapData: RoadmapData = {
             {
               id: "new-address-format",
               title: "New address format",
-              content: "Introduce a new address format. Accounts can have several addresses and encode interface and public key information into the address. This will improve the security and anonymity of private transactions on the Miden network.",
+              content: "Address format with support for multiple addresses per account, embedding interface and public key information. Improves security and anonymity of private transactions.",
               grid: 2
             },
             {
               id: "private-note-distribution-v12",
               title: "Canonical private note distribution",
-              content: "Implement reliable, secure and encrypted distribution mechanisms for private notes.",
+              content: "Reliable, secure, and encrypted distribution mechanisms for private notes.",
               grid: 3
             }
           ]
         },
         {
           id: "private-multisig-support",
-          title: "Private multi-sig support",
+          title: "Private multisig support",
           items: [
             {
               id: "multisig-auth-component",
               title: "Multisig auth component",
-              content: "Add protocol support for private multi-signature wallets with transaction introspection. The core is to allow the Transaction Kernel to result in a proposed TransactionSummary instead of a proof. The summary can then be signed by the threshold.",
+              content: "Protocol support for private multi-signature wallets with transaction introspection. The Transaction Kernel outputs a proposed TransactionSummary instead of a proof, which can then be signed by the threshold.",
               grid: 2
             },
             {
               id: "public-multisig",
               title: "Public multisig",
-              content: "End-to-end multi-sig support on Miden including a user-friendly interface. There is a server for offchain communication to orchestrate the signing process.",
+              content: "End-to-end multisig support on Miden, including a user-friendly interface. Includes an off-chain communication server to orchestrate the signing process.",
               grid: 3
             },
             {
               id: "private-state-management",
-              title: "Private Multisig",
-              content: "Implement private state management capabilities to allow secure private multi-sigs with customisable signature thresholds per procedure - really cool stuff.",
+              title: "Private multisig",
+              content: "Private state management for secure multisigs with customizable signature thresholds per procedure.",
               grid: 4
             },
           ]
@@ -125,20 +125,20 @@ export const roadmapData: RoadmapData = {
           items: [
             {
               id: "async-tx-execution",
-              title: "Asynchronous tx execution",
-              content: "Implement asynchronous transaction execution to improve performance and user experience. This will allow for better handling of complex account operations and key management workflows.",
+              title: "Asynchronous transaction execution",
+              content: "Asynchronous transaction execution for improved performance and user experience. Enables better handling of complex account operations and key management workflows.",
               grid: 2
             },
             {
               id: "named-storage-slots",
               title: "Named storage slots",
-              content: "Implement named storage slots for better account organization and add support for synchronizing large accounts efficiently to improve performance and user experience.",
+              content: "Named storage slots for clearer account organization, with support for synchronizing large accounts efficiently. Improves performance and user experience.",
               grid: 3
             },
             {
               id: "general-purpose-auth",
               title: "General purpose authentication & basic social recovery",
-              content: "Add general purpose authentication mechanisms and basic social reovery for enhanced account security and flexibility.",
+              content: "General purpose authentication mechanisms and basic social recovery for enhanced account security and flexibility.",
               grid: 4
             },
           ]
@@ -150,13 +150,13 @@ export const roadmapData: RoadmapData = {
             {
               id: "standards-fungible-nfts",
               title: "Standards for fungible tokens + NFTs",
-              content: "Develop comprehensive standards for fungible and non-fungible tokens to ensure interoperability and consistency across the Miden ecosystem.",
+              content: "Standards for fungible and non-fungible tokens to ensure interoperability and consistency across the Miden ecosystem.",
               grid: 3
             },
             {
               id: "programmable-assets",
               title: "Programmable assets",
-              content: "Develop programmable asset capabilities that allow for custom logic and behavior within asset contracts - this will allow compliant and private stable coin payments",
+              content: "Programmable asset capabilities with custom logic and behavior in asset contracts. Enables compliant and private stablecoin payments.",
               grid: 4
             }
           ]
@@ -168,13 +168,13 @@ export const roadmapData: RoadmapData = {
             {
               id: "ecdsa-keccak-no-proof",
               title: "Precompile support (no proof): ECDSA & Keccak",
-              content: "Add ECDSA and Keccak precompiles (without proof generation) to support additional cryptographic operations and improve compatibility.",
+              content: "ECDSA and Keccak precompiles without proof generation. Expands cryptographic operations and improves compatibility.",
               grid: 3
             },
             {
               id: "ecdsa-keccak-with-proof",
-              title: "Full Precompile Support: ECDSA & Keccak",
-              content: "Complete ECDSA and Keccak precompile implementation with full proof generation capabilities for enhanced security and compatibility.",
+              title: "Full precompile support: ECDSA & Keccak",
+              content: "Complete ECDSA and Keccak precompiles with proof generation. Enhances security and compatibility.",
               grid: 5
             }
           ]
@@ -185,20 +185,20 @@ export const roadmapData: RoadmapData = {
           items: [
             {
               id: "agglayer-contracts",
-              title: "AggLayer bridge contracts",
-              content: "Implement AggLayer contracts to connect Miden to Ethereum.",
+              title: "Agglayer bridge contracts",
+              content: "Agglayer contracts to connect Miden to Ethereum.",
               grid: 3
             },
             {
               id: "fast-block-building",
               title: "Fast block building",
-              content: "Separate block proving and sequencing such that blocks can be constructed without requiring ZKPs validating the correctness of block construction. The ZKPs will be appended to the blocks at a later point in time, but before blocks are sent to the L1 ",
+              content: "Separation of block proving and sequencing so blocks can be constructed without immediate ZKP validation. Proofs are appended before blocks are sent to L1.",
               grid: 4
             },
             {
               id: "batch-block-kernel",
-              title: "Batch and Block MASM kernel & DA layer integration",
-              content: "Implement batch/block kernel functionality using recursive verification for improved performance. Integrate AggLayer with Data Availability (DA) layer for improved scalability, security, and data availability guarantees.",
+              title: "Batch and block MASM kernel & DA layer integration",
+              content: "Batch/block kernel functionality using recursive verification for better performance. Integration of Agglayer with a Data Availability (DA) layer for scalability, security, and data availability guarantees.",
               grid: 5
             },
           ]
@@ -209,14 +209,14 @@ export const roadmapData: RoadmapData = {
           items: [
             {
               id: "add-fees-to-protocol",
-              title: "Add fees to protocol",
-              content: "Implement a comprehensive fee structure for the Miden protocol to ensure sustainable network operation and incentivize validators and network participants.",
+              title: "Protocol fees",
+              content: "Comprehensive fee structure for the Miden protocol to support sustainable network operation and incentivize participants.",
               grid: 2
             },
             {
               id: "process-fees-in-blocks",
-              title: "Process fees in blocks",
-              content: "Implement fee processing within blocks to ensure proper fee collection and distribution across the network.",
+              title: "Fee processing in blocks",
+              content: "In-block fee collection and distribution across the network.",
               grid: 3
             }
           ]
@@ -227,8 +227,8 @@ export const roadmapData: RoadmapData = {
           items: [
             {
               id: "plonky3-instead-winterfell",
-              title: "PLONKY3 instead of Winterfell",
-              content: "Migrate from Winterfell to PLONKY3 proof system for improved performance, better security, and enhanced scalability.",
+              title: "Plonky3 (replacing Winterfell)",
+              content: "Migration from Winterfell to the Plonky3 proof system for improved performance, security, and scalability.",
               grid: 4
             }
           ]
