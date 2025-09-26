@@ -26,36 +26,40 @@ export function meta({ data }: Route.MetaArgs) {
 
 export const press = [
   {
-    label: "Miden VM: Revolutionizing Zero-Knowledge Proofs in Blockchain",
-    link: "https://miden.xyz/",
+    label: "[Fortune Crypto] Andreessen Horowitz leads $25 million bet on Miden, a former Meta engineer’s privacy blockchain",
+    link: "https://fortune.com/crypto/2025/04/29/miden-a16z-privacy-blockchain-polygon-labs?utm_source=miden&utm_medium=website",
   },
   {
-    label: "Unlocking the Potential of Miden: A Deep Dive into its Architecture",
-    link: "https://miden.xyz/",
+    label: "[The Block] Polygon spin-off Miden raises $25 million in seed funding for privacy-focused blockchain",
+    link: "https://www.theblock.co/post/352342/polygon-miden-funding-blockchainhttps://www.theblock.co/post/352342/polygon-miden-funding-blockchain?utm_source=miden&utm_medium=website",
   },
   {
-    label: "Exploring Miden: The Future of Scalable Cryptographic Solutions",
-    link: "https://miden.xyz/",
+    label: "[CoinDesk] Polygon spin-off Miden secures $25M to bring speed, privacy to institutional giants",
+    link: "https://www.coindesk.com/tech/2025/04/29/polygon-spin-off-miden-secures-25m-to-bring-speed-privacy-to-institutional-giants?utm_source=miden&utm_medium=website",
   },
   {
-    label: "Why Miden is the Game Changer in the World of Decentralized Apps",
-    link: "https://miden.xyz/",
+    label: "[Decrypt] Miden spins out from Polygon Labs, raises $25M to launch own chain",
+    link: "https://decrypt.co/316869/miden-spins-out-from-polygon-labs-raises-25m-to-launch-own-chain?utm_source=miden&utm_medium=website",
   },
   {
-    label: "Innovations in Miden: Building Trust with Zero-Knowledge Technology",
-    link: "https://miden.xyz/",
+    label: "[The Street] Miden raises $25M after spinning out from Polygon Labs",
+    link: "https://www.thestreet.com/crypto/markets/miden-raises-25m-after-spinning-out-from-polygon-labs?utm_source=miden&utm_medium=website",
   },
   {
-    label: "Miden and the Rise of Privacy-Centric Blockchain Applications",
-    link: "https://miden.xyz/",
+    label: "[Cointelegraph] A16z leads $25M funding for Miden blockchain project",
+    link: "https://cointelegraph.com/news/miden-raises-25m-to-scale-zk-blockchain-after-polygon-spinout?utm_source=miden&utm_medium=website",
   },
   {
-    label: "How Miden is Shaping the Next Generation of Smart Contracts",
-    link: "https://miden.xyz/",
+    label: "[crypto.news] Miden raises $25m to launch ‘Edge Blockchain’ for private, scalable apps",
+    link: "https://crypto.news/miden-raises-25m-to-launch-edge-blockchain-for-private-scalable-apps?utm_source=miden&utm_medium=website",
   },
   {
-    label: "The Impact of Miden on the Evolution of Decentralized Finance",
-    link: "https://miden.xyz/",
+    label: "[Modular Crypto] Miden levanta US$25 milhões para criar a primeira Edge Blockchain",
+    link: "https://x.com/ModularCrypto/status/1917302966903582739?utm_source=miden&utm_medium=website",
+  },
+  {
+    label: "[The Defiant] Miden secures $25M seed funding led by a16z, Hack VC, and 1kx for ZK-Rollup on Ethereum",
+    link: "https://thedefiant.io/news/blockchains/miden-secures-25m-seed-funding-led-a16z-hack-vc-1kx-zk-rollup-on-ethereum-01e3c7ae?utm_source=miden&utm_medium=website",
   },
 ];
 
