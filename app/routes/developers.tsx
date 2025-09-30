@@ -15,7 +15,7 @@ const items = [
   {
     label: "Playground",
     description: "Start experimenting with Miden in your browser.",
-    link: "https://miden-playground.pages.dev/",
+    link: "https://playground.miden.xyz/",
   },
   {
     label: "Midenscan",
