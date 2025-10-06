@@ -20,5 +20,7 @@ export default [
     route("/about", "routes/about-us.tsx"),
   ]),
 
+  route("api/subscribe", "routes/api/subscribe.ts"),
+
   ...(await flatRoutes({ rootDirectory: "content" })),
 ] satisfies RouteConfig;

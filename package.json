@@ -7,11 +7,12 @@
     "build:staging": "CLOUDFLARE_ENV=staging react-router build && npm run generate-sitemap",
     "deploy:production": "CLOUDFLARE_ENV=production npm run build:production && wrangler deploy",
     "deploy:staging": "CLOUDFLARE_ENV=staging npm run build:staging && wrangler deploy",
-    "dev": "react-router dev",
+    "dev": "CLOUDFLARE_ENV=dev react-router dev",
     "start": "wrangler dev",
     "typecheck": "react-router typegen && tsc -b",
     "lint": "biome lint .",
-    "generate-sitemap": "tsx scripts/generate-sitemap.ts"
+    "generate-sitemap": "tsx scripts/generate-sitemap.ts",
+    "cf:typegen": "wrangler types"
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.0",
@@ -36,7 +37,8 @@
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
     "unist-util-visit": "^5.0.0",
-    "vaul": "^1.1.2"
+    "vaul": "^1.1.2",
+    "zod": "^4.1.11"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241112.0",
