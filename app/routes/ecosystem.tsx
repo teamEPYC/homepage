@@ -11,7 +11,8 @@ import {
   LogoOpenzeppelin,
   LogoLambdaclass,
   LogoMassa,
-  LogoReilabs
+  LogoReilabs,
+  LogoLigero
 } from "~/components/logo";
 import { PageEcosystem } from "~/pages/ecosystem";
 import type { Partner } from "~/pages/ecosystem";
@@ -71,9 +72,10 @@ const partners: Partner[] = [
   { icon: <LogoLambdaclass />, label: "LambdaClass", size: "large", link: "https://lambdaclass.com/" },
   { icon: <LogoNethermind />, label: "Nethermind", size: "large", link: "https://nethermind.io/" },
   { icon: <LogoOpenzeppelin />, label: "OpenZeppelin", size: "large", link: "https://www.openzeppelin.com/" },
+  { icon: <LogoLigero />, label: "Ligero", size: "large", link: "https://ligero-inc.com/" },
   { icon: <LogoReilabs />, label: "Reilabs", size: "large", link: "https://reilabs.io/" },
   { icon: <LogoMassa />, label: "Massa Labs", size: "large", link: "https://massa.net/" },
-  { icon: <LogoLeo />, label: "Demox Labs", size: "large", link: "https://www.miden.fi/" },
+  // { icon: <LogoLeo />, label: "Demox Labs", size: "large", link: "https://www.miden.fi/" },
 
 ];
 
