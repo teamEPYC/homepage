@@ -1,10 +1,9 @@
-name: Deploy
+name: Deploy Staging
 
 on:
   push:
     branches:
-      - master
-      - main
+      - staging
 
 jobs:
   deploy:
@@ -17,11 +16,11 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build:production
+        run: npm run build:staging
 
       - name: Deploy
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          environment: production
+          environment: staging

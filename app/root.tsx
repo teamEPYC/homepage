@@ -107,7 +107,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       />
       <Navigation />
       <Container className="flex flex-col justify-center items-center">
-        <h1 className="mb-2 font-bold text-lg">{message}</h1>
+        <h1 className="mb-2 font-bold text-28">{message}</h1>
         <p className="text-sm">{details}</p>
         {stack && (
           <pre className="p-4 w-full overflow-x-auto">

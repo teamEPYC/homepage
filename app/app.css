@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -16,9 +17,12 @@
 
 @theme {
   --font-mono: "IBM Plex Mono", monospace;
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+  --font-dm-mono: "Inter", ui-sans-serif, system-ui, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-script: "Biro Script", cursive;
+  --font-dm-mono: "DM Mono", monospace;
+  --height-88: 88px;
+  --text-28: 28px;
 }
 
 * {
@@ -27,7 +31,7 @@
 
 html,
 body {
-  @apply bg-white text-neutral-800 font-mono antialiased;
+  @apply bg-white text-neutral-800 font-dm-mono antialiased;
 
   @media (prefers-color-scheme: dark) {
     color-scheme: dark;
@@ -35,21 +39,12 @@ body {
 }
 
 h1,
-h2 {
-  @apply font-sans;
-}
-
-h2 {
-  @apply font-semibold;
-}
-
-h3 {
-  @apply font-bold;
-}
-
+h2,
+h3,
 h4 {
-  @apply font-medium;
+  @apply font-dm-mono font-medium;
 }
+
 
 :root {
   --radius: 0.625rem;
@@ -59,7 +54,11 @@ h4 {
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.676 0.217 38.802);
+  --primary: #FF5500;
+  --light-gray: #fcfcfcfc;
+  --dark-gray: #D9D9D9;
+  --white-dark: #FAFAFA;
+  --light-gray-md: rgba(126, 126, 126, 0.08);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.97 0 0);
   --secondary-foreground: oklch(0.205 0 0);
@@ -135,7 +134,11 @@ h4 {
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-light-gray: var(--light-gray);
+  --color-light-gray-md: var(--light-gray-md);
+  --color-dark-gray: var(--dark-gray);
   --color-secondary: var(--secondary);
+  --color-white-dark: var(--white-dark);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
@@ -169,10 +172,10 @@ h4 {
     @apply bg-background text-foreground;
   }
   .w-miden {
-    @apply w-full max-w-[800px] mx-auto;
+    @apply w-full max-w-[848px] mx-auto;
   }
   .w-wrapper {
-    @apply w-full max-w-[800px] mx-0;
+    @apply w-full max-w-[848px] mx-0;
   }
 }
 

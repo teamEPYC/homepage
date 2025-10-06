@@ -25,7 +25,7 @@ export function PageEcosystem({
 }) {
   return (
     <Container>
-      <Header>
+      <Header className="[&_h2]:uppercase">
         <h2>Miden Pioneer Program</h2>
         <p>
           The Miden Pioneer Program gives top teams critical support and funding

@@ -1,18 +1,63 @@
 import { getPosts } from "~/lib/posts.server";
 import { PageResources } from "~/pages/resources";
 import type { Route } from "./+types/resources";
+import { buildMeta } from "~/lib/meta";
 
-export function meta() {
-  return [{ title: "Resources – Miden" }];
-}
-
-export function loader() {
+export function loader({ request }: Route.LoaderArgs) {
+  const url = new URL(request.url);
   const posts = getPosts();
 
   return {
     posts,
+    url,
   };
 }
+
+export function meta({ data }: Route.MetaArgs) {
+  const canonical = data.url.origin + data.url.pathname;
+  return buildMeta({
+    title: "Miden Publications",
+    description:
+      "Watch talks, read blog posts, and explore research papers from the Miden team.",
+    url: canonical,
+    image: `${data.url.origin}/images/miden.webp`,
+  });
+}
+
+export const press = [
+  {
+    label: "[Fortune Crypto] Andreessen Horowitz leads $25 million bet on Miden, a former Meta engineer’s privacy blockchain",
+    link: "https://fortune.com/crypto/2025/04/29/miden-a16z-privacy-blockchain-polygon-labs?utm_source=miden&utm_medium=website",
+  },
+  {
+    label: "[The Block] Polygon spin-off Miden raises $25 million in seed funding for privacy-focused blockchain",
+    link: "https://www.theblock.co/post/352342/polygon-miden-funding-blockchainhttps://www.theblock.co/post/352342/polygon-miden-funding-blockchain?utm_source=miden&utm_medium=website",
+  },
+  {
+    label: "[CoinDesk] Polygon spin-off Miden secures $25M to bring speed, privacy to institutional giants",
+    link: "https://www.coindesk.com/tech/2025/04/29/polygon-spin-off-miden-secures-25m-to-bring-speed-privacy-to-institutional-giants?utm_source=miden&utm_medium=website",
+  },
+  {
+    label: "[Decrypt] Miden spins out from Polygon Labs, raises $25M to launch own chain",
+    link: "https://decrypt.co/316869/miden-spins-out-from-polygon-labs-raises-25m-to-launch-own-chain?utm_source=miden&utm_medium=website",
+  },
+  {
+    label: "[The Street] Miden raises $25M after spinning out from Polygon Labs",
+    link: "https://www.thestreet.com/crypto/markets/miden-raises-25m-after-spinning-out-from-polygon-labs?utm_source=miden&utm_medium=website",
+  },
+  {
+    label: "[Cointelegraph] A16z leads $25M funding for Miden blockchain project",
+    link: "https://cointelegraph.com/news/miden-raises-25m-to-scale-zk-blockchain-after-polygon-spinout?utm_source=miden&utm_medium=website",
+  },
+  {
+    label: "[crypto.news] Miden raises $25m to launch ‘Edge Blockchain’ for private, scalable apps",
+    link: "https://crypto.news/miden-raises-25m-to-launch-edge-blockchain-for-private-scalable-apps?utm_source=miden&utm_medium=website",
+  },
+  {
+    label: "[The Defiant] Miden secures $25M seed funding led by a16z, Hack VC, and 1kx for ZK-Rollup on Ethereum",
+    link: "https://thedefiant.io/news/blockchains/miden-secures-25m-seed-funding-led-a16z-hack-vc-1kx-zk-rollup-on-ethereum-01e3c7ae?utm_source=miden&utm_medium=website",
+  },
+];
 
 export const papers = [
   {
@@ -178,5 +223,5 @@ export const talks = [
 export default function RouteResources({
   loaderData: { posts },
 }: Route.ComponentProps) {
-  return <PageResources posts={posts} papers={papers} talks={talks} />;
+  return <PageResources posts={posts} papers={papers} talks={talks} press={press} />;
 }

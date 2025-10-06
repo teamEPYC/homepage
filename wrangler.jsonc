@@ -3,19 +3,31 @@
   "name": "miden",
   "main": "./build/server/index.js",
   "assets": {
-    "directory": "./build/client/"
+    "directory": "./build/client/",
   },
   "compatibility_date": "2024-11-18",
   "observability": {
-    "enabled": true
+    "enabled": true,
   },
   "placement": {
-    "mode": "smart"
+    "mode": "smart",
   },
-  "routes": [
-    {
-      "pattern": "miden.xyz",
-      "custom_domain": true
-    }
-  ]
+  "env": {
+    "production": {
+      "routes": [
+        {
+          "pattern": "miden.xyz",
+          "custom_domain": true,
+        },
+      ],
+    },
+    "staging": {
+      "routes": [
+        {
+          "pattern": "staging.miden.xyz",
+          "custom_domain": true,
+        },
+      ],
+    },
+  },
 }

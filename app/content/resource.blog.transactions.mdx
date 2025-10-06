@@ -1,5 +1,6 @@
 ---
-title: Transaction Model
+title: "Transaction Model"
+description: "Miden, a ZK-optimized rollup that extends Ethereum’s feature set, will complement existing zero-knowledge solutions aiming to become the internet's value layer"
 author: Bobbin Threadbare & Dominik Schmid
 date: 28.04.23
 featured: true
@@ -14,6 +15,7 @@ import Scribble from "../components/scribble";
 Miden, a ZK-optimized rollup that extends Ethereum’s feature set, will complement existing zero-knowledge solutions aiming to become the internet's value layer. This post is the second in a series meant to introduce Miden, the motivations behind its design, and the one-of-a-kind features it offers.
 
 Last month, Miden’s goals and core features were outlined. What follows will focus on the core concepts of Miden:
+
 - Accounts
 - Notes
 - Transactions
@@ -73,12 +75,14 @@ Let’s look at the architecture of how two accounts can swap tokens with a Unis
 ![](/images/public-shared-state.gif)
 
 1. Token swap initiation: Acc1 and Acc2 want to trade on a Uniswap-like contract.
+
 - Tx1 creates Note1 and can be locally executed by Acc1.
 - Tx2 creates Note2 and can be locally executed by Acc2.
 
 2. Uniswap Execution: In Tx3, Uniswap consumes Note1 and Note2 (and all the other notes that are in its inbox) and creates Note3 and Note4 in the same transaction.
-Because Uniswap’s state must be publicly visible, this state change is performed by the Miden operator.
+   Because Uniswap’s state must be publicly visible, this state change is performed by the Miden operator.
 
 3. Token swap finalization: Acc1 and Acc2 now get their swapped tokens back.
+
 - Tx4 consumes Note4 and can again be locally executed by Acc2.
 - Tx5 consumes Note3 and can again be locally executed by Acc1.
