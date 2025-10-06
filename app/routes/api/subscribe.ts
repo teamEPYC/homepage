@@ -4,7 +4,7 @@ import { data } from "react-router";
 
 export async function action({ request, context }: Route.ActionArgs) {
   const env = context.cloudflare.env;
-  const unknownData = await request.json();
+  const unknownData = Object.fromEntries((await request.formData()).entries());
 
   const parseResult = z.object({ email: z.email() }).safeParse(unknownData);
 
