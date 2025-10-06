@@ -29,6 +29,7 @@ export async function action({ request, context }: Route.ActionArgs) {
   }
 
   const requestBody = {
+    updateEnabled: true,
     email,
     listIds: [subscribeListId],
   };
