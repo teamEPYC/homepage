@@ -7,7 +7,7 @@
     "build:staging": "CLOUDFLARE_ENV=staging react-router build && npm run generate-sitemap",
     "deploy:production": "CLOUDFLARE_ENV=production npm run build:production && wrangler deploy",
     "deploy:staging": "CLOUDFLARE_ENV=staging npm run build:staging && wrangler deploy",
-    "dev": "CLOUDFLARE_ENV=dev react-router dev",
+    "dev": "react-router dev",
     "start": "wrangler dev",
     "typecheck": "react-router typegen && tsc -b",
     "lint": "biome lint .",
