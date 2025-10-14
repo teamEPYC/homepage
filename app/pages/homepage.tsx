@@ -17,7 +17,7 @@ export function PageHome({
 }) {
   return (
     <Container className="flex-1 !mb-6">
-      <Header className="[&_h2]:uppercase">
+      <Header>
         <h2>Miden is the Edge Blockchain</h2>
         <p>
           Miden grants applications the power to scale with public and private
@@ -32,15 +32,15 @@ export function PageHome({
           to="/developers"
           className="font-medium text-primary underline underline-offset-2"
         >
-          START BUILDING →
+          Start Building →
         </Link>
       </Header>
 
       <div className="mt-16">
-        <h3 className="font-dm-mono font-semibold text-2xl text-balance uppercase">
+        <h3 className="font-mono font-semibold text-xl text-balance">
           The way blockchains were always meant to work
         </h3>
-        <ol className="flex flex-col gap-4 md:gap-6 mt-6 text-base">
+        <ol className="flex flex-col gap-4 md:gap-6 mt-6 text-sm">
           <li>
             <h4 className="mb-1 font-bold text-primary">It scales</h4>
             <p>
@@ -67,7 +67,7 @@ export function PageHome({
       </div>
 
       <div className="mt-16">
-        <h3 className="font-dm-mono font-semibold text-2xl text-balance uppercase">
+        <h3 className="font-mono font-semibold text-xl text-balance">
           Our investors
         </h3>
         <ul className="gap-4 grid grid-cols-2 md:grid-cols-4 mt-6">

@@ -133,12 +133,12 @@ export function RoadmapModal({
       >
         <div className="p-4 xl:pr-17">
           {category && (
-            <div className="text-[8px] font-medium text-primary uppercase mb-1">
+            <div className="text-[8px] font-medium text-primary mb-1">
               {category}
             </div>
           )}
           
-          <h2 id="modal-title" className="text-base xl:text-xl font-medium text-black uppercase mb-1">
+          <h2 id="modal-title" className="text-sm xl:text-xl font-medium text-black mb-1">
             {title}
           </h2>
           

@@ -183,7 +183,7 @@ export function PageRoadmap() {
                                     <div key={category.id} className="mb-4">
                                         <div className="flex justify-center mb-4">
                                             <div className={`w-full p-4 border !border-black/5 bg-white-dark/80 font-medium`}>
-                                                <h2 className="text-sm font-medium text-primary uppercase tracking-wider text-center">
+                                                <h2 className="text-sm font-medium text-primary tracking-wider text-center">
                                                     {category.title}
                                                 </h2>
                                             </div>
@@ -199,7 +199,7 @@ export function PageRoadmap() {
                                                             <div className="flex items-center justify-center gap-2">
                                                                 
                                                                 <h3 className={`
-                                                                    !font-normal text-sm uppercase tracking-wider text-center
+                                                                    !font-normal text-sm tracking-wider text-center
                                                                     ${activeItem === item.id ? 'text-primary' : 'text-foreground'}
                                                                 `}>
                                                                     <span className={`inline-block relative -top-1 right-1.5 min-w-1 min-h-1 text-black rounded-full flex-shrink-0 ${activeItem === item.id ? 'bg-primary' : 'bg-foreground'
@@ -253,7 +253,7 @@ export function PageRoadmap() {
                                         <div key={category.id} className={`grid grid-cols-5 gap-0 ${activeItem ? 'border-b !border-transparent' : 'border-b !border-black/5'} transition-opacity duration-300 ${activeItem !== null && !shouldShowCategory ? 'opacity-0' : 'opacity-100'
                                             }`}>
                                             <div className={`col-span-1 p-4 flex items-center justify-center min-h-88 ${activeItem ? 'border-r !border-transparent' : 'border-r !border-black/5'}`}>
-                                                <h3 className="font-medium text-sm uppercase tracking-wider text-primary text-center">
+                                                <h3 className="font-medium text-sm tracking-wider text-primary text-center">
                                                     {category.title}
                                                 </h3>
                                             </div>

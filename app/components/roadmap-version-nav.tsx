@@ -85,7 +85,7 @@ export function RoadmapVersionNav({
       </button>
 
       <div className="flex items-center gap-2 px-4 py-2">
-        <span className="font-medium text-base text-primary">{currentVersion}</span>
+        <span className="font-medium text-sm text-primary">{currentVersion}</span>
       </div>
 
       <button
@@ -134,7 +134,7 @@ export function RoadmapVersionNav({
                 aria-label={`Version ${version}`}
               >
                 <div className="text-center">
-                  <h3 className="font-semibold text-sm uppercase tracking-wider">
+                  <h3 className="font-semibold text-sm tracking-wider">
                     {version}
                   </h3>
                 </div>

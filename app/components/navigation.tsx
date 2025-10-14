@@ -42,7 +42,7 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center gap-4 px-6 py-6 md:pr-3 pb-0 md:pl-6 w-miden text-xs">
+    <nav className="flex justify-between items-center gap-4 px-6 py-6 md:pr-3 pb-0 md:pl-6 w-miden text-sm">
       <Link to="/" prefetch="intent" className="m-0">
         <Logo className="h-9 shrink-0" />
       </Link>
@@ -52,7 +52,7 @@ export function Navigation() {
             <NavLink
               to={item.href}
               prefetch="intent"
-              className="px-3 aria-[current='page']:text-primary uppercase"
+              className="px-3 aria-[current='page']:text-primary"
             >
               {item.label}
             </NavLink>
@@ -74,15 +74,15 @@ export function Navigation() {
         <DrawerContent>
           <div className="p-6">
             <DrawerHeader className="mb-4 px-3">
-              <DrawerTitle className="text-lg">
+              <DrawerTitle className="text-sm">
                 <Logo className="w-full h-9 shrink-0" />
               </DrawerTitle>
-              <DrawerDescription className="text-base">
+              <DrawerDescription className="text-sm">
                 Miden is a privacy-preserving blockchain platform that enables
                 safe and scalable transactions.
               </DrawerDescription>
             </DrawerHeader>
-            <ul className="flex flex-col gap-2 pb-6 text-lg">
+            <ul className="flex flex-col gap-2 pb-6 text-sm">
               <li>
                 <NavLink
                   to="/"

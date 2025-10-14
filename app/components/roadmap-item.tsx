@@ -60,7 +60,7 @@ export function RoadmapItem({
           `}
           aria-label={`${title} - ${description}`}
         >
-          <h3 className="font-normal text-xs uppercase tracking-wider">
+          <h3 className="font-normal text-xs tracking-wider">
             {title}
           </h3>
         </button>
