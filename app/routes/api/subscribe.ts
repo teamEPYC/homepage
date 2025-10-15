@@ -1,0 +1,74 @@
+import type { Route } from "./+types/subscribe";
+import { z } from "zod";
+import { data } from "react-router";
+
+export async function action({ request, context }: Route.ActionArgs) {
+  const env = context.cloudflare.env;
+  const unknownData = Object.fromEntries((await request.formData()).entries());
+
+  const parseResult = z.object({ email: z.email() }).safeParse(unknownData);
+
+  if (!parseResult.success) {
+    return Response.json({ error: parseResult.error }, { status: 400 });
+  }
+
+  const { email } = parseResult.data;
+
+  const subscribeListId = parseInt(env.BREVO_SUBSCRIBE_LIST_ID);
+
+  if (Number.isNaN(subscribeListId)) {
+    console.log({
+      msg: "Invalid subscribe list ID",
+      subscribeListId: env.BREVO_SUBSCRIBE_LIST_ID,
+    });
+
+    return Response.json(
+      { error: "Invalid subscribe list ID" },
+      { status: 500 },
+    );
+  }
+
+  const requestBody = {
+    updateEnabled: true,
+    email,
+    listIds: [subscribeListId],
+  };
+
+  console.log(requestBody);
+  try {
+
+    const res = await fetch("https://api.brevo.com/v3/contacts", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        "api-key": env.BREVO_API_KEY,
+      },
+      body: JSON.stringify(requestBody),
+    });
+
+    if (res.status === 204) {
+      await res.body?.cancel();
+      return Response.json({ success: true, data: "Already subscribed" }, { status: 200 });
+    }
+ 
+    console.log(res.status);
+    if (!res.ok) {
+      console.log("Unknown error");
+
+      const error = await res.text();
+      console.log(error);
+      return Response.json({ error: error }, { status: 400 });
+    }
+
+
+    const brevoData = await res.json();
+
+    return Response.json({ success: true, data: brevoData }, { status: 200 });
+
+  } catch (errr) {
+    console.log(errr);
+    return Response.json({ error: JSON.stringify(errr) }, { status: 400 });
+
+  }
+}

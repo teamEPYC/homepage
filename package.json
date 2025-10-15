@@ -11,7 +11,8 @@
     "start": "wrangler dev",
     "typecheck": "react-router typegen && tsc -b",
     "lint": "biome lint .",
-    "generate-sitemap": "tsx scripts/generate-sitemap.ts"
+    "generate-sitemap": "tsx scripts/generate-sitemap.ts",
+    "cf:typegen": "wrangler types"
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.0",
@@ -36,7 +37,8 @@
     "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
     "unist-util-visit": "^5.0.0",
-    "vaul": "^1.1.2"
+    "vaul": "^1.1.2",
+    "zod": "^4.1.11"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20241112.0",
