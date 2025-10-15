@@ -1,4 +1,3 @@
-import { Github, ExternalLink } from "lucide-react";
 import type { SVGProps } from "react";
 import { Link } from "react-router";
 import type { RoadmapItem } from "~/lib/data-roadmap";
@@ -33,10 +32,10 @@ export function RoadmapModal({ item, isOpen, onClose }: RoadmapModalProps) {
             onClick={handleBackdropClick}
         >
             <div className="bg-white rounded max-w-xl w-full max-h-[90vh] overflow-y-auto border !border-black/20">
-                <div className="flex items-center justify-between py-4 px-6 border-b !border-black/20">
+                <div className="flex items-center justify-between flex-wrap gap-2 py-3 md:py-4 px-3 md:px-6 border-b !border-black/20">
                     <div className="flex items-center gap-2">
                         <span className="text-lg font-mono text-black">{'<>'}</span>
-                        <h2 className="text-xl font-semibold text-black">{item.title}</h2>
+                        <h3 className="text-lg md:text-xl font-semibold text-black">{item.title}</h3>
                     </div>
                     <div className="flex items-center gap-3">
                         <span className={`px-2 rounded-[2px] text-10 border  text-black  ${item.status === 'complete'
@@ -52,13 +51,13 @@ export function RoadmapModal({ item, isOpen, onClose }: RoadmapModalProps) {
                 </div>
 
                 {/* Modal Content */}
-                <div className="py-4 px-6">
+                <div className="py-3 md:py-4 px-3 md:px-6">
                     <div className="mb-4">
-                        <h3 className="text-xs font-semibold text-[#8C8C8C] mb-2">DESCRIPTION</h3>
+                        <h4 className="text-xs font-semibold text-[#8C8C8C] mb-2">DESCRIPTION</h4>
                         <p className="text-xs text-black ">{item.description}</p>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-2">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                         <div className="p-2.5 border !border-black/20 rounded bg-light-gray">
                             <h4 className="text-xs !font-normal text-black mb-2">Category</h4>
                             <p className="text-xs text-black font-semibold">{item.category}</p>
@@ -67,7 +66,7 @@ export function RoadmapModal({ item, isOpen, onClose }: RoadmapModalProps) {
                             <h4 className="text-xs !font-normal text-black mb-2">Timeline Phase</h4>
                             <p className="text-xs text-black font-semibold">
                                 {item.phase === 'pre-mainnet' ? 'Pre-Mainnet' :
-                                    item.phase === 'mainnet' ? 'Mainnet' : ''}
+                                    item.phase === 'post-mainnet' ? 'Post-Mainnet' : ''}
                             </p>
                         </div>
                     </div>
@@ -75,7 +74,7 @@ export function RoadmapModal({ item, isOpen, onClose }: RoadmapModalProps) {
 
                     {/* Development Status */}
                     {item.developmentStatus && (
-                        <div className="p-2.5 border !border-black/20 rounded bg-light-gray mt-4">
+                        <div className="p-2.5 border !border-black/20 rounded bg-light-gray mt-2 md:mt-4">
                             <h4 className="text-xs !font-semibold text-black mb-1">
                                 {item.developmentStatus}
                             </h4>
@@ -88,7 +87,7 @@ export function RoadmapModal({ item, isOpen, onClose }: RoadmapModalProps) {
                 </div>
                 {/* GitHub Repository */}
                 {item.githubRepo && (
-                    <Link to={item.githubRepo} target="_blank" className="flex items-center justify-between py-2.5 px-6 border-t !border-black/20">
+                    <Link to={item.githubRepo} target="_blank" className="flex items-center justify-between py-3 px-3 md:px-6 border-t !border-black/20">
                         <div className="flex items-center gap-1">
                             <GithubIcon className="w-5 h-5" />
                             <span className="text-xs text-black font-semibold">Github Repo: <span className="font-normal">View repository</span></span>

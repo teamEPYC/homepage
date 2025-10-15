@@ -34,7 +34,7 @@ export function RoadmapAccordion({
 
         const matchesPhase = phaseFilter === 'all' ||
             (phaseFilter === 'pre-mainnet' && item.phase === 'pre-mainnet') ||
-            (phaseFilter === 'post-mainnet' && (item.phase === 'mainnet'));
+            (phaseFilter === 'post-mainnet' && (item.phase === 'post-mainnet'));
 
         return matchesSearch && matchesPhase;
     });
@@ -44,13 +44,13 @@ export function RoadmapAccordion({
             {/* Accordion Header */}
             <button
                 onClick={() => setIsExpanded(!isExpanded)}
-                className="w-full py-4 px-6 text-left transition-colors cursor-pointer bg-white"
+                className="w-full py-3 px-3 md:py-4 md:px-6 text-left transition-colors cursor-pointer bg-white"
             >
                 <div className="flex items-center justify-between mb-5">
-                    <div className="flex items-center gap-3">
+                    <div className="flex md:items-center gap-1">
                         <span className="text-lg font-mono text-gray-600">{'<>'}</span>
                         <div>
-                            <h3 className="text-xl text-black !font-normal">{category.title}</h3>
+                            <h3 className="text-lg md:text-xl text-black !font-normal">{category.title}</h3>
                         </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -81,16 +81,16 @@ export function RoadmapAccordion({
 
             {/* Accordion Content */}
             {isExpanded && (
-                <div className="px-6 py-4 bg-dark-gray-2">
+                <div className="px-3 md:px-6 py-3 md:py-4 bg-dark-gray-2">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                         {filteredItems.map((item) => (
                             <div
                                 key={item.id}
                                 onClick={() => onItemClick(item)}
-                                className="border !border-black/20 rounded overflow-hidden p-4 cursor-pointer transition-colors bg-white"
+                                className="border !border-black/20 rounded overflow-hidden p-3 md:p-4 cursor-pointer transition-colors bg-white"
                             >
                                 <div className="mb-0">
-                                    <h4 className="text-sm text-black mb-4 !font-normal">{item.title}</h4>
+                                    <h4 className="text-sm text-black mb-3 md:mb-4 !font-normal">{item.title}</h4>
                                     <div className="flex gap-2">
                                         <span
                                             className={`px-6 py-0.5 rounded-full text-10 text-black border !border-black/20  ${item.status === 'complete'
@@ -105,7 +105,7 @@ export function RoadmapAccordion({
                                         </span>
                                         <span className="px-6 py-0.5 rounded-full text-10 text-black bg-white border !border-black/20">
                                             {item.phase === 'pre-mainnet' ? 'Pre-mainnet' :
-                                                item.phase === 'mainnet' ? 'Mainnet' : ''}
+                                                item.phase === 'post-mainnet' ? 'Post-mainnet' : ''}
                                         </span>
                                     </div>
                                 </div>

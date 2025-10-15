@@ -28,7 +28,7 @@ export function PageRoadmap() {
 
             const matchesPhase = phaseFilter === 'all' ||
                 (phaseFilter === 'pre-mainnet' && item.phase === 'pre-mainnet') ||
-                (phaseFilter === 'post-mainnet' && (item.phase === 'mainnet'));
+                (phaseFilter === 'post-mainnet' && (item.phase === 'post-mainnet'));
 
             return matchesSearch && matchesPhase;
         });

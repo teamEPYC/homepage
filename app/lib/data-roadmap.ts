@@ -4,7 +4,7 @@ export type RoadmapItem = {
   description: string;
   category: string;
   status: 'complete' | 'in-progress' | 'not-begun';
-  phase: 'pre-mainnet' | 'mainnet';
+  phase: 'pre-mainnet' | 'post-mainnet';
   developmentStatus?: string;
   developmentNote?: string;
   githubRepo?: string;
@@ -60,7 +60,7 @@ export const roadmapData: RoadmapData = {
           title: "Advanced Optimizations",
           description: "Performance optimizations and advanced compiler features for production deployment.",
           category: "Compiler + Toolchain",
-          status: 'in-progress',
+          status: 'complete',
           phase: 'pre-mainnet',
           developmentStatus: "IN ACTIVE DEVELOPMENT",
           developmentNote: "Currently being developed and tested."
@@ -71,7 +71,7 @@ export const roadmapData: RoadmapData = {
           description: "Full production-ready compiler with all features and comprehensive testing.",
           category: "Compiler + Toolchain",
           status: 'not-begun',
-          phase: 'mainnet'
+          phase: 'post-mainnet'
         },
         {
           id: "midenup-installer",
@@ -132,7 +132,7 @@ export const roadmapData: RoadmapData = {
           description: "Component certification and validation program.",
           category: "Standards and Components",
           status: 'not-begun',
-          phase: 'mainnet'
+          phase: 'post-mainnet'
         }
       ]
     },
@@ -182,7 +182,7 @@ export const roadmapData: RoadmapData = {
           description: "Full mainnet launch with all features and production readiness.",
           category: "Network & Bridging",
           status: 'not-begun',
-          phase: 'mainnet'
+          phase: 'post-mainnet'
         }
       ]
     }

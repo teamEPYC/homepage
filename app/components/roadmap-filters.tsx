@@ -25,12 +25,12 @@ export function RoadmapFilters({
         <div className="mb-8">
             <div className="flex flex-col">
                 <h2 className="text-2xl text-black font-semibold">Miden Development Roadmap</h2>
-                <div className="text-sm font-semibold text-black mt-1">
+                <div className="text-xs font-semibold text-black mt-1">
                     {completedMilestones}/{totalMilestones} milestones completed
                 </div>
             </div>
 
-            <div className="flex gap-2.5 my-8">
+            <div className="flex flex-wrap gap-2.5 my-8">
                 {phases.map((phase) => (
                     <button
                         key={phase.id}

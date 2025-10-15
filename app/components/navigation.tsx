@@ -17,12 +17,12 @@ const items = [
     href: "/testnet",
   },
   {
-    label: "Roadmap",
-    href: "/roadmap",
-  },
-  {
     label: "Publications",
     href: "/publications",
+  },
+  {
+    label: "Roadmap",
+    href: "/roadmap",
   },
   {
     label: "Ecosystem",
