@@ -38,7 +38,7 @@ export default function Newsletter() {
   };
 
   return (
-    <div className="!border-gray-300/60 border-t mt-6 md:mt-16 pt-14 md:pt-0 pb-2 md:border-0">
+    <div className="!border-gray-300/60 border-t mt-6 md:mt-16 md:mb-8 pt-14 md:pt-0 pb-2 md:border-0">
       <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-2 md:gap-6">
         <div className="">
           <p className="!text-black/50">
@@ -48,7 +48,7 @@ export default function Newsletter() {
           </p>
         </div>
         <div className="flex flex-col lg:flex-1 lg:max-w-lg">
-          <form onSubmit={handleSubmit} className="flex flex-row shadow-sm">
+          <form onSubmit={handleSubmit} className="flex flex-row">
             <input
               type="email"
               placeholder="you@email.com"

@@ -85,7 +85,7 @@ export default function Layout({
       <main className="flex flex-col mx-auto md:px-6 w-full min-h-dvh text-sm">
         <Navigation />
         <div className="my-12">
-          <div className="relative gap-6 xl:grid grid-cols-[1fr_848px_1fr] w-full w-miden max-w-[calc(848px+256px+256px) xl:max-w-full font-dm-mono">
+          <div className="relative gap-6 xl:grid grid-cols-[1fr_848px_1fr] w-full w-miden max-w-[calc(848px+256px+256px) xl:max-w-full font-mono">
             <ul className="hidden top-0 sticky xl:flex flex-col ml-auto p-6 w-full max-w-3xs h-fit text-muted-foreground">
               <li>
                 <Link
@@ -111,7 +111,7 @@ export default function Layout({
                     }}
                   >
                     <motion.span
-                      className="block truncate uppercase"
+                      className="block truncate"
                       initial={{ width: 65 }}
                       animate={{ width: isHovering ? 65 : 0 }}
                       transition={{
@@ -136,7 +136,7 @@ export default function Layout({
             </ul>
 
             <div className="px-6 w-full">
-              <div className="[&_span.author]:block prose-h1:m-0 [&_span.author]:mt-1 prose-h2:mt-6 [&_span.author]:mb-3 prose-h2:mb-3 prose-h3:mb-3 prose-h1:first:pt-0 prose-headings:pt-6 [&_span.author]:pb-3 prose-h2:pb-3 prose-h3:pb-3 [&h1>a]:border-b prose-img:w-full max-w-full [&_*]:max-w-[600px] font-dm-mono [&_span.author]:font-mono [&h1>a]:font-mono prose-h1:font-semibold prose-h2:font-semibold prose-h3:font-semibold prose-h4:font-semibold text-sm prose-h4:text-base prose-h3:text-xl prose-h2:text-2xl prose-h1:text-4xl prose-h1:text-balance leading-[170%] prose [&_h1]:uppercase">
+              <div className="[&_span.author]:block prose-h1:m-0 [&_span.author]:mt-1 prose-h2:mt-6 [&_span.author]:mb-3 prose-h2:mb-3 prose-h3:mb-3 prose-h1:first:pt-0 prose-headings:pt-6 [&_span.author]:pb-3 prose-h2:pb-3 prose-h3:pb-3 [&h1>a]:border-b prose-img:w-full max-w-full [&_*]:max-w-[800px] font-mono [&_span.author]:font-mono [&h1>a]:font-mono prose-h1:font-semibold prose-h2:font-semibold prose-h3:font-semibold prose-h4:font-semibold text-sm prose-h4:text-sm prose-h3:text-xl prose-h2:text-2xl prose-h1:text-28 prose-h1:text-balance leading-[170%] prose">
                 <Outlet />
               </div>
             </div>
@@ -145,7 +145,7 @@ export default function Layout({
       </main>
 
       <Container className="my-0 mb-12 text-sm">
-        <h3 className="my-3 my-b font-dm-mono uppercase font-medium">More blogs</h3>
+        <h3 className="my-3 my-b font-mono font-medium">More blogs</h3>
         <ul className="flex flex-col">
           {relatedPosts.map((item) => (
             <li key={item.slug}>
