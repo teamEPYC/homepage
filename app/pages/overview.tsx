@@ -27,7 +27,7 @@ export function PageOverview({
             <NavLink
               to={`/publications/${category}`}
               prefetch="intent"
-              className="aria-[current='page']:font-bold aria-[current='page']:text-neutral-800 uppercase"
+              className="aria-[current='page']:font-bold aria-[current='page']:text-neutral-800"
             >
               {category}
             </NavLink>

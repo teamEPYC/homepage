@@ -3,7 +3,6 @@ import { Link } from "react-router";
 import { Container } from "~/components/container";
 import { IconPaper, IconTalk } from "~/components/icons";
 import { ListItem } from "~/components/list";
-import { IconPress } from "~/components/logo";
 import type { Article } from "~/lib/data";
 
 const LIMIT = 10;
@@ -26,7 +25,7 @@ export function PageResources({
 
   return (
     <div className="relative flex-1 gap-6 xl:grid grid-cols-[1fr_848px_1fr] w-full w-miden max-w-[calc(848px+256px+256px) xl:max-w-full">
-      <ul className="hidden top-0 sticky xl:flex flex-col ml-auto p-6 py-12 w-full max-w-3xs h-fit font-dm-mono text-muted-foreground mt-16">
+      <ul className="hidden top-0 sticky xl:flex flex-col ml-auto p-6 py-12 w-full max-w-3xs h-fit font-mono text-muted-foreground mt-16">
         {[
           { id: "press", label: "Press" },
           { id: "blog", label: "Blog" },
@@ -36,7 +35,7 @@ export function PageResources({
           <li key={heading.id}>
             <Link
               to={`#${heading.id}`}
-              className="block py-1.5 hover:text-black text-balance transition-colors uppercase"
+              className="block py-1.5 hover:text-black text-balance transition-colors"
             >
               {heading.label}
             </Link>
@@ -46,13 +45,11 @@ export function PageResources({
 
       <Container className="flex-1">
 
-        <h1 className="text-28 font-medium uppercase text-black mb-8">PUBLICATIONS</h1>
-
-
+        <h1 className="text-28 font-medium text-black mb-8">Publications</h1>
         {
           press.length > 0 && (
             <div className="mb-6">
-              <h2 id="press" className="mb-4 !font-dm-mono !font-medium text-2xl uppercase">
+              <h2 id="press" className="mb-4 !font-mono !font-medium text-2xl">
                 <a aria-hidden="true" tabIndex={-1} href="#press">
                   <span className="icon icon-link" />
                 </a>
@@ -61,22 +58,30 @@ export function PageResources({
               <ul className="flex flex-col">
                 {press
                   .slice(0, showMorePress ? press.length : LIMIT)
-                  .map((item) => (
-                    <li key={item.label}>
-                      <ListItem
-                        to={item.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <div className="flex justify-center items-center h-5 text-primary">
-                          <IconPress className="size-5" />
-                        </div>
-                        <h4 className="!font-normal text-muted-foreground ">
-                          {item.label}
-                        </h4>
-                      </ListItem>
-                    </li>
-                  ))}
+                  .map((item) => {
+                    const match = item.label.match(/^\[(.*?)\]\s*(.*)$/);
+                    const source = match ? match[1] : "";
+                    const text = match ? match[2] : item.label;
+
+                    return (
+                      <li key={item.label}>
+                        <ListItem
+                          to={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <h4 className="!font-normal text-muted-foreground">
+                            {source && (
+                              <span className="text-primary mr-1.5">
+                                {source}
+                              </span>
+                            )}
+                            {text}
+                          </h4>
+                        </ListItem>
+                      </li>
+                    );
+                  })}
               </ul>
               {press.length > LIMIT && !showMorePress && (
                 <button
@@ -93,7 +98,7 @@ export function PageResources({
 
         {posts.length > 0 && (
           <div className="mb-6">
-            <h2 id="blog" className="mb-4 !font-dm-mono !font-medium text-2xl uppercase">
+            <h2 id="blog" className="mb-4 !font-mono !font-medium text-2xl ">
               <a aria-hidden="true" tabIndex={-1} href="#blog">
                 <span className="icon icon-link" />
               </a>
@@ -131,7 +136,7 @@ export function PageResources({
 
         {talks.length > 0 && (
           <div className="mb-6">
-            <h2 id="talks" className="mb-4 !font-dm-mono !font-medium text-2xl uppercase">
+            <h2 id="talks" className="mb-4 !font-mono !font-medium text-2xl">
               <a aria-hidden="true" tabIndex={-1} href="#talks">
                 <span className="icon icon-link" />
               </a>
@@ -172,7 +177,7 @@ export function PageResources({
 
         {papers.length > 0 && (
           <div className="mb-6">
-            <h2 id="papers" className="mb-4 !font-dm-mono !font-medium text-2xl uppercase">
+            <h2 id="papers" className="mb-4 !font-mono !font-medium text-2xl">
               <a aria-hidden="true" tabIndex={-1} href="#papers">
                 <span className="icon icon-link" />
               </a>

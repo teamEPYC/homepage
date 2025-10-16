@@ -10,7 +10,7 @@ import type { Item as ItemType } from "~/routes/developers";
 export function PageDevelopers({ items }: { items: ItemType[] }) {
   return (
     <Container>
-      <Header className="[&_h2]:uppercase">
+      <Header className="">
         <h2>Why build on Miden?</h2>
         <p>
           Edge execution enables what traditional blockchains can’t provide: an
