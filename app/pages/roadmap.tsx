@@ -17,24 +17,25 @@ export function PageRoadmap() {
     const totalMilestones = allItems.length;
     const completedMilestones = allItems.filter(item => item.status === 'complete').length;
 
-    const filteredCategories = Object.values(roadmapData.items).filter(category => {
-        const categoryMatches = searchTerm === '' ||
-            category.title.toLowerCase().includes(searchTerm.toLowerCase());
-
-        const hasMatchingItems = category.items.some(item => {
+    const filteredCategories = Object.values(roadmapData.items).map(category => {
+        const filteredItems = category.items.filter(item => {
             const matchesSearch = searchTerm === '' ||
                 item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                item.description.toLowerCase().includes(searchTerm.toLowerCase());
+                item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                category.title.toLowerCase().includes(searchTerm.toLowerCase());
 
             const matchesPhase = phaseFilter === 'all' ||
                 (phaseFilter === 'pre-mainnet' && item.phase === 'pre-mainnet') ||
-                (phaseFilter === 'post-mainnet' && (item.phase === 'post-mainnet'));
+                (phaseFilter === 'post-mainnet' && item.phase === 'post-mainnet');
 
             return matchesSearch && matchesPhase;
         });
 
-        return categoryMatches || hasMatchingItems;
-    });
+        return {
+            ...category,
+            items: filteredItems
+        };
+    }).filter(category => category.items.length > 0);
 
     const handleItemClick = (item: RoadmapItem) => {
         setSelectedItem(item);
@@ -64,7 +65,7 @@ export function PageRoadmap() {
                     <div className="space-y-4">
                         {filteredCategories.map((category, index) => (
                             <RoadmapAccordion
-                                key={category.id}
+                                key={`${category.id}-${searchTerm}-${phaseFilter}`}
                                 category={category}
                                 onItemClick={handleItemClick}
                                 searchTerm={searchTerm}

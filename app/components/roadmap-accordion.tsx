@@ -20,24 +20,10 @@ export function RoadmapAccordion({
 
     const [isExpanded, setIsExpanded] = useState(isFirstCategory);
 
-    // Calculate progress
     const totalMilestones = category.items.length;
     const completedMilestones = category.items.filter(item => item.status === 'complete').length;
     const progressPercentage = Math.round((completedMilestones / totalMilestones) * 100);
-
-    // Filter items based on search and phase
-    const filteredItems = category.items.filter(item => {
-        const matchesSearch = searchTerm === '' ||
-            item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            item.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            category.title.toLowerCase().includes(searchTerm.toLowerCase()); 
-
-        const matchesPhase = phaseFilter === 'all' ||
-            (phaseFilter === 'pre-mainnet' && item.phase === 'pre-mainnet') ||
-            (phaseFilter === 'post-mainnet' && (item.phase === 'post-mainnet'));
-
-        return matchesSearch && matchesPhase;
-    });
+    const filteredItems = category.items;
 
     return (
         <div className="border !border-black/20 rounded mb-8">

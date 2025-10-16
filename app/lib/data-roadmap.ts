@@ -73,17 +73,6 @@ export const roadmapData: RoadmapData = {
           status: 'not-begun',
           phase: 'post-mainnet'
         },
-        {
-          id: "midenup-installer",
-          title: "Midenup Installer",
-          description: "This milestone will allow the midenup installer to download instead of being Midendown",
-          category: "Compiler + Toolchain",
-          status: 'in-progress',
-          phase: 'pre-mainnet',
-          developmentStatus: "IN ACTIVE DEVELOPMENT BUT TESTABLE",
-          developmentNote: "Active development is underway. Please check back for updates.",
-          githubRepo: "https://github.com/0xPolygonMiden/midenup",
-        },
       ]
     },
     "standards and components": {
