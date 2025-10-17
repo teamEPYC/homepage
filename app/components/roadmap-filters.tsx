@@ -1,3 +1,5 @@
+import { Header } from "./container";
+
 interface RoadmapFiltersProps {
     searchTerm: string;
     onSearchChange: (term: string) => void;
@@ -24,7 +26,7 @@ export function RoadmapFilters({
     return (
         <div className="mb-8">
             <div className="flex flex-col">
-                <h2 className="text-2xl text-black font-semibold">Miden Development Roadmap</h2>
+                <h2 className="!text-4xl !font-sans !font-semibold text-left">Miden development roadmap</h2>
                 <div className="text-xs font-semibold text-black mt-1">
                     {completedMilestones}/{totalMilestones} milestones completed
                 </div>

@@ -26,7 +26,7 @@ export function PageEcosystem({
   return (
     <Container>
       <Header className="">
-        <h2>Miden Pioneer Program</h2>
+        <h2>Miden Pioneer program</h2>
         <p>
           The Miden Pioneer Program gives top teams critical support and funding
           to build the future of onchain economies.
@@ -60,9 +60,11 @@ export function PageEcosystem({
       </Header>
 
       <div className="mt-16">
-        <h3 className="font-sans font-semibold text-2xl text-balance">
-          Projects
-        </h3>
+        <Header>
+          <h3 className="font-sans font-semibold text-2xl text-balance">
+            Projects
+          </h3>
+        </Header>
         <br></br>
         <Wrapper>
           {items.map((item) => (
@@ -83,9 +85,11 @@ export function PageEcosystem({
       </div>
 
       <div className="mt-16">
-        <h3 className="font-sans font-semibold text-2xl text-balance">
-          Partners
-        </h3>
+        <Header>
+          <h3 className="font-sans font-semibold text-2xl text-balance">
+            Partners
+          </h3>
+        </Header>
         <ul className="gap-4 grid grid-cols-2 md:grid-cols-3 mt-6">
           {partners.map((p) => (
             <li
