@@ -17,6 +17,7 @@ export default [
     route("/home-ibm-serif-roboto-serif", "routes/homeIBMSerifRobotoSerif.tsx"),
     route("/home-supreme-satoshi", "routes/homeSupremeSatoshi.tsx"),
     route("/home-be-open", "routes/homeBeOpen.tsx"),
+    route("/home-bitter-geist", "routes/homeBitterGeist.tsx"),
     route("/testnet", "routes/testnet.tsx"),
     route("/developers", "routes/developers.tsx"),
     route("/roadmap", "routes/roadmap.tsx"),
