@@ -8,7 +8,7 @@ import {
   LogoP2Ventures,
   LogoSymbolicCapital,
 } from "~/components/logo";
-import { PageHomeSatoshiGeist, type Investor } from "~/pages/homepageSatoshiGeist";
+import { PageHomeSatoshiErode, type Investor } from "~/pages/homepageSatoshiErode";
 import { buildMeta } from "~/lib/meta";
 import type { LoaderData } from "~/lib/data";
 
@@ -80,6 +80,6 @@ const items: Investor[] = [
   },
 ];
 
-export default function RouteHomeSatoshiGeist() {
-  return <PageHomeSatoshiGeist items={items} />;
+export default function RouteHomeSatoshiErode() {
+  return <PageHomeSatoshiErode items={items} />;
 }

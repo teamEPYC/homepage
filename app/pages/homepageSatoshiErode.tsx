@@ -10,20 +10,20 @@ export type Investor = {
   link?: string;
 };
 
-export function PageHomePoppinsRaleway({
+export function PageHomeSatoshiErode({
   items,
 }: {
   items: Investor[];
 }) {
   return (
-    <Container className="flex-1 !mb-6" style={{ fontFamily: 'Raleway, ui-sans-serif, system-ui, sans-serif' }}>
+    <Container className="flex-1 !mb-6 font-erode">
       <Header>
-        <h2 className="font-bold text-3xl text-balance" style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif', fontWeight: '600', fontSize: '2.25rem' }}>Miden is the Edge Blockchain</h2>
-        <p style={{ fontSize: '16px !important', fontWeight: '500 !important' }}>
+        <h2 className="font-bold text-3xl text-balance" style={{ fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif', fontWeight: '700', fontSize: '2.25rem' }}>Miden is the Edge Blockchain</h2>
+        <p className="font-erode" style={{ fontSize: '18px !important', fontWeight: '900 !important' }}>
           Miden grants applications the power to scale with public and private
           transactions.
         </p>
-        <p style={{ fontSize: '16px !important', fontWeight: '500 !important' }}>
+        <p className="font-erode" style={{ fontSize: '18px !important', fontWeight: '900 !important' }}>
           By pushing execution and state to the edge, on the client side, Miden
           overcomes the limitations of scalability, privacy and safety that
           hold back traditional blockchains.
@@ -37,27 +37,27 @@ export function PageHomePoppinsRaleway({
       </Header>
 
       <div className="mt-16">
-        <h2 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif', fontWeight: '600', fontSize: '1.625rem' }}>
+        <h2 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif', fontWeight: '700', fontSize: '1.625rem' }}>
           The way blockchains were always meant to work
         </h2>
-        <ol className="flex flex-col gap-4 md:gap-6 mt-6" style={{ fontFamily: 'Raleway, ui-sans-serif, system-ui, sans-serif', fontSize: '16px', fontWeight: '500' }}>
+        <ol className="flex flex-col gap-4 md:gap-6 mt-6 font-erode" style={{ fontSize: '18px' }}>
           <li>
-            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif' }}>It scales</h4>
-            <p style={{ fontSize: '16px !important', fontWeight: '500 !important' }}>
+            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif', fontWeight: '700' }}>It scales</h4>
+            <p className="font-erode" style={{ fontSize: '18px !important', fontWeight: '900 !important' }}>
               Miden allows users to execute and prove their own transactions
               with client-side proving, removing the need for re-execution.
             </p>
           </li>
           <li>
-            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif' }}>It's private</h4>
-            <p style={{ fontSize: '16px !important', fontWeight: '500 !important' }}>
+            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif', fontWeight: '700' }}>It's private</h4>
+            <p className="font-erode" style={{ fontSize: '18px !important', fontWeight: '900 !important' }}>
               With edge execution and self-custodied state control, users keep
               full control of their data and transaction details.
             </p>
           </li>
           <li>
-            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif' }}>It's safe</h4>
-            <p style={{ fontSize: '16px !important', fontWeight: '500 !important' }}>
+            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif', fontWeight: '700' }}>It's safe</h4>
+            <p className="font-erode" style={{ fontSize: '18px !important', fontWeight: '900 !important' }}>
               Miden enables safe smart contract development with Rust and
               built-in account abstraction, while also minimizing attack surface
               with native asset storage for user accounts.
@@ -67,15 +67,15 @@ export function PageHomePoppinsRaleway({
       </div>
 
       <div className="mt-16">
-        <h2 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif', fontWeight: '600', fontSize: '1.625rem' }}>
+        <h3 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif', fontWeight: '700', fontSize: '1.625rem' }}>
           Our investors
-        </h2>
-        <ul className="gap-4 grid grid-cols-2 md:grid-cols-4 mt-6" style={{ fontFamily: 'Raleway, ui-sans-serif, system-ui, sans-serif' }}>
+        </h3>
+        <ul className="gap-4 grid grid-cols-2 md:grid-cols-4 mt-6">
           {items.map((item) => (
             <li
               key={item.label}
               className={cn(
-                "flex items-center justify-center w-full h-24 border",
+                "flex items-center justify-center w-full h-24 border border-neutral-200 bg-white",
                 item.size === "large" && "h-44",
               )}
             >
@@ -84,20 +84,23 @@ export function PageHomePoppinsRaleway({
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-center w-full h-full"
+                  className="flex items-center justify-center w-full h-full p-4"
                   aria-label={item.label}
                   title={item.label}
                 >
-                  {item.icon}
+                  <div className="flex items-center justify-center w-full h-full">
+                    {item.icon}
+                  </div>
                 </a>
               ) : (
-                item.icon
+                <div className="flex items-center justify-center w-full h-full p-4">
+                  {item.icon}
+                </div>
               )}
             </li>
           ))}
         </ul>
       </div>
-
 
       <Newsletter />
     </Container>
