@@ -42,7 +42,7 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="flex justify-between items-center gap-4 px-6 py-6 md:pr-3 pb-0 md:pl-6 w-miden text-sm">
+    <nav className="flex justify-between items-center gap-4 px-6 py-6 md:pr-3 pb-0 md:pl-6 w-miden text-sm font-inter">
       <Link to="/" prefetch="intent" className="m-0">
         <Logo className="h-9 shrink-0" />
       </Link>
@@ -82,7 +82,7 @@ export function Navigation() {
                 safe and scalable transactions.
               </DrawerDescription>
             </DrawerHeader>
-            <ul className="flex flex-col gap-2 pb-6 text-sm">
+            <ul className="flex flex-col gap-2 pb-6 text-sm font-inter">
               <li>
                 <NavLink
                   to="/"
