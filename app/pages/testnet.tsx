@@ -11,7 +11,7 @@ export function PageTestnet({ items }: { items: ItemType[] }) {
   return (
     <Container>
       <Header className="">
-        <h2>Miden Testnet</h2>
+        <h2>Miden testnet</h2>
         <p>
           The current version is testnet v0.11. It is ready for builders to
           experiment with, but some important features (e.g. stable Rust compilation)

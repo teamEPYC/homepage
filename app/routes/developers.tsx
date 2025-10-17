@@ -40,7 +40,7 @@ const items = [
     link: "https://testnet.midenscan.com/",
   },
   {
-    label: "Miden Faucet",
+    label: "Miden faucet",
     description: "Get Miden testnet tokens and start building with Miden.",
     link: "https://faucet.testnet.miden.io/",
   },

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
-import { Container } from "~/components/container";
+import { Container, Header } from "~/components/container";
 import { IconPaper, IconTalk } from "~/components/icons";
 import { ListItem } from "~/components/list";
 import type { Article } from "~/lib/data";
@@ -24,6 +24,7 @@ export function PageResources({
   const [showMorePress, setShowMorePress] = useState(false);
 
   return (
+    
     <div className="relative flex-1 gap-6 xl:grid grid-cols-[1fr_848px_1fr] w-full w-miden max-w-[calc(848px+256px+256px) xl:max-w-full">
       <ul className="hidden top-0 sticky xl:flex flex-col ml-auto p-6 py-12 w-full max-w-3xs h-fit font-mono text-muted-foreground mt-16">
         {[
@@ -44,8 +45,9 @@ export function PageResources({
       </ul>
 
       <Container className="flex-1">
-
-        <h1 className="text-28 font-medium text-black mb-8">Publications</h1>
+      <Header>
+        <h2 className="text-28 font-medium text-black mb-8">Publications</h2>
+      </Header>
         {
           press.length > 0 && (
             <div className="mb-6">

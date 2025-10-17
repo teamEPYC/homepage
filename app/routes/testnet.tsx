@@ -33,7 +33,7 @@ const items = [
     },
   },
   {
-    label: "Miden Faucet",
+    label: "Miden faucet",
     description: "Get Miden testnet tokens and start building  with Miden.",
     link: {
       href: "https://faucet.testnet.miden.io/",
@@ -41,7 +41,7 @@ const items = [
     },
   },
   {
-    label: "Miden Wallet",
+    label: "Miden wallet",
     description: "Install the Miden wallet and experience client-side proving.",
     link: {
       href: "https://chromewebstore.google.com/detail/miden-wallet/ablmompanofnodfdkgchkpmphailefpb",

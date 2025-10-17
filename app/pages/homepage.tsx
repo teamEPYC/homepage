@@ -32,14 +32,16 @@ export function PageHome({
           to="/developers"
           className="font-medium text-primary underline underline-offset-2"
         >
-          Start Building →
+          Start building →
         </Link>
       </Header>
 
       <div className="mt-16">
-        <h3 className="font-mono font-semibold text-xl text-balance">
-          The way blockchains were always meant to work
-        </h3>
+        <Header>
+          <h3 className="font-mono font-medium text-xl text-balance">
+            The way blockchains were always meant to work
+          </h3>
+        </Header>
         <ol className="flex flex-col gap-4 md:gap-6 mt-6 text-sm">
           <li>
             <h4 className="mb-1 font-bold text-primary">It scales</h4>
@@ -67,9 +69,11 @@ export function PageHome({
       </div>
 
       <div className="mt-16">
-        <h3 className="font-mono font-semibold text-xl text-balance">
-          Our investors
-        </h3>
+        <Header>
+          <h3 className="font-mono font-semibold text-xl text-balance">
+            Our investors
+          </h3>
+        </Header>
         <ul className="gap-4 grid grid-cols-2 md:grid-cols-4 mt-6">
           {items.map((item) => (
             <li
