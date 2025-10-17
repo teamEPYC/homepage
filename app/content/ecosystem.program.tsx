@@ -52,7 +52,7 @@ export default function Layout({ loaderData: { data } }: Route.ComponentProps) {
           <ul className="hidden top-0 sticky xl:flex flex-col ml-auto p-6 w-full max-w-3xs h-fit text-muted-foreground">
             <li>
               <Link
-                to="ecosystem"
+                to="/ecosystem"
                 className="flex items-center gap-1 py-1.5 overflow-hidden hover:text-black text-balance transition-colors"
                 onMouseEnter={() => {
                   setIsHovering(true);
@@ -99,7 +99,7 @@ export default function Layout({ loaderData: { data } }: Route.ComponentProps) {
           </ul>
 
           <div className="mb-3 px-6 w-full">
-            <div className="[&_span.author]:block prose-h1:m-0 [&_span.author]:mt-1 prose-h2:mt-6 [&_span.author]:mb-3 prose-h2:mb-3 prose-h3:mb-3 prose-h1:first:pt-0 prose-headings:pt-6 [&_span.author]:pb-3 prose-h2:pb-3 prose-h3:pb-3 [&h1>a]:border-b prose-img:w-full max-w-full [&_*]:max-w-[800px] font-inter [&_span.author]:font-mono [&h1>a]:font-mono prose-h1:font-semibold prose-h2:font-semibold prose-h3:font-semibold prose-h4:font-semibold text-sm prose-h4:text-base prose-h3:text-xl prose-h2:text-2xl prose-h1:text-28 prose-h1:text-4xl prose-h1:text-balance leading-[170%] prose">
+            <div className="[&_span.author]:block prose-h1:m-0 [&_span.author]:mt-1 prose-h2:mt-6 [&_span.author]:mb-3 prose-h2:mb-3 prose-h3:mb-3 prose-h1:first:pt-0 prose-headings:pt-6 [&_span.author]:pb-3 prose-h2:pb-3 prose-h3:pb-3 [&h1>a]:border-b prose-img:w-full max-w-full [&_*]:max-w-[800px] font-inter [&_span.author]:font-mono [&h1>a]:font-mono prose-h1:!font-sans prose-h2:!font-sans prose-h3:!font-sans prose-h4:!font-sans prose-h1:!font-semibold prose-h2:!font-semibold prose-h3:!font-bold prose-h4:!font-semibold text-sm prose-h4:text-base prose-h1:!text-4xl prose-h2:!text-2xl prose-h3:!text-xl prose-h4:!text-lg prose-h1:text-balance leading-[170%] prose">
               <Outlet />
             </div>
           </div>
