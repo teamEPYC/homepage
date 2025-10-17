@@ -18,7 +18,7 @@ export function PageHomeSupremeSatoshi({
   return (
     <Container className="flex-1 !mb-6" style={{ fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif' }}>
       <Header>
-        <h2 className="font-bold text-3xl text-balance" style={{ fontFamily: 'Supreme, ui-sans-serif, system-ui, sans-serif', fontWeight: '700', fontSize: '2.25rem' }}>Miden is the Edge Blockchain</h2>
+        <h2 className="font-bold text-3xl text-balance" style={{ fontFamily: 'Supreme, ui-sans-serif, system-ui, sans-serif !important', fontWeight: '700', fontSize: '2.25rem' }}>Miden is the Edge Blockchain</h2>
         <p style={{ fontSize: '16px !important', fontWeight: '500 !important', fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif !important' }}>
           Miden grants applications the power to scale with public and private
           transactions.
@@ -37,26 +37,26 @@ export function PageHomeSupremeSatoshi({
       </Header>
 
       <div className="mt-16">
-        <h2 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Supreme, ui-sans-serif, system-ui, sans-serif', fontWeight: '700', fontSize: '1.625rem' }}>
+        <h2 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Supreme, ui-sans-serif, system-ui, sans-serif !important', fontWeight: '700', fontSize: '1.625rem' }}>
           The way blockchains were always meant to work
         </h2>
         <ol className="flex flex-col gap-4 md:gap-6 mt-6" style={{ fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif', fontSize: '16px' }}>
           <li>
-            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Supreme, ui-sans-serif, system-ui, sans-serif', fontWeight: '700' }}>It scales</h4>
+            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Supreme, ui-sans-serif, system-ui, sans-serif !important', fontWeight: '700' }}>It scales</h4>
             <p style={{ fontSize: '16px !important', fontWeight: '500 !important', fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif !important' }}>
               Miden allows users to execute and prove their own transactions
               with client-side proving, removing the need for re-execution.
             </p>
           </li>
           <li>
-            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Supreme, ui-sans-serif, system-ui, sans-serif', fontWeight: '700' }}>It's private</h4>
+            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Supreme, ui-sans-serif, system-ui, sans-serif !important', fontWeight: '700' }}>It's private</h4>
             <p style={{ fontSize: '16px !important', fontWeight: '500 !important', fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif !important' }}>
               With edge execution and self-custodied state control, users keep
               full control of their data and transaction details.
             </p>
           </li>
           <li>
-            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Supreme, ui-sans-serif, system-ui, sans-serif', fontWeight: '700' }}>It's safe</h4>
+            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Supreme, ui-sans-serif, system-ui, sans-serif !important', fontWeight: '700' }}>It's safe</h4>
             <p style={{ fontSize: '16px !important', fontWeight: '500 !important', fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif !important' }}>
               Miden enables safe smart contract development with Rust and
               built-in account abstraction, while also minimizing attack surface
@@ -67,7 +67,7 @@ export function PageHomeSupremeSatoshi({
       </div>
 
       <div className="mt-16">
-        <h3 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Supreme, ui-sans-serif, system-ui, sans-serif', fontWeight: '700', fontSize: '1.625rem' }}>
+        <h3 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Supreme, ui-sans-serif, system-ui, sans-serif !important', fontWeight: '700', fontSize: '1.625rem' }}>
           Our investors
         </h3>
         <ul className="gap-4 grid grid-cols-2 md:grid-cols-4 mt-6">
