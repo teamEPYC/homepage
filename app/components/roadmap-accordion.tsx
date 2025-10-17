@@ -18,7 +18,7 @@ export function RoadmapAccordion({
     isFirstCategory
 }: RoadmapAccordionProps) {
 
-    const [isExpanded, setIsExpanded] = useState(isFirstCategory);
+    const [isExpanded, setIsExpanded] = useState(true);
 
     const totalMilestones = category.items.length;
     const completedMilestones = category.items.filter(item => item.status === 'complete').length;
