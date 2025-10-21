@@ -22,156 +22,366 @@ export type RoadmapData = {
 
 export const roadmapData: RoadmapData = {
   items: {
+    // -------------------------------------------------
+    // Compiler & Toolchain
+    // -------------------------------------------------
     "compiler & toolchain": {
       id: "compiler & toolchain",
       title: "Compiler & Toolchain",
       items: [
         {
           id: "midenup-installer",
-          title: "Midenup Installer",
-          description: "This milestone will allow the midenup installer to download instead of being Midendown",
-          category: "Compiler + Toolchain",
-          status: 'complete',
-          phase: 'pre-mainnet',
-          developmentStatus: "IN ACTIVE DEVELOPMENT BUT TESTABLE",
-          developmentNote: "Active development is underway. Please check back for updates.",
-          githubRepo: "https://github.com/0xPolygonMiden/midenup",
+          title: "midenup installer",
+          description:
+            "Installs all components needed to test, run, and interact with Miden programs locally or on the network.",
+          category: "Compiler & Toolchain",
+          status: "complete",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
         },
         {
           id: "full-compiler",
-          title: "Full Compiler",
-          description: "Complete Rust-to-MASM compiler with advanced features and optimizations for production use.",
-          category: "Compiler + Toolchain",
-          status: 'complete',
-          phase: 'pre-mainnet',
-          githubRepo: "https://github.com/0xPolygonMiden/miden",
+          title: "Full compiler",
+          description:
+            "The compiler targets the complete transaction kernel API so builders can write anything allowed by the protocol in Rust.",
+          category: "Compiler & Toolchain",
+          status: "complete",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
         },
         {
           id: "integrated-testing",
-          title: "Integrated Testing",
-          description: "Built-in framework for testing Miden scripts. Improves workflow and code quality.",
-          category: "Compiler + Toolchain",
-          status: 'complete',
-          phase: 'pre-mainnet',
-          githubRepo: "https://github.com/0xPolygonMiden/miden",
+          title: "Integrated testing",
+          description:
+            "A testing framework for Miden programs to streamline development workflow and improve code quality.",
+          category: "Compiler & Toolchain",
+          status: "in-progress",
+          phase: "post-mainnet",
+          githubRepo: "https://github.com/0xMiden"
         },
         {
-          id: "advanced-optimizations",
-          title: "Advanced Optimizations",
-          description: "Performance optimizations and advanced compiler features for production deployment.",
-          category: "Compiler + Toolchain",
-          status: 'complete',
-          phase: 'pre-mainnet',
-          developmentStatus: "IN ACTIVE DEVELOPMENT",
-          developmentNote: "Currently being developed and tested."
+          id: "improved-ergonomics",
+          title: "Improved ergonomics",
+          description:
+            "Improves the Rust compiler and crates to reduce boilerplate and make APIs more intuitive.",
+          category: "Compiler & Toolchain",
+          status: "not-begun",
+          phase: "post-mainnet",
+          githubRepo: "https://github.com/0xMiden"
         },
         {
-          id: "production-ready",
-          title: "Production Ready",
-          description: "Full production-ready compiler with all features and comprehensive testing.",
-          category: "Compiler + Toolchain",
-          status: 'not-begun',
-          phase: 'post-mainnet'
-        },
-      ]
-    },
-    "standards and components": {
-      id: "standards and components",
-      title: "Standards and Components",
-      items: [
-        {
-          id: "core-standards",
-          title: "Core Standards",
-          description: "Establish core standards for Miden components and interoperability.",
-          category: "Standards and Components",
-          status: 'complete',
-          phase: 'pre-mainnet',
-          githubRepo: "https://github.com/0xPolygonMiden/miden",
-        },
-        {
-          id: "component-library",
-          title: "Component Library",
-          description: "Comprehensive library of reusable Miden components and modules.",
-          category: "Standards and Components",
-          status: 'complete',
-          phase: 'pre-mainnet',
-          githubRepo: "https://github.com/0xPolygonMiden/miden",
-        },
-        {
-          id: "interoperability",
-          title: "Interoperability",
-          description: "Standards and tools for cross-platform interoperability.",
-          category: "Standards and Components",
-          status: 'in-progress',
-          phase: 'pre-mainnet',
-          developmentStatus: "IN ACTIVE DEVELOPMENT",
-          developmentNote: "Currently being developed and tested."
-        },
-        {
-          id: "documentation",
-          title: "Documentation",
-          description: "Comprehensive documentation and developer guides.",
-          category: "Standards and Components",
-          status: 'not-begun',
-          phase: 'pre-mainnet'
-        },
-        {
-          id: "certification",
-          title: "Certification Program",
-          description: "Component certification and validation program.",
-          category: "Standards and Components",
-          status: 'not-begun',
-          phase: 'post-mainnet'
+          id: "u256-arithmetic",
+          title: "u256 arithmetic",
+          description:
+            "Adds support for 256-bit arithmetic in the Rust compiler to enable advanced DeFi applications.",
+          category: "Compiler & Toolchain",
+          status: "not-begun",
+          phase: "post-mainnet",
+          githubRepo: "https://github.com/0xMiden"
         }
       ]
     },
+
+    // -------------------------------------------------
+    // Standards & Components
+    // -------------------------------------------------
+    "standards & components": {
+      id: "standards & components",
+      title: "Standards & Components",
+      items: [
+        {
+          id: "private-multisig",
+          title: "Private multisig",
+          description:
+            "A multisig standard for private Miden accounts. Private state management keeps signers in sync and coordinates signing.",
+          category: "Standards & Components",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "fungible-and-non-fungible-standards",
+          title: "Fungible & non-fungible standards",
+          description:
+            "Miden’s ERC-20 and ERC-721 equivalents, enabling private, parallel, and compliant token and NFT transfers.",
+          category: "Standards & Components",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "ecdsa-eddsa-authentication",
+          title: "ECDSA & EdDSA authentication",
+          description:
+            "Transaction authentication via widely used ECDSA and EdDSA signature schemes.",
+          category: "Standards & Components",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        }
+      ]
+    },
+
+    // -------------------------------------------------
+    // Core Protocol
+    // -------------------------------------------------
+    "core protocol": {
+      id: "core protocol",
+      title: "Core Protocol",
+      items: [
+        {
+          id: "named-storage-slots",
+          title: "Named storage slots",
+          description: "Allows storage slots to be referenced by user-defined names.",
+          category: "Core Protocol",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "basic-fees",
+          title: "Basic fees",
+          description:
+            "Processes transaction fees within blocks to ensure proper collection and distribution.",
+          category: "Core Protocol",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "create-public-notes-in-network-transactions",
+          title: "Create public notes in network transactions",
+          description:
+            "Enables network transactions to produce public notes that emit further network notes, allowing automatic chains of execution.",
+          category: "Core Protocol",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "harden-network-tx",
+          title: "Harden network tx",
+          description:
+            "Adds foreign procedure invocation and robust retry mechanisms to improve reliability and user experience.",
+          category: "Core Protocol",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "programmable-assets",
+          title: "Programmable assets",
+          description:
+            "Framework for programmable assets enabling private and compliant transfers, such as stablecoins with custom transfer rules.",
+          category: "Core Protocol",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "note-metadata-refactoring",
+          title: "Note metadata refactoring",
+          description:
+            "Refactors note metadata and tag schemas for improved structure and performance.",
+          category: "Core Protocol",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "batch-and-block-kernel",
+          title: "Batch & block kernel",
+          description:
+            "Implements Miden Assembly kernels to build batches and blocks as executable programs for the VM.",
+          category: "Core Protocol",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "updatable-code",
+          title: "Updatable code",
+          description: "Enables code within Miden accounts to be updated after deployment.",
+          category: "Core Protocol",
+          status: "not-begun",
+          phase: "post-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "updatable-authentication",
+          title: "Updatable authentication",
+          description:
+            "Allows authentication procedures within Miden accounts to be updated securely over time.",
+          category: "Core Protocol",
+          status: "not-begun",
+          phase: "post-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        }
+      ]
+    },
+
+    // -------------------------------------------------
+    // Network & Bridging
+    // -------------------------------------------------
     "network & bridging": {
       id: "network & bridging",
       title: "Network & Bridging",
       items: [
         {
-          id: "testnet-launch",
-          title: "Testnet Launch",
-          description: "Public testnet launch with core network functionality.",
+          id: "private-state-management",
+          title: "Private state management",
+          description:
+            "Manages private account state across multiple signers, ensuring all participants can create valid transactions.",
           category: "Network & Bridging",
-          status: 'complete',
-          phase: 'pre-mainnet',
-          githubRepo: "https://github.com/0xPolygonMiden/miden",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
         },
         {
-          id: "bridge-protocols",
-          title: "Bridge Protocols",
-          description: "Cross-chain bridging protocols and infrastructure.",
+          id: "private-note-transport",
+          title: "Private note transport",
+          description:
+            "Implements a canonical encrypted client-to-client transport for full private note data, since only commitments are stored onchain.",
           category: "Network & Bridging",
-          status: 'complete',
-          phase: 'pre-mainnet',
-          githubRepo: "https://github.com/0xPolygonMiden/miden",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
         },
         {
-          id: "network-optimization",
-          title: "Network Optimization",
-          description: "Performance optimizations and scalability improvements.",
+          id: "agglayer-bridge",
+          title: "Agglayer bridge",
+          description:
+            "Integrates Miden contracts with the Agglayer bridge to support minting and burning of bridged assets.",
           category: "Network & Bridging",
-          status: 'in-progress',
-          phase: 'pre-mainnet',
-          developmentStatus: "IN ACTIVE DEVELOPMENT",
-          developmentNote: "Currently being developed and tested."
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
         },
         {
-          id: "mainnet-preparation",
-          title: "Mainnet Preparation",
-          description: "Final preparations and security audits for mainnet launch.",
+          id: "settling-to-ethereum",
+          title: "Settling to Ethereum",
+          description:
+            "Submits block proofs to the Agglayer for verification and posts results to Ethereum to ensure L2 state validity.",
           category: "Network & Bridging",
-          status: 'not-begun',
-          phase: 'pre-mainnet'
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        }
+      ]
+    },
+
+    // -------------------------------------------------
+    // VM & Crypto
+    // -------------------------------------------------
+    "vm & crypto": {
+      id: "vm & crypto",
+      title: "VM & Crypto",
+      items: [
+        {
+          id: "ecdsa-eddsa-precompiles",
+          title: "ECDSA & EdDSA precompiles",
+          description:
+            "Adds precompiles for ECDSA and EdDSA. The VM routes signatures to a host structure for elliptic-curve operations.",
+          category: "VM & Crypto",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
         },
         {
-          id: "mainnet-launch",
-          title: "Mainnet Launch",
-          description: "Full mainnet launch with all features and production readiness.",
-          category: "Network & Bridging",
-          status: 'not-begun',
-          phase: 'post-mainnet'
+          id: "debugging-improvements",
+          title: "Debugging improvements",
+          description:
+            "Introduces debugging tools and improvements for Miden Assembly and the Rust compiler.",
+          category: "VM & Crypto",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "call-from-syscall",
+          title: "Call from syscall",
+          description:
+            "Enables calls and creation of new contexts from the kernel context, required for programmable assets and rule-based faucets.",
+          category: "VM & Crypto",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "parallel-trace-generation",
+          title: "Parallel trace generation",
+          description:
+            "Parallelizes trace generation to speed up proof creation.",
+          category: "VM & Crypto",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "recursive-verification",
+          title: "Recursive verification",
+          description:
+            "Runs the verifier inside the VM to generate a proof that verifies multiple smaller proofs.",
+          category: "VM & Crypto",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "plonky3-migration",
+          title: "Plonky3 migration",
+          description:
+            "Migrates from Winterfell to the Plonky3 proving library to improve performance and compatibility.",
+          category: "VM & Crypto",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "precompile-proving",
+          title: "Precompile proving",
+          description: "Implements a dedicated VM for precompile proving.",
+          category: "VM & Crypto",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        }
+      ]
+    },
+
+    // -------------------------------------------------
+    // Ecosystem Applications
+    // -------------------------------------------------
+    "ecosystem applications": {
+      id: "ecosystem applications",
+      title: "Ecosystem Applications",
+      items: [
+        {
+          id: "private-asset-management",
+          title: "Private asset management",
+          description: "Enables compliant private payroll and related financial applications.",
+          category: "Ecosystem Applications",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "zoro-dex",
+          title: "Zoro DEX",
+          description: "Implements a dark AMM (automated market maker) on Miden.",
+          category: "Ecosystem Applications",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
+        },
+        {
+          id: "dome",
+          title: "Dome",
+          description: "Ecosystem application under exploration.",
+          category: "Ecosystem Applications",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden"
         }
       ]
     }
