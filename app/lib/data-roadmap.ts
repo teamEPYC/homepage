@@ -31,13 +31,13 @@ export const roadmapData: RoadmapData = {
       items: [
         {
           id: "midenup-installer",
-          title: "midenup installer",
+          title: "Midenup installer",
           description:
             "Installs all components needed to test, run, and interact with Miden programs locally or on the network.",
           category: "Compiler & Toolchain",
           status: "complete",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/midenup"
         },
         {
           id: "full-compiler",
@@ -47,7 +47,17 @@ export const roadmapData: RoadmapData = {
           category: "Compiler & Toolchain",
           status: "complete",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/compiler/issues/304"
+        },
+        {
+          id: "miden-debug",
+          title: "Miden debug",
+          description:
+            "Debugger, Debug Adapter Protocol support, and richer debug info to reconstruct local variables at every program point.",
+          category: "Compiler & Toolchain",
+          status: "in-progress",
+          phase: "pre-mainnet",
+          githubRepo: "https://github.com/0xMiden/miden-debug"
         },
         {
           id: "integrated-testing",
@@ -56,8 +66,7 @@ export const roadmapData: RoadmapData = {
             "A testing framework for Miden programs to streamline development workflow and improve code quality.",
           category: "Compiler & Toolchain",
           status: "in-progress",
-          phase: "post-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          phase: "post-mainnet"
         },
         {
           id: "improved-ergonomics",
@@ -66,8 +75,7 @@ export const roadmapData: RoadmapData = {
             "Improves the Rust compiler and crates to reduce boilerplate and make APIs more intuitive.",
           category: "Compiler & Toolchain",
           status: "not-begun",
-          phase: "post-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          phase: "post-mainnet"
         },
         {
           id: "u256-arithmetic",
@@ -76,8 +84,7 @@ export const roadmapData: RoadmapData = {
             "Adds support for 256-bit arithmetic in the Rust compiler to enable advanced DeFi applications.",
           category: "Compiler & Toolchain",
           status: "not-begun",
-          phase: "post-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          phase: "post-mainnet"
         }
       ]
     },
@@ -97,7 +104,7 @@ export const roadmapData: RoadmapData = {
           category: "Standards & Components",
           status: "in-progress",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/MultiSig"
         },
         {
           id: "fungible-and-non-fungible-standards",
@@ -106,8 +113,7 @@ export const roadmapData: RoadmapData = {
             "Miden’s ERC-20 and ERC-721 equivalents, enabling private, parallel, and compliant token and NFT transfers.",
           category: "Standards & Components",
           status: "in-progress",
-          phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          phase: "pre-mainnet"
         },
         {
           id: "ecdsa-eddsa-authentication",
@@ -116,8 +122,7 @@ export const roadmapData: RoadmapData = {
             "Transaction authentication via widely used ECDSA and EdDSA signature schemes.",
           category: "Standards & Components",
           status: "in-progress",
-          phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          phase: "pre-mainnet"
         }
       ]
     },
@@ -136,7 +141,7 @@ export const roadmapData: RoadmapData = {
           category: "Core Protocol",
           status: "in-progress",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/miden-base/discussions/1394"
         },
         {
           id: "basic-fees",
@@ -146,7 +151,7 @@ export const roadmapData: RoadmapData = {
           category: "Core Protocol",
           status: "in-progress",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/miden-base/issues/1689"
         },
         {
           id: "create-public-notes-in-network-transactions",
@@ -156,7 +161,7 @@ export const roadmapData: RoadmapData = {
           category: "Core Protocol",
           status: "in-progress",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/miden-node/issues/1159"
         },
         {
           id: "harden-network-tx",
@@ -166,7 +171,7 @@ export const roadmapData: RoadmapData = {
           category: "Core Protocol",
           status: "in-progress",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/miden-node/issues/1192"
         },
         {
           id: "programmable-assets",
@@ -176,7 +181,7 @@ export const roadmapData: RoadmapData = {
           category: "Core Protocol",
           status: "in-progress",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/miden-base/discussions/1068"
         },
         {
           id: "note-metadata-refactoring",
@@ -186,7 +191,7 @@ export const roadmapData: RoadmapData = {
           category: "Core Protocol",
           status: "in-progress",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/miden-base/discussions/1449"
         },
         {
           id: "batch-and-block-kernel",
@@ -196,7 +201,7 @@ export const roadmapData: RoadmapData = {
           category: "Core Protocol",
           status: "in-progress",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/miden-base/issues/1122"
         },
         {
           id: "updatable-code",
@@ -205,7 +210,7 @@ export const roadmapData: RoadmapData = {
           category: "Core Protocol",
           status: "not-begun",
           phase: "post-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/miden-base/discussions/1771"
         },
         {
           id: "updatable-authentication",
@@ -214,8 +219,7 @@ export const roadmapData: RoadmapData = {
             "Allows authentication procedures within Miden accounts to be updated securely over time.",
           category: "Core Protocol",
           status: "not-begun",
-          phase: "post-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          phase: "post-mainnet"
         }
       ]
     },
@@ -234,8 +238,7 @@ export const roadmapData: RoadmapData = {
             "Manages private account state across multiple signers, ensuring all participants can create valid transactions.",
           category: "Network & Bridging",
           status: "in-progress",
-          phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          phase: "pre-mainnet"
         },
         {
           id: "private-note-transport",
@@ -245,7 +248,7 @@ export const roadmapData: RoadmapData = {
           category: "Network & Bridging",
           status: "in-progress",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/miden-note-transport"
         },
         {
           id: "agglayer-bridge",
@@ -255,7 +258,7 @@ export const roadmapData: RoadmapData = {
           category: "Network & Bridging",
           status: "in-progress",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/miden-base/discussions/1676"
         },
         {
           id: "settling-to-ethereum",
@@ -264,8 +267,7 @@ export const roadmapData: RoadmapData = {
             "Submits block proofs to the Agglayer for verification and posts results to Ethereum to ensure L2 state validity.",
           category: "Network & Bridging",
           status: "in-progress",
-          phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          phase: "pre-mainnet"
         }
       ]
     },
@@ -285,7 +287,7 @@ export const roadmapData: RoadmapData = {
           category: "VM & Crypto",
           status: "in-progress",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/miden-vm/pull/2277"
         },
         {
           id: "debugging-improvements",
@@ -295,7 +297,7 @@ export const roadmapData: RoadmapData = {
           category: "VM & Crypto",
           status: "in-progress",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/miden-vm/issues/1776"
         },
         {
           id: "call-from-syscall",
@@ -305,7 +307,7 @@ export const roadmapData: RoadmapData = {
           category: "VM & Crypto",
           status: "in-progress",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/miden-vm/issues/1681"
         },
         {
           id: "parallel-trace-generation",
@@ -315,7 +317,7 @@ export const roadmapData: RoadmapData = {
           category: "VM & Crypto",
           status: "in-progress",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/miden-vm/issues/1558"
         },
         {
           id: "recursive-verification",
@@ -324,8 +326,7 @@ export const roadmapData: RoadmapData = {
             "Runs the verifier inside the VM to generate a proof that verifies multiple smaller proofs.",
           category: "VM & Crypto",
           status: "in-progress",
-          phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          phase: "pre-mainnet"
         },
         {
           id: "plonky3-migration",
@@ -335,7 +336,7 @@ export const roadmapData: RoadmapData = {
           category: "VM & Crypto",
           status: "in-progress",
           phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          githubRepo: "https://github.com/0xMiden/miden-vm/tree/zz/migrate-plonky3"
         },
         {
           id: "precompile-proving",
@@ -343,8 +344,7 @@ export const roadmapData: RoadmapData = {
           description: "Implements a dedicated VM for precompile proving.",
           category: "VM & Crypto",
           status: "in-progress",
-          phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          phase: "pre-mainnet"
         }
       ]
     },
@@ -357,22 +357,20 @@ export const roadmapData: RoadmapData = {
       title: "Ecosystem Applications",
       items: [
         {
-          id: "private-asset-management",
-          title: "Private asset management",
+          id: "private-payroll",
+          title: "Private payroll",
           description: "Enables compliant private payroll and related financial applications.",
           category: "Ecosystem Applications",
           status: "in-progress",
-          phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          phase: "pre-mainnet"
         },
         {
-          id: "zoro-dex",
-          title: "Zoro DEX",
+          id: "private-hfamm",
+          title: "Private hfAMM",
           description: "Implements a dark AMM (automated market maker) on Miden.",
           category: "Ecosystem Applications",
           status: "in-progress",
-          phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          phase: "pre-mainnet"
         },
         {
           id: "dome",
@@ -380,8 +378,7 @@ export const roadmapData: RoadmapData = {
           description: "Ecosystem application under exploration.",
           category: "Ecosystem Applications",
           status: "in-progress",
-          phase: "pre-mainnet",
-          githubRepo: "https://github.com/0xMiden"
+          phase: "pre-mainnet"
         }
       ]
     }
