@@ -31,7 +31,7 @@ export const press = [
   },
   {
     label: "[The Block] Polygon spin-off Miden raises $25 million in seed funding for privacy-focused blockchain",
-    link: "https://www.theblock.co/post/352342/polygon-miden-funding-blockchainhttps://www.theblock.co/post/352342/polygon-miden-funding-blockchain?utm_source=miden&utm_medium=website",
+    link: "https://www.theblock.co/post/352342/polygon-miden-funding-blockchain?utm_source=miden&utm_medium=website",
   },
   {
     label: "[CoinDesk] Polygon spin-off Miden secures $25M to bring speed, privacy to institutional giants",
