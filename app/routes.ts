@@ -20,7 +20,7 @@ export default [
     route("/home-bitter-geist", "routes/homeBitterGeist.tsx"),
     route("/testnet", "routes/testnet.tsx"),
     route("/developers", "routes/developers.tsx"),
-    route("/roadmap", "routes/roadmap.tsx"),
+    // route("/roadmap", "routes/roadmap.tsx"),
     route("/ecosystem", "routes/ecosystem.tsx"),
     route("/publications", "routes/resources.tsx"),
     route("/resource/:category", "routes/overview.tsx"),

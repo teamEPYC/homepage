@@ -30,7 +30,7 @@ async function findFilesByPattern(directory: string, pattern: RegExp): Promise<s
 const STATIC_ROUTES = [
   { url: '/', priority: 1.0 },
   { url: '/testnet', priority: 0.8 },
-  { url: '/roadmap', priority: 0.8 },
+  // { url: '/roadmap', priority: 0.8 },
   { url: '/ecosystem', priority: 0.8 },
   { url: '/developers', priority: 0.8 },
   { url: '/about', priority: 0.8 },
