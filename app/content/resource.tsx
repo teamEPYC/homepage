@@ -145,7 +145,7 @@ export default function Layout({
       </main>
 
       <Container className="my-0 mb-12 text-sm">
-        <h3 className="my-3 my-b font-mono font-medium">More blogs</h3>
+        <h3 className="my-3 my-b font-inter font-medium">More blogs</h3>
         <ul className="flex flex-col">
           {relatedPosts.map((item) => (
             <li key={item.slug}>

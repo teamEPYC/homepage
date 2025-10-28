@@ -82,7 +82,7 @@ export function Navigation() {
                 safe and scalable transactions.
               </DrawerDescription>
             </DrawerHeader>
-            <ul className="flex flex-col gap-2 pb-6 text-xs font-mono">
+            <ul className="flex flex-col gap-2 pb-6 text-xs font-inter">
               <li>
                 <NavLink
                   to="/"

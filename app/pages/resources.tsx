@@ -26,7 +26,7 @@ export function PageResources({
   return (
     
     <div className="relative flex-1 gap-6 xl:grid grid-cols-[1fr_848px_1fr] w-full w-miden max-w-[calc(848px+256px+256px) xl:max-w-full">
-      <ul className="hidden top-0 sticky xl:flex flex-col ml-auto p-6 py-12 w-full max-w-3xs h-fit font-mono text-muted-foreground mt-16">
+      <ul className="hidden top-0 sticky xl:flex flex-col ml-auto p-6 py-12 w-full max-w-3xs h-fit font-inter text-muted-foreground mt-16">
         {[
           { id: "press", label: "Press" },
           { id: "blog", label: "Blog" },
@@ -51,7 +51,7 @@ export function PageResources({
         {
           press.length > 0 && (
             <div className="mb-6">
-              <h2 id="press" className="mb-4 !font-mono !font-medium text-2xl">
+              <h2 id="press" className="mb-4 !font-inter !font-medium text-2xl">
                 <a aria-hidden="true" tabIndex={-1} href="#press">
                   <span className="icon icon-link" />
                 </a>
@@ -100,7 +100,7 @@ export function PageResources({
 
         {posts.length > 0 && (
           <div className="mb-6">
-            <h2 id="blog" className="mb-4 !font-mono !font-medium text-2xl ">
+            <h2 id="blog" className="mb-4 !font-inter !font-medium text-2xl ">
               <a aria-hidden="true" tabIndex={-1} href="#blog">
                 <span className="icon icon-link" />
               </a>
@@ -138,7 +138,7 @@ export function PageResources({
 
         {talks.length > 0 && (
           <div className="mb-6">
-            <h2 id="talks" className="mb-4 !font-mono !font-medium text-2xl">
+            <h2 id="talks" className="mb-4 !font-inter !font-medium text-2xl">
               <a aria-hidden="true" tabIndex={-1} href="#talks">
                 <span className="icon icon-link" />
               </a>
@@ -179,7 +179,7 @@ export function PageResources({
 
         {papers.length > 0 && (
           <div className="mb-6">
-            <h2 id="papers" className="mb-4 !font-mono !font-medium text-2xl">
+            <h2 id="papers" className="mb-4 !font-inter !font-medium text-2xl">
               <a aria-hidden="true" tabIndex={-1} href="#papers">
                 <span className="icon icon-link" />
               </a>

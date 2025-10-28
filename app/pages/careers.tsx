@@ -6,7 +6,7 @@ export function PageCareers({ Jobs }: { Jobs: Career[] }) {
   return (
     <>
       <div className="my-12 flex-1">
-        <div className="relative gap-6 px-6 xl:grid grid-cols-[1fr_848px_1fr] w-full w-miden max-w-[calc(848px+256px+256px) xl:max-w-full font-mono">
+        <div className="relative gap-6 px-6 xl:grid grid-cols-[1fr_848px_1fr] w-full w-miden max-w-[calc(848px+256px+256px) xl:max-w-full font-inter">
           <ul className="hidden top-0 sticky xl:flex flex-col ml-auto px-6 w-full max-w-32 h-fit text-muted-foreground">
             <li>
               <Link to="/about" className="block py-1.5 hover:text-primary text-balance transition-colors">
@@ -15,7 +15,7 @@ export function PageCareers({ Jobs }: { Jobs: Career[] }) {
             </li>
           </ul>
           <Container className="!m-0 px-0 xl:px-6">
-            <div className="flex flex-col gap-4 [&_p]:text-black [&_h2]:text-black [&_p]:text-sm [&_h3]:text-xl [&_h2]:text-2xl [&_h2]:text-balance [&_h1]:text-28">
+            <div className="flex flex-col gap-4 [&_p]:text-black [&_h2]:text-black [&_p]:text-sm [&_h3]:text-xl [&_h2]:text-2xl [&_h2]:text-balance [&_h1]:text-28 [&_h1]:font-mono [&_h2]:font-mono [&_h3]:font-mono [&_h4]:font-mono">
               <h1>Careers</h1>
               <p>
                 Miden is the edge blockchain – private by default, scalable, built for real-world builders.
