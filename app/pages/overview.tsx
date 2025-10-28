@@ -20,14 +20,14 @@ export function PageOverview({
       <Container className="flex-none">
         <Header>
           <div className="flex items-center gap-2 text-neutral-500">
-            <NavLink to="/resources" prefetch="intent">
+            <NavLink to="/publications" prefetch="intent">
               Resources
             </NavLink>
             <span>/</span>
             <NavLink
-              to={`/resources/${category}`}
+              to={`/publications/${category}`}
               prefetch="intent"
-              className="aria-[current='page']:font-bold aria-[current='page']:text-neutral-800 uppercase"
+              className="aria-[current='page']:font-bold aria-[current='page']:text-neutral-800"
             >
               {category}
             </NavLink>

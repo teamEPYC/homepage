@@ -10,8 +10,8 @@ import type { Item as ItemType } from "~/routes/developers";
 export function PageDevelopers({ items }: { items: ItemType[] }) {
   return (
     <Container>
-      <Header>
-        <h2>Why Build on Miden?</h2>
+      <Header className="">
+        <h2>Why build on Miden?</h2>
         <p>
           Edge execution enables what traditional blockchains can’t provide: an
           environment to create and deploy scalable applications with private

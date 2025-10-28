@@ -11,6 +11,7 @@ import { getPaper } from "~/lib/papers.server";
 import { getPost, getRelatedPosts } from "~/lib/posts.server";
 import { getTalk } from "~/lib/talks.server";
 import type { Route } from "./+types/resource";
+import { buildMeta } from "~/lib/meta";
 
 export function loader({ request }: Route.LoaderArgs) {
   const url = new URL(request.url);
@@ -54,11 +55,24 @@ export function loader({ request }: Route.LoaderArgs) {
 
   const relatedPosts = getRelatedPosts(data.slug);
 
-  return { data, category, relatedPosts };
+  return {
+    data,
+    category,
+    relatedPosts,
+    url: url,
+  };
 }
 
-export function meta({ data: { data } }: Route.MetaArgs) {
-  return [{ title: `${data.title} – Miden` }];
+export function meta({ data }: Route.MetaArgs) {
+  const { data: article } = data;
+  const canonical = data.url.origin + data.url.pathname;
+
+  return buildMeta({
+    title: article?.title,
+    description: article?.description,
+    url: canonical,
+    image: `${data.url.origin}/images/miden.webp`,
+  });
 }
 
 export default function Layout({
@@ -71,11 +85,11 @@ export default function Layout({
       <main className="flex flex-col mx-auto md:px-6 w-full min-h-dvh text-sm">
         <Navigation />
         <div className="my-12">
-          <div className="relative gap-6 xl:grid grid-cols-[1fr_800px_1fr] w-full w-miden max-w-[calc(800px+256px+256px) xl:max-w-full font-sans">
+          <div className="relative gap-6 xl:grid grid-cols-[1fr_848px_1fr] w-full w-miden max-w-[calc(848px+256px+256px) xl:max-w-full font-inter">
             <ul className="hidden top-0 sticky xl:flex flex-col ml-auto p-6 w-full max-w-3xs h-fit text-muted-foreground">
               <li>
                 <Link
-                  to="/resources"
+                  to="/publications"
                   className="flex items-center gap-1 py-1.5 overflow-hidden hover:text-black text-balance transition-colors"
                   onMouseEnter={() => {
                     setIsHovering(true);
@@ -97,7 +111,7 @@ export default function Layout({
                     }}
                   >
                     <motion.span
-                      className="block truncate uppercase"
+                      className="block truncate"
                       initial={{ width: 65 }}
                       animate={{ width: isHovering ? 65 : 0 }}
                       transition={{
@@ -122,7 +136,7 @@ export default function Layout({
             </ul>
 
             <div className="px-6 w-full">
-              <div className="[&_span.author]:block prose-h1:m-0 [&_span.author]:mt-1 prose-h2:mt-6 [&_span.author]:mb-3 prose-h2:mb-3 prose-h3:mb-3 prose-h1:first:pt-0 prose-headings:pt-6 [&_span.author]:pb-3 prose-h2:pb-3 prose-h3:pb-3 [&h1>a]:border-b prose-img:w-full max-w-full [&_*]:max-w-[600px] font-sans [&_span.author]:font-mono [&h1>a]:font-mono prose-h1:font-semibold prose-h2:font-semibold prose-h3:font-semibold prose-h4:font-semibold text-sm prose-h4:text-base prose-h3:text-xl prose-h2:text-2xl prose-h1:text-4xl prose-h1:text-balance leading-[170%] prose">
+              <div className="[&_span.author]:block prose-h1:m-0 [&_span.author]:mt-1 prose-h2:mt-6 [&_span.author]:mb-3 prose-h2:mb-3 prose-h3:mb-3 prose-h1:first:pt-0 prose-headings:pt-6 [&_span.author]:pb-3 prose-h2:pb-3 prose-h3:pb-3 [&h1>a]:border-b prose-img:w-full max-w-full [&_*]:max-w-[800px] font-inter [&_span.author]:font-mono [&h1>a]:font-mono prose-h1:!font-sans prose-h2:!font-sans prose-h3:!font-sans prose-h4:!font-sans prose-h1:!font-semibold prose-h2:!font-semibold prose-h3:!font-bold prose-h4:!font-semibold text-sm prose-code:text-sm prose-code:font-inter prose-h1:!text-4xl prose-h2:!text-2xl prose-h3:!text-xl prose-h4:!text-lg prose-h1:text-balance leading-[170%] prose">
                 <Outlet />
               </div>
             </div>
@@ -131,7 +145,7 @@ export default function Layout({
       </main>
 
       <Container className="my-0 mb-12 text-sm">
-        <h3 className="my-3 my-b font-sans">More blogs</h3>
+        <h3 className="my-3 my-b font-inter font-medium">More blogs</h3>
         <ul className="flex flex-col">
           {relatedPosts.map((item) => (
             <li key={item.slug}>
@@ -146,7 +160,7 @@ export default function Layout({
         </ul>
         <Link
           prefetch="intent"
-          to="/resources"
+          to="/publications"
           className="block my-3 underline underline-offset-2"
         >
           {">>"} Explore more articles

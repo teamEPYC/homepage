@@ -2,6 +2,7 @@ import type { ReactElement } from "react";
 
 export type Frontmatter = {
   title: string;
+  description: string;
   author: string;
   date: string;
   featured?: boolean;
@@ -28,3 +29,27 @@ export interface MDXModule {
   default: (props: any) => ReactElement;
   headings: Heading[];
 }
+
+export interface CareerMDXModule {
+  frontmatter: CareerFrontmatter;
+  default: (props: any) => ReactElement;
+  headings: Heading[];
+}
+
+export type CareerFrontmatter = {
+  title: string;
+  description: string;
+  department: string;
+  location: string;
+  type: string;
+  slug: string;
+  headings: any[];
+};
+
+export type Career = CareerFrontmatter & {
+  component?: (props: any) => React.ReactElement;
+};
+
+export type LoaderData = {
+  url: URL;
+};

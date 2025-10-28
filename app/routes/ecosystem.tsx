@@ -15,12 +15,28 @@ import {
   LogoLigero
 } from "~/components/logo";
 import { PageEcosystem } from "~/pages/ecosystem";
+import { buildMeta } from "~/lib/meta";
+import type { LoaderData } from "~/lib/data";
 import type { Partner } from "~/pages/ecosystem";
 
 export type Item = (typeof items)[0];
 
-export function meta() {
-  return [{ title: "Ecosystem – Miden" }];
+export function loader({ request }: { request: Request }): LoaderData {
+  const url = new URL(request.url);
+  return {
+    url,
+  };
+}
+
+export function meta({ data }: { data: LoaderData }) {
+  const canonical = data.url.origin + data.url.pathname;
+  return buildMeta({
+    title: "Miden Ecosystem",
+    description:
+      "Explore projects and partners building real-world applications on top of Miden.",
+    url: canonical,
+    image: `${data.url.origin}/images/miden.webp`,
+  });
 }
 
 const items = [

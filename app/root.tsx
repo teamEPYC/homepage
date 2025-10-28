@@ -44,7 +44,7 @@ export const links: Route.LinksFunction = () => [
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth [scrollbar-gutter:stable]">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -107,7 +107,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       />
       <Navigation />
       <Container className="flex flex-col justify-center items-center">
-        <h1 className="mb-2 font-bold text-lg">{message}</h1>
+        <h1 className="mb-2 font-bold text-28">{message}</h1>
         <p className="text-sm">{details}</p>
         {stack && (
           <pre className="p-4 w-full overflow-x-auto">

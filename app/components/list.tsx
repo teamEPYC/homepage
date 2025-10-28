@@ -10,7 +10,7 @@ export function ListItem(props: LinkProps) {
       )}
       {...props}
     >
-      <div className="flex items-center gap-3 truncate">{props.children}</div>
+      <div className="flex items-start md:items-center gap-3">{props.children}</div>
     </Link>
   );
 }
