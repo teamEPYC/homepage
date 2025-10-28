@@ -10,8 +10,6 @@ export default [
   layout("routes/layout.tsx", [
     index("routes/home.tsx"),
     route("/home-geist", "routes/homeGeist.tsx"),
-    route("/home-poppins-raleway", "routes/homePoppinsRaleway.tsx"),
-    route("/home-open-sans-source-sans", "routes/homeOpenSansSourceSans.tsx"),
     route("/testnet", "routes/testnet.tsx"),
     route("/developers", "routes/developers.tsx"),
     // route("/roadmap", "routes/roadmap.tsx"),
