@@ -18,12 +18,12 @@ export function PageHomePoppinsRaleway({
   return (
     <Container className="flex-1 !mb-6" style={{ fontFamily: 'Raleway, ui-sans-serif, system-ui, sans-serif' }}>
       <Header>
-        <h2 className="font-bold text-3xl text-balance" style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif', fontWeight: '600', fontSize: '1.875rem' }}>Miden is the Edge Blockchain</h2>
-        <p style={{ fontSize: '16px !important' }}>
+        <h2 style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif' }}>Miden is the Edge Blockchain</h2>
+        <p>
           Miden grants applications the power to scale with public and private
           transactions.
         </p>
-        <p style={{ fontSize: '16px !important' }}>
+        <p>
           By pushing execution and state to the edge, on the client side, Miden
           overcomes the limitations of scalability, privacy and safety that
           hold back traditional blockchains.
@@ -37,27 +37,27 @@ export function PageHomePoppinsRaleway({
       </Header>
 
       <div className="mt-16">
-        <h2 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif', fontWeight: '600', fontSize: '1.5rem' }}>
+        <h3 className="font-semibold text-xl text-balance" style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif' }}>
           The way blockchains were always meant to work
-        </h2>
-        <ol className="flex flex-col gap-4 md:gap-6 mt-6 text-base" style={{ fontFamily: 'Raleway, ui-sans-serif, system-ui, sans-serif', fontSize: '16px' }}>
+        </h3>
+        <ol className="flex flex-col gap-4 md:gap-6 mt-6 text-sm" style={{ fontFamily: 'Raleway, ui-sans-serif, system-ui, sans-serif' }}>
           <li>
             <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif' }}>It scales</h4>
-            <p style={{ fontSize: '16px !important' }}>
+            <p>
               Miden allows users to execute and prove their own transactions
               with client-side proving, removing the need for re-execution.
             </p>
           </li>
           <li>
             <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif' }}>It's private</h4>
-            <p style={{ fontSize: '16px !important' }}>
+            <p>
               With edge execution and self-custodied state control, users keep
               full control of their data and transaction details.
             </p>
           </li>
           <li>
             <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif' }}>It's safe</h4>
-            <p style={{ fontSize: '16px !important' }}>
+            <p>
               Miden enables safe smart contract development with Rust and
               built-in account abstraction, while also minimizing attack surface
               with native asset storage for user accounts.
@@ -67,9 +67,9 @@ export function PageHomePoppinsRaleway({
       </div>
 
       <div className="mt-16">
-        <h2 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif', fontWeight: '600', fontSize: '1.5rem' }}>
+        <h3 className="font-semibold text-xl text-balance" style={{ fontFamily: 'Poppins, ui-sans-serif, system-ui, sans-serif' }}>
           Our investors
-        </h2>
+        </h3>
         <ul className="gap-4 grid grid-cols-2 md:grid-cols-4 mt-6" style={{ fontFamily: 'Raleway, ui-sans-serif, system-ui, sans-serif' }}>
           {items.map((item) => (
             <li
