@@ -8,25 +8,26 @@ import {
   LogoP2Ventures,
   LogoSymbolicCapital,
 } from "~/components/logo";
-import { PageHomeSatoshiGeist, type Investor } from "~/pages/homepageSatoshiGeist";
+import { PageHomeInterIBMPlexSans, type Investor } from "~/pages/homepageInterIBMPlexSans";
 import { buildMeta } from "~/lib/meta";
 import type { LoaderData } from "~/lib/data";
 
 export function loader({ request }: { request: Request }): LoaderData {
   const url = new URL(request.url);
-
   return {
-    meta: buildMeta({
-      title: "Miden",
-      description:
-        "Miden grants applications the power to scale with public and private transactions.",
-      url,
-    }),
+    url,
   };
 }
 
 export function meta({ data }: { data: LoaderData }) {
-  return data.meta;
+  const canonical = data.url.origin + data.url.pathname;
+  return buildMeta({
+    title: "Miden",
+    description:
+      "The Edge Blockchain for scalable applications with public and private transactions.",
+    url: canonical,
+    image: `${data.url.origin}/images/miden.webp`,
+  });
 }
 
 const items: Investor[] = [
@@ -80,6 +81,6 @@ const items: Investor[] = [
   },
 ];
 
-export default function RouteHomeSatoshiGeist() {
-  return <PageHomeSatoshiGeist items={items} />;
+export default function RouteHomeInterIBMPlexSans() {
+  return <PageHomeInterIBMPlexSans items={items} />;
 }
