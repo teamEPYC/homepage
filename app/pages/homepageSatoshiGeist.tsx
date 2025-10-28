@@ -10,20 +10,20 @@ export type Investor = {
   link?: string;
 };
 
-export function PageHomeIBMSerifRobotoSerif({
+export function PageHomeSatoshiGeist({
   items,
 }: {
   items: Investor[];
 }) {
   return (
-    <Container className="flex-1 !mb-6 font-roboto-serif">
+    <Container className="flex-1 !mb-6" style={{ fontFamily: 'Geist, ui-sans-serif, system-ui, sans-serif' }}>
       <Header>
-        <h2 className="font-bold text-3xl text-balance" style={{ fontFamily: 'IBM Plex Serif, ui-serif, serif', fontWeight: '700', fontSize: '2.25rem' }}>Miden is the Edge Blockchain</h2>
-        <p className="font-roboto-serif" style={{ fontSize: '16px !important', fontWeight: '400 !important' }}>
+        <h2 className="font-bold text-3xl text-balance" style={{ fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif', fontWeight: '700', fontSize: '2.25rem' }}>Miden is the Edge Blockchain</h2>
+        <p style={{ fontSize: '16px !important', fontWeight: 'normal !important', fontFamily: 'Geist, ui-sans-serif, system-ui, sans-serif !important' }}>
           Miden grants applications the power to scale with public and private
           transactions.
         </p>
-        <p className="font-roboto-serif" style={{ fontSize: '16px !important', fontWeight: '400 !important' }}>
+        <p style={{ fontSize: '16px !important', fontWeight: 'normal !important', fontFamily: 'Geist, ui-sans-serif, system-ui, sans-serif !important' }}>
           By pushing execution and state to the edge, on the client side, Miden
           overcomes the limitations of scalability, privacy and safety that
           hold back traditional blockchains.
@@ -37,27 +37,27 @@ export function PageHomeIBMSerifRobotoSerif({
       </Header>
 
       <div className="mt-16">
-        <h2 className="font-bold text-2xl text-balance" style={{ fontFamily: 'IBM Plex Serif, ui-serif, serif', fontWeight: '700', fontSize: '1.625rem' }}>
+        <h2 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif', fontWeight: '700', fontSize: '1.625rem' }}>
           The way blockchains were always meant to work
         </h2>
-        <ol className="flex flex-col gap-4 md:gap-6 mt-6 font-roboto-serif" style={{ fontSize: '16px' }}>
+        <ol className="flex flex-col gap-4 md:gap-6 mt-6" style={{ fontFamily: 'Geist, ui-sans-serif, system-ui, sans-serif', fontSize: '16px' }}>
           <li>
-            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif, ui-serif, serif', fontWeight: '700' }}>It scales</h4>
-            <p className="font-roboto-serif" style={{ fontSize: '16px !important', fontWeight: '400 !important' }}>
+            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif', fontWeight: '700' }}>It scales</h4>
+            <p style={{ fontSize: '16px !important', fontWeight: 'normal !important', fontFamily: 'Geist, ui-sans-serif, system-ui, sans-serif !important' }}>
               Miden allows users to execute and prove their own transactions
               with client-side proving, removing the need for re-execution.
             </p>
           </li>
           <li>
-            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif, ui-serif, serif', fontWeight: '700' }}>It's private</h4>
-            <p className="font-roboto-serif" style={{ fontSize: '16px !important', fontWeight: '400 !important' }}>
+            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif', fontWeight: '700' }}>It's private</h4>
+            <p style={{ fontSize: '16px !important', fontWeight: 'normal !important', fontFamily: 'Geist, ui-sans-serif, system-ui, sans-serif !important' }}>
               With edge execution and self-custodied state control, users keep
               full control of their data and transaction details.
             </p>
           </li>
           <li>
-            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'IBM Plex Serif, ui-serif, serif', fontWeight: '700' }}>It's safe</h4>
-            <p className="font-roboto-serif" style={{ fontSize: '16px !important', fontWeight: '400 !important' }}>
+            <h4 className="mb-1 font-bold text-primary" style={{ fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif', fontWeight: '700' }}>It's safe</h4>
+            <p style={{ fontSize: '16px !important', fontWeight: 'normal !important', fontFamily: 'Geist, ui-sans-serif, system-ui, sans-serif !important' }}>
               Miden enables safe smart contract development with Rust and
               built-in account abstraction, while also minimizing attack surface
               with native asset storage for user accounts.
@@ -67,7 +67,7 @@ export function PageHomeIBMSerifRobotoSerif({
       </div>
 
       <div className="mt-16">
-        <h3 className="font-bold text-2xl text-balance" style={{ fontFamily: 'IBM Plex Serif, ui-serif, serif', fontWeight: '700', fontSize: '1.625rem' }}>
+        <h3 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Satoshi, ui-sans-serif, system-ui, sans-serif', fontWeight: '700', fontSize: '1.625rem' }}>
           Our investors
         </h3>
         <ul className="gap-4 grid grid-cols-2 md:grid-cols-4 mt-6">

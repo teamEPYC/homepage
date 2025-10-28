@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Source+Sans+Pro:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600;700&family=Roboto+Serif:wght@400;500;600;700&family=Lora:wght@400;500;600;700&family=Bitter:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -36,14 +35,6 @@
 }
 
 @font-face {
-  font-family: "Erode";
-  font-weight: 200 900;
-  font-style: normal;
-  font-display: swap;
-  src: url("/fonts/Erode.woff2") format("woff2-variations");
-}
-
-@font-face {
   font-family: "Be Vietnam Pro";
   font-weight: 200 700;
   font-style: normal;
@@ -51,19 +42,10 @@
   src: url("/fonts/BeVietnamPro.woff2") format("woff2-variations");
 }
 
-@font-face {
-  font-family: "Sentient";
-  font-weight: 200 700;
-  font-style: normal;
-  font-display: swap;
-  src: url("/fonts/Sentient.woff2") format("woff2-variations");
-}
-
 @theme {
   --font-mono: "IBM Plex Mono", monospace;
   --font-script: "Biro Script", cursive;
   --font-dm-mono: "DM Mono", monospace;
-  --font-inter: "Inter", sans-serif;
   --font-geist: "Geist", ui-sans-serif, system-ui, sans-serif;
   --font-poppins: "Poppins", ui-sans-serif, system-ui, sans-serif;
   --font-raleway: "Raleway", ui-sans-serif, system-ui, sans-serif;
@@ -71,13 +53,7 @@
   --font-source-sans: "Source Sans Pro", ui-sans-serif, system-ui, sans-serif;
   --font-satoshi: "Satoshi", ui-sans-serif, system-ui, sans-serif;
   --font-supreme: "Supreme", ui-sans-serif, system-ui, sans-serif;
-  --font-erode: "Erode", ui-sans-serif, system-ui, sans-serif;
-  --font-ibm-plex-serif: "IBM Plex Serif", ui-serif, serif;
-  --font-roboto-serif: "Roboto Serif", ui-serif, serif;
   --font-be-vietnam: "Be Vietnam Pro", ui-sans-serif, system-ui, sans-serif;
-  --font-sentient: "Sentient", ui-serif, serif;
-  --font-lora: "Lora", ui-serif, serif;
-  --font-bitter: "Bitter", ui-serif, serif;
   --height-88: 88px;
   --text-10: 10px;
   --text-28: 28px;
