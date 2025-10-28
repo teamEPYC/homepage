@@ -18,7 +18,7 @@ export function PageHomeOpenSansSourceSans({
   return (
     <Container className="flex-1 !mb-6" style={{ fontFamily: 'Source Sans Pro, ui-sans-serif, system-ui, sans-serif' }}>
       <Header>
-        <h2 className="font-bold text-3xl text-balance" style={{ fontFamily: 'Open Sans, ui-sans-serif, system-ui, sans-serif', fontWeight: '600', fontSize: '1.875rem' }}>Miden is the Edge Blockchain</h2>
+        <h2 className="font-bold text-3xl text-balance" style={{ fontFamily: 'Open Sans, ui-sans-serif, system-ui, sans-serif', fontWeight: '700', fontSize: '1.875rem' }}>Miden is the Edge Blockchain</h2>
         <p style={{ fontSize: '16px !important' }}>
           Miden grants applications the power to scale with public and private
           transactions.
@@ -37,7 +37,7 @@ export function PageHomeOpenSansSourceSans({
       </Header>
 
       <div className="mt-16">
-        <h2 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Open Sans, ui-sans-serif, system-ui, sans-serif', fontWeight: '600', fontSize: '1.5rem' }}>
+        <h2 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Open Sans, ui-sans-serif, system-ui, sans-serif', fontWeight: '700', fontSize: '1.5rem' }}>
           The way blockchains were always meant to work
         </h2>
         <ol className="flex flex-col gap-4 md:gap-6 mt-6 text-base" style={{ fontFamily: 'Source Sans Pro, ui-sans-serif, system-ui, sans-serif', fontSize: '16px' }}>
@@ -67,7 +67,7 @@ export function PageHomeOpenSansSourceSans({
       </div>
 
       <div className="mt-16">
-        <h2 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Open Sans, ui-sans-serif, system-ui, sans-serif', fontWeight: '600', fontSize: '1.5rem' }}>
+        <h2 className="font-bold text-2xl text-balance" style={{ fontFamily: 'Open Sans, ui-sans-serif, system-ui, sans-serif', fontWeight: '700', fontSize: '1.5rem' }}>
           Our investors
         </h2>
         <ul className="gap-4 grid grid-cols-2 md:grid-cols-4 mt-6" style={{ fontFamily: 'Source Sans Pro, ui-sans-serif, system-ui, sans-serif' }}>
