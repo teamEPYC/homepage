@@ -12,7 +12,8 @@ import {
   LogoLambdaclass,
   LogoMassa,
   LogoReilabs,
-  LogoLigero
+  LogoLigero,
+  LogoMidenName
 } from "~/components/logo";
 import { PageEcosystem } from "~/pages/ecosystem";
 import { buildMeta } from "~/lib/meta";
@@ -53,12 +54,6 @@ const items = [
     link: "https://zoroswap.com/",
   },
   {
-    icon: <LogoMidenbrowserwallet className="size-6" />,
-    label: "Miden Browser Wallet",
-    description: "In-browser Wallet for Easy Payments",
-    link: "https://midenbrowserwallet.com/",
-  },
-  {
     icon: <LogoLinum className="size-6" />,
     label: "Lumina Engine",
     description: "Institutional-grade Programmable Dark Pool",
@@ -71,16 +66,28 @@ const items = [
     link: "https://github.com/arcane-finance-defi/miden-bridge-mono",
   },
   {
+    icon: <LogoMidenbrowserwallet className="size-6" />,
+    label: "Miden Browser Wallet",
+    description: "In-browser Wallet for Easy Payments",
+    link: "https://midenbrowserwallet.com/",
+  },  
+  {
     icon: <LogoInicio className="size-6" />,
     label: "Inicio Labs",
     description: "Private Multisig Solution",
     link: "https://github.com/0xMiden/MultiSig",
+  },
+  {
+    icon: <LogoMidenName className="size-6" />,
+    label: "Miden Name",
+    description: "Name Service for Miden",
+    link: "https://miden.name/",
   },  
   {
     icon: <LogoWalnut className="size-6" />,
     label: "Walnut",
-    description: "Miden Playground (WIP)",
-    link: "https://github.com/walnuthq/miden-playground",
+    description: "Miden Playground",
+    link: "https://playground.miden.xyz/",
   }, 
 ];
 

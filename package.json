@@ -3,10 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build:production": "CLOUDFLARE_ENV=production react-router build && npm run generate-sitemap",
-    "build:staging": "CLOUDFLARE_ENV=staging react-router build && npm run generate-sitemap",
-    "deploy:production": "CLOUDFLARE_ENV=production npm run build:production && wrangler deploy",
-    "deploy:staging": "CLOUDFLARE_ENV=staging npm run build:staging && wrangler deploy",
+
+    "build:production": "cross-env CLOUDFLARE_ENV=production npm run generate-sitemap && react-router build",
+    "build:staging": "cross-env CLOUDFLARE_ENV=staging npm run generate-sitemap && react-router build",
+    "deploy:production": "cross-env CLOUDFLARE_ENV=production npm run build:production && wrangler deploy",
+    "deploy:staging": "cross-env CLOUDFLARE_ENV=staging npm run build:staging && wrangler deploy",
     "dev": "react-router dev",
     "start": "wrangler dev",
     "typecheck": "react-router typegen && tsc -b",
@@ -51,6 +52,7 @@
     "@types/react": "^19.0.1",
     "@types/react-dom": "^19.0.1",
     "biome": "^0.3.3",
+    "cross-env": "^10.1.0",
     "rehype-pretty-code": "^0.14.1",
     "remark-frontmatter": "^5.0.0",
     "remark-mdx-frontmatter": "^5.0.0",
