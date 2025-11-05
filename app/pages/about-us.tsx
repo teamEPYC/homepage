@@ -8,10 +8,12 @@ export function PageAboutUs() {
             <Header className="text-black [&_p]:text-black">
                 <h2>About</h2>
                 <p>
-                    Miden brings practical privacy to web3, combining high throughput, private transactions, and verifiable computation.
+                    Miden brings practical privacy to web3, combining high throughput, private transactions 
+                    and verifiable computation.
                 </p>
                 <p>
-                    Miden brings practical privacy to web3, combining high throughput, private transactions, and verifiable computation.
+                It’s designed to power the next generation of financial applications that demand both privacy 
+                and compliance.
                 </p>
                 <h3 className="mt-2">The team</h3>
                 <p>
