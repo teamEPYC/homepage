@@ -13,14 +13,14 @@ export function PageDevelopers({ items }: { items: ItemType[] }) {
       <Header className="">
         <h2>Why build on Miden?</h2>
         <p>
-          Edge execution enables what traditional blockchains can’t provide: an
-          environment to create and deploy scalable applications with private
-          and public transactions.
+          Miden lets builders create applications that combine scalability, privacy and compliance, overcoming the limitations of traditional blockchains.
         </p>
         <p>
-          Miden offers the flexibility and safety guarantees needed to build
-          previously impossible products through account abstraction,
-          self-custodied state, and smart contracts written in Rust.
+          With local proving, self-custodied state, and Rust-native contracts, Miden gives builders
+          a flexible, safe canvas for creating applications that weren’t possible before.
+        </p>
+        <p>
+          Explore, test, learn: here are the key resources to get you started.
         </p>
       </Header>
 

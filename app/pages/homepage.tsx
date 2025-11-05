@@ -18,15 +18,13 @@ export function PageHome({
   return (
     <Container className="flex-1 !mb-6">
       <Header>
-        <h2>Miden is the Edge Blockchain</h2>
+        <h2>Practical privacy for the future of finance</h2>
         <p>
-          Miden grants applications the power to scale with public and private
-          transactions.
+          Miden is the programmable privacy network for the next generation of compliant finance applications.
         </p>
         <p>
-          By pushing execution and state to the edge, on the client side, Miden
-          overcomes the limitations of scalability, privacy and safety that
-          hold back traditional blockchains.
+          By moving execution and state offchain, Miden lets applications scale while keeping data private 
+          and secure for real-world financial use.
         </p>
         <Link
           to="/developers"
@@ -47,22 +45,24 @@ export function PageHome({
             <h4 className="mb-1 font-bold text-primary">It scales</h4>
             <p>
               Miden allows users to execute and prove their own transactions
-              with client-side proving, removing the need for re-execution.
+              with client-side proving, and the network only verifies proofs. 
+              No global re-execution, no bottlenecks.
             </p>
           </li>
           <li>
             <h4 className="mb-1 font-bold text-primary">It’s private</h4>
             <p>
-              With edge execution and self-custodied state control, users keep
-              full control of their data and transaction details.
+            Unlike public chains where users’ data and transactions are visible, 
+            Miden gives applications programmable privacy that can be tailored to 
+            any regulatory model.
             </p>
           </li>
           <li>
             <h4 className="mb-1 font-bold text-primary">It’s safe</h4>
             <p>
-              Miden enables safe smart contract development with Rust and
-              built-in account abstraction, while also minimizing attack surface
-              with native asset storage for user accounts.
+            Privacy reduces exposure by limiting what’s ever made public. Combined 
+            with Rust-based contracts and native account abstraction, Miden enables 
+            secure application development.
             </p>
           </li>
         </ol>
