@@ -20,7 +20,7 @@ export function PageHome({
       <Header>
         <h2>Practical privacy for the future of finance</h2>
         <p>
-          Miden is the programmable privacy network for the next generation of compliant finance applications.
+          Miden is the programmable privacy network for the next generation of compliant finance.
         </p>
         <p>
           By moving execution and state offchain, Miden lets applications scale while keeping data private 
