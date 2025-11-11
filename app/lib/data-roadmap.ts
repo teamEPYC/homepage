@@ -29,27 +29,27 @@ export const roadmapData: RoadmapData = {
       features: [
         {
           title: "Private note routing: ",
-          description: "a canonical transport layer for private notes",
+          description: "Canonical transport layer for private notes",
           status: "complete"
         },
         {
           title: "ECDSA signatures: ",
-          description: "signing transactions using ECDSA",
+          description: "Support for signing transactions using ECDSA",
           status: "complete"
         },
         {
           title: "Basic guardrails: ",
-          description: "implement collection and storage of underlying transaction data for transactions",
+          description: "Collection and storage of underlying transaction data",
           status: "complete"
         },
         {
           title: "Address format: ",
-          description: "a new Address format including public keys and interface information",
+          description: "New address format including public keys and interface information",
           status: "complete"
         },
         {
           title: "midenup: ",
-          description: "Miden toolchain installer and project structure",
+          description: "Miden toolchain installer and project scaffolding",
           status: "complete"
         }
       ]
@@ -57,35 +57,35 @@ export const roadmapData: RoadmapData = {
     {
       version: "v0.13",
       releaseState: "upcoming",
-      releaseDate: "12 Jan 2025",
+      releaseDate: "12 Jan 2026",
       features: [
         {
           title: "Separate block building and proving: ",
-          description: "increasing transaction throughput to 500 TPS",
+          description: "Increases transaction throughput to 500 TPS",
+          status: "not-begun"
+        },
+        {
+          title: "User-defined batches: ",
+          description: "Allows atomic transaction chains",
           status: "in-progress"
         },
         {
-          title: "User defined-batches: ",
-          description: "allowing atomic transaction chains",
+          title: "Agglayer bridging: ",
+          description: "Bridge assets to Ethereum and Agglayer chains",
           status: "in-progress"
         },
         {
-          title: "AggLayer bridging: ",
-          description: "bridge assets to Ethereum and AggLayer chains",
-          status: "in-progress"
-        },
-        {
-          title: "Network transaction improvement: ",
+          title: "Network transaction improvements: ",
           description: "Public note creation and oracle calls for network transactions",
           status: "in-progress"
         },
         {
           title: "Full Rust compiler: ",
-          description: "code anything that is allowed in-protocol in Rust",
+          description: "Write any code allowed in-protocol directly in Rust",
           status: "in-progress"
         },
         {
-          title: "Long running clients: ",
+          title: "Long-running clients: ",
           description: "Miden clients can sync automatically and react to predefined events",
           status: "in-progress"
         }
@@ -97,28 +97,28 @@ export const roadmapData: RoadmapData = {
       releaseDate: "Feb 2026",
       features: [
         {
-          title: "Private mutlisig: ",
-          description: "integration of the private state management module for private multisigs",
+          title: "Private multisig: ",
+          description: "Integration of the Private State Management module for private multisigs",
           status: "not-begun"
         },
         {
           title: "Programmable assets: ",
-          description: "build compliant, private stablecoins",
+          description: "Enable creation of compliant, private stablecoins",
           status: "not-begun"
         },
         {
-          title: "AggLayer settlement: ",
-          description: "block proof verification using the AggLayer",
+          title: "Agglayer settlement: ",
+          description: "Block proof verification using the Agglayer",
           status: "not-begun"
         },
         {
           title: "midenup improvements: ",
-          description: "integrated testing and debugging using midenup",
+          description: "Integrated testing and debugging within midenup",
           status: "not-begun"
         },
         {
           title: "Transaction fees: ",
-          description: "exposing transaction fees to users",
+          description: "Expose transaction fees to users",
           status: "not-begun"
         }
       ]
