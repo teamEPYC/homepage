@@ -190,7 +190,7 @@ export const roadmapData: RoadmapData = {
     },
     {
       version: "v0.15",
-      releaseState: "planned",
+      releaseState: "upcoming",
       releaseDate: "late Mar 2026",
       features: [
         {
