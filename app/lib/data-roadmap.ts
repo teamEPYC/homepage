@@ -23,134 +23,115 @@ export type RoadmapData = {
 export const roadmapData: RoadmapData = {
   versions: [
     {
-      version: "v0.9",
+      version: "v0.12",
       releaseState: "released",
-      releaseDate: "May 20, 2025",
-      blogPostUrl: "#",
+      releaseDate: "12 Nov 2025",
       features: [
         {
-          title: "Network accounts:",
-          description: "introduced the concept of network accounts",
+          title: "Private note routing: ",
+          description: "a canonical transport layer for private notes",
           status: "complete"
         },
         {
-          title: "Note execution checker:",
-          description: "implemented ability to check which notes out of a set of",
+          title: "ECDSA signatures: ",
+          description: "signing transactions using ECDSA",
           status: "complete"
         },
         {
-          title: "Network accounts:",
-          description: "introduced the concept of network accounts",
+          title: "Basic guardrails: ",
+          description: "implement collection and storage of underlying transaction data for transactions",
           status: "complete"
         },
         {
-          title: "Note execution checker:",
-          description: "implemented ability to check which notes out of a set of",
+          title: "Address format: ",
+          description: "a new Address format including public keys and interface information",
           status: "complete"
         },
         {
-          title: "Note execution checker:",
-          description: "implemented ability to check which notes out of a set of",
-          status: "complete"
-        },
-        {
-          title: "Note execution checker:",
-          description: "implemented ability to check which notes out of a set of",
+          title: "midenup: ",
+          description: "Miden toolchain installer and project structure",
           status: "complete"
         }
       ]
     },
     {
-      version: "v0.10",
+      version: "v0.13",
       releaseState: "upcoming",
-      releaseDate: "May 20, 2026",
+      releaseDate: "12 Jan 2025",
       features: [
         {
-          title: "Network accounts:",
-          description: "introduced the concept of network accounts",
-          status: "complete"
-        },
-        {
-          title: "Note execution checker:",
-          description: "implemented ability to check which notes out of a set of",
+          title: "Separate block building and proving: ",
+          description: "increasing transaction throughput to 500 TPS",
           status: "in-progress"
         },
         {
-          title: "Network accounts:",
-          description: "introduced the concept of network accounts",
+          title: "User defined-batches: ",
+          description: "allowing atomic transaction chains",
           status: "in-progress"
         },
         {
-          title: "Note execution checker:",
-          description: "implemented ability to check which notes out of a set of",
-          status: "not-begun"
+          title: "AggLayer bridging: ",
+          description: "bridge assets to Ethereum and AggLayer chains",
+          status: "in-progress"
         },
         {
-          title: "Note execution checker:",
-          description: "implemented ability to check which notes out of a set of",
-          status: "not-begun"
+          title: "Network transaction improvement: ",
+          description: "Public note creation and oracle calls for network transactions",
+          status: "in-progress"
         },
         {
-          title: "Note execution checker:",
-          description: "implemented ability to check which notes out of a set of",
-          status: "not-begun"
+          title: "Full Rust compiler: ",
+          description: "code anything that is allowed in-protocol in Rust",
+          status: "in-progress"
+        },
+        {
+          title: "Long running clients: ",
+          description: "Miden clients can sync automatically and react to predefined events",
+          status: "in-progress"
         }
       ]
     },
     {
-      version: "v0.11",
+      version: "v0.14",
       releaseState: "planned",
-      releaseDate: "TBD",
+      releaseDate: "Feb 2026",
       features: [
         {
-          title: "Network accounts:",
-          description: "introduced the concept of network accounts"
+          title: "Private mutlisig: ",
+          description: "integration of the private state management module for private multisigs",
+          status: "not-begun"
         },
         {
-          title: "Note execution checker:",
-          description: "implemented ability to check which notes out of a set of"
+          title: "Programmable assets: ",
+          description: "build compliant, private stablecoins",
+          status: "not-begun"
         },
         {
-          title: "Network accounts:",
-          description: "introduced the concept of network accounts"
+          title: "AggLayer settlement: ",
+          description: "block proof verification using the AggLayer",
+          status: "not-begun"
+        },
+        {
+          title: "midenup improvements: ",
+          description: "integrated testing and debugging using midenup",
+          status: "not-begun"
+        },
+        {
+          title: "Transaction fees: ",
+          description: "exposing transaction fees to users",
+          status: "not-begun"
         }
       ]
     },
     {
-      version: "v0.9",
-      releaseState: "released",
-      releaseDate: "May 20, 2025",
-      blogPostUrl: "#",
+      version: "v0.15",
+      releaseState: "planned",
+      releaseDate: "Mar/Apr 2026",
       features: [
         {
-          title: "Network accounts:",
-          description: "introduced the concept of network accounts",
-          status: "complete"
-        },
-        {
-          title: "Note execution checker:",
-          description: "implemented ability to check which notes out of a set of",
-          status: "complete"
-        },
-        {
-          title: "Network accounts:",
-          description: "introduced the concept of network accounts",
-          status: "complete"
-        },
-        {
-          title: "Note execution checker:",
-          description: "implemented ability to check which notes out of a set of",
-          status: "complete"
-        },
-        {
-          title: "Note execution checker:",
-          description: "implemented ability to check which notes out of a set of",
-          status: "complete"
-        },
-        {
-          title: "Note execution checker:",
-          description: "implemented ability to check which notes out of a set of",
-          status: "complete"
+          title: "Mainnet: ",
+          description: "Mainnet launch",
+          status: "not-begun"
         }
       ]
     }
