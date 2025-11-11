@@ -31,7 +31,7 @@ function getReleaseDateInfo(version: RoadmapVersion) {
 
   if (version.releaseState === "upcoming") {
     return {
-      text: `Set to release on ${version.releaseDate}`,
+      text: `Set to release ${version.releaseDate}`,
       color: "text-blue-2",
     };
   }
