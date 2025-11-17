@@ -20,10 +20,10 @@ const items = [
     label: "Publications",
     href: "/publications",
   },
-  // {
-  //   label: "Roadmap",
-  //   href: "/roadmap",
-  // },
+  {
+    label: "Roadmap",
+    href: "/roadmap",
+  },
   {
     label: "Ecosystem",
     href: "/ecosystem",

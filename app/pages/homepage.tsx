@@ -18,54 +18,54 @@ export function PageHome({
   return (
     <Container className="flex-1 !mb-6">
       <Header>
-        <h2>Miden is the Edge Blockchain</h2>
+        <h2>Practical privacy for the future of finance</h2>
         <p>
-          Miden grants applications the power to scale with public and private
-          transactions.
+          Miden is the programmable privacy network for the next generation of compliant finance.
         </p>
-        <p>
-          By pushing execution and state to the edge, on the client side, Miden
-          overcomes the limitations of scalability, privacy and safety that
-          hold back traditional blockchains.
-        </p>
-        <Link
-          to="/developers"
-          className="font-medium text-primary underline underline-offset-2"
-        >
-          Start building →
-        </Link>
       </Header>
 
       <div className="mt-16">
         <Header>
-          <h3 className="font-mono font-medium text-xl text-balance">
-            The way blockchains were always meant to work
+          <h3 className="font-semibold text-xl text-balance">
+            The power of blockchain, built for business
           </h3>
         </Header>
-        <ol className="flex flex-col gap-4 md:gap-6 mt-6 text-sm">
+
+        <ol className="flex flex-col gap-6 mt-6 text-sm">
           <li>
-            <h4 className="mb-1 font-bold text-primary">It scales</h4>
+            <h4 className="mb-1 font-mono font-bold text-primary">
+              Customizable Privacy
+            </h4>
             <p>
-              Miden allows users to execute and prove their own transactions
-              with client-side proving, removing the need for re-execution.
+              Miden gives builders the choice between public and private transactions, enabling a new class of business applications.
             </p>
           </li>
           <li>
-            <h4 className="mb-1 font-bold text-primary">It’s private</h4>
+            <h4 className="mb-1 font-mono font-bold text-primary">
+              Quantum Secure
+            </h4>
             <p>
-              With edge execution and self-custodied state control, users keep
-              full control of their data and transaction details.
+              Built with post-quantum cryptography, Miden is designed to future-proof your business onchain.
             </p>
           </li>
           <li>
-            <h4 className="mb-1 font-bold text-primary">It’s safe</h4>
+            <h4 className="mb-1 font-mono font-bold text-primary">
+              Regulation Ready
+            </h4>
             <p>
-              Miden enables safe smart contract development with Rust and
-              built-in account abstraction, while also minimizing attack surface
-              with native asset storage for user accounts.
+              With programmable privacy at its core, Miden is ready for a future of regulatory clarity.
             </p>
           </li>
         </ol>
+
+        <div className="mt-8">
+          <Link
+            to="/developers"
+            className="font-medium font-bold text-primary underline underline-offset-2"
+          >
+            START BUILDING →
+          </Link>
+        </div>
       </div>
 
       <div className="mt-16">
