@@ -18,7 +18,7 @@ export function PageCareers({ Jobs }: { Jobs: Career[] }) {
             <div className="flex flex-col gap-4 [&_p]:text-black [&_h2]:text-black [&_p]:text-sm [&_h3]:text-xl [&_h2]:text-2xl [&_h2]:text-balance [&_h1]:text-28 font-mono [&_h1]:!font-sans [&_h2]:!font-sans [&_h3]:!font-sans [&_h4]:!font-sans [&_h1]:!font-semibold [&_h2]:!font-semibold [&_h3]:!font-bold [&_h4]:!font-semibold">
               <h1>Careers</h1>
               <p>
-                Miden is the edge blockchain – private by default, scalable, built for real-world builders.
+                Miden unlocks practical privacy for the future of finance – private by default, scalable, built for real-world builders.
               </p>
               <p>
                 We don’t have active openings right now, but we’re always interested in hearing from exceptional people who want to help build the future of the internet for private finance.

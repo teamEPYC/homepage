@@ -15,7 +15,7 @@ export function meta({ data }: { data: LoaderData }) {
     return buildMeta({
         title: "About Miden",
         description:
-            "Learn about Miden’s mission, technology, and the team building the Edge Blockchain for scalable, privacy-preserving applications.",
+            "Learn about Miden’s mission, technology, and the team building the future of finance with practical privacy.",
         url: canonical,
         image: `${data.url.origin}/images/miden.webp`,
     });

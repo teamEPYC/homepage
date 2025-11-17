@@ -24,7 +24,7 @@ export function meta({ data }: { data: LoaderData }) {
   return buildMeta({
     title: "Miden",
     description:
-      "The Edge Blockchain for scalable applications with public and private transactions.",
+      "Practical privacy for the future of finance.",
     url: canonical,
     image: `${data.url.origin}/images/miden.webp`,
   });
