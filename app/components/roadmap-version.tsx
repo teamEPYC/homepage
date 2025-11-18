@@ -49,22 +49,22 @@ export function RoadmapVersion({ version }: RoadmapVersionProps) {
 
   return (
     <article
-      className="border-b !border-black/10 md:border-b-0 pb-4 md:pb-2 mb-4 md:mb-16 md:flex relative items-center justify-between text-2xl"
+      className="border-b !border-black/10 md:border-b-0 pb-4 md:pb-0 mb-4 md:mb-16 md:flex relative items-start justify-between text-2xl"
       aria-label={`Roadmap version ${version.version}`}
     >
-      <div className="flex-shrink-0 flex-1 md:text-right mb-4 md:mb-0 md:pr-8 lg:pr-0 lg:mr-3">
+      <div className="flex-shrink-0 flex-1 mb-4 md:mb-0 md:pr-8 lg:pr-0 lg:mr-3">
         <h3 className="text-2xl md:text-32 font-bold text-black">
           {version.version}
         </h3>
         <p
-          className={`text-xs md:text-base font-medium ${dateInfo.color}`}
+          className={`text-xs font-medium ${dateInfo.color}`}
           aria-label={`Release date: ${dateInfo.text}`}
         >
           {dateInfo.text}
         </p>
       </div>
 
-      <div className="hidden lg:block w-full max-w-[217px] relative after:absolute after:top-1/2 after:left-0 after:w-full after:h-[1px] after:bg-black/20 after:z-0 after:content-['']">
+      <div className="hidden lg:block w-full max-w-[217px] relative top-4 after:absolute after:top-1/2 after:left-0 after:w-full after:h-[1px] after:bg-black/20 after:z-0 after:content-['']">
         <div
           className="w-8 h-8 bg-primary rounded-[4px] m-auto relative z-[2]"
           aria-hidden="true"
@@ -100,7 +100,7 @@ export function RoadmapVersion({ version }: RoadmapVersionProps) {
             </div>
           )}
 
-          {version.releaseState === "planned" && (
+          {/* {version.releaseState === "planned" && (
             <div className="py-1 px-2 text-center border-t !border-black/20 bg-dark-gray-2">
               <p
                 className="text-xs font-medium text-black"
@@ -109,10 +109,10 @@ export function RoadmapVersion({ version }: RoadmapVersionProps) {
                 Expected Features
               </p>
             </div>
-          )}
+          )} */}
         </div>
 
-        {progress !== null && (
+        {progress !== null && progress > 0 && (
           <div
             className="relative border !border-black/10 bg-dark-gray-2 h-4 w-full"
             role="progressbar"
