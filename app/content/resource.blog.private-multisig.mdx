@@ -1,0 +1,190 @@
+---
+title: "Multisigs, But Private"
+author: Gaylord Warner
+date: 12.11.2025
+featured: true
+---
+
+
+# Multisigs, But Private
+
+![](/images/private_multisig_0.jpg)
+
+How do you share control when no one can see what others are doing?   
+That’s the challenge of building a multi-signature wallet (aka multisig) on Miden, where every account is private by default. 
+
+Multisigs assume visibility. Miden assumes privacy.  
+Bringing the two together forces a rethink of how people coordinate and agree on actions when nothing is public.
+
+The solution is Private State Management (PSM), a system co-developed with OpenZeppelin that makes private multisigs possible. And with a private multisig, builders finally get the missing piece to design complex, multi-user applications that do not expose internal state.
+
+But to understand why that matters in practice, let’s first revisit what multisigs mean in the traditional, transparent setting.
+
+## 1\. Why multisigs matter
+
+Multisig wallets are a key component of onchain asset management.  
+They enable multiple participants to control a shared account and approve actions collectively, which has become the norm for DAOs, funds, and teams managing protocol or treasury assets in general.
+
+On public chains, multisigs have evolved into a core trust primitive.  
+[Safe](https://safe.global/) on Ethereum pioneered the standard for collective control and modular smart accounts, now securing tens of billions in assets.  
+[Squads](https://squads.so/) on Solana extended that model with role-based permissions, spending limits, and formal verification.
+
+<div style={{ textAlign: 'center' }}>
+<br/>
+![](/images/private_multisig_1.jpg)
+
+*Typical multisig flow on public blockchains*
+<br/>
+</div>
+Public multisig flows follow a simple sequence: a transaction is proposed, cosigners sign, and, once a threshold is met, the transaction is executed onchain.
+
+Some other approaches (like [zkSafe](https://zksafe.1kx.io/) from 1kx or even the [Private Multisig v0.1](https://ethresear.ch/t/private-multisig-v0-1/20025) PoC suggested by [Artem Chystiakov](https://x.com/Arvolear/status/1978845928711704818)) explored how zero-knowledge proofs could bring partial privacy to these public models, by hiding signer identities or votes.
+
+But all these systems share one underlying assumption: every signer can see the same onchain state and the same transaction being signed.
+
+That visibility makes coordination simple, but Miden has privacy by default – and that changes everything.
+
+## 2\. How privacy changes the flow
+
+On Miden, execution and state updates are managed locally.  
+Accounts live offchain on the user’s device, and the network only verifies zero-knowledge proofs of correct execution and state updates.
+
+This is where Miden’s privacy comes from – not encryption. Unlike systems where all signers can decrypt a shared private ledger, here each account state is local, making synchronization a coordination problem rather than a cryptographic one.
+
+So we have an architecture that gives users control over their data, but it breaks the assumptions traditional multisigs rely on.
+
+Since signers no longer share a public onchain state, *coordination* becomes harder. A cosigner may not know what the latest account state is, whether another signer has already updated it, or even if the proposed transaction is still relevant.
+
+Without a *synchronization* layer, a single cosigner withholding the canonical state could block the entire group.
+
+Here's how the flow, straightforward for a public multisig, becomes more complex in a privacy-preserving context:
+
+<div style={{ textAlign: 'center' }}>
+![](/images/private_multisig_2.jpg)
+
+*In a private context, coordination and state synchronization become the two hard problems*
+<br/>
+</div>
+
+To make multisigs work in this environment, [Miden and OpenZeppelin are partnering](https://miden.xyz/resource/blog/miden-x-openzeppelin) to co-develop **Private State Management (PSM)**, an offchain system that keeps private accounts consistent and coordinated.
+
+## 3\. How PSM works
+
+PSM defines three architectural layers that interact throughout the transaction cycle:
+
+- a *synchronization* layer that ensures all signers share the latest state  
+- a *coordination* layer that manages proposals and threshold signing  
+- an *authentication* layer that verifies each signer’s authorization policy
+
+To clarify: these layers are part of a single offchain system rather than separate services. But each represents a different responsibility handled by the PSM server during a signing cycle.
+
+<div style={{ textAlign: 'center' }}>
+
+![](/images/private_multisig_3.jpg)
+
+*Overview of the interactions between PSM layers during a 2-of-3 signing flow*
+<br/>
+</div>
+
+The layers aren’t executed one after another. They interact back and forth throughout a single signing cycle. Below is a walkthrough of a typical 2-of-3 flow, matching the diagram above.
+
+1. Initial synchronization: all cosigners confirm they are on the same latest state S(n)  
+2. Enter coordination: one signer (the proposer) submits a transaction P to the PSM for circulation  
+3. Authentication \#1: the first cosigner reviews P and signs locally  
+4. Authentication \#2: the second cosigner reviews P and signs locally, reaching the threshold  
+5. Coordination aggregate: the executor pulls the transaction proposals signed by the cosigners  
+6. Local execution and proof: a lot of things are happening at this step  
+   6.1. The PSM checks the signatures and acknowledges it (essentially adding its signature) – the bundle is then marked as “candidate”  
+   6.2. The executor has all the signatures to be authorized to run P on their local state S(n), and generates a proof for the transition S(n) → S(n+1)  
+   6.3. The executor submits the transaction, resulting in a new state commitment being sent onchain  
+7. Last synchronization step: once the PSM detects that the “candidate” transaction was successfully submitted onchain, it marks it as “canonical” and other cosigners can review both the “candidate” and “canonical” states  
+8. Fin: all cosigners can update to the new canonical state S(n+1)
+
+Through this flow, PSM ensures private accounts can coordinate safely and stay consistent. The next section breaks down the roles of these layers one by one – and if you wanna skip the technical details, [jump to section 5 right away](/resource/blog/private-multisig#5-what-this-enables)\!
+
+## 4\. The PSM layers
+
+### 4.1 Synchronization layer
+
+The synchronization layer keeps all participants aligned on the latest private state. Whenever a new transaction updates an account, a new state delta is produced and shared through the PSM.
+
+The data isn’t published onchain or exposed publicly. It is exchanged privately within the system, and future deployments will include a private mode that hides state data from PSM operators. This makes *PSM-as-a-service* possible while preserving end-to-end privacy.
+
+After the transaction’s signatures are verified onchain, the PSM compares the “candidate” commitment (saved before execution at step 6.a) with the onchain commitment (resulting from the executed proof).  
+If they match, the PSM transitions the account from “candidate” to “canonical.” If not, a challenge flow is triggered to discard the invalid state (not covered here in the article). This keeps everyone synchronized to the same verified state before the next transaction cycle begins.
+
+You can think of this last step as achieving *proof of sharing*: it guarantees that each participant, or at least a quorum, has received the new state before it is finalized.  
+It acts as a *state guardian* whose role is to confirm distribution and liveness across cosigners.
+
+Note that the way this *state guardian* is implemented is technically not the only possible solution to achieve *proof of sharing*: a purely peer-to-peer model would also be possible. But it would require all participants to be online simultaneously. That drastically limits usability (aka, bad UX), and that is why the *state guardian* implementation was preferred.
+
+### 4.2 Coordination layer
+
+The coordination layer manages the exchange of transaction proposals and signatures between cosigners. It ensures that everyone signs against the same payload and that threshold conditions are met before submitting the transaction onchain.
+
+In practice, this happens offchain through the PSM server, which acts as the canonical transport layer. This logic is sometimes described as a *coordinator* by the teams internally – a lightweight relay that gathers signatures and verifies completeness.
+
+In the 2-of-3 example from earlier, the *coordinator* logic circulates a proposal (step 2), and gathers two matching signatures which marks the transaction as ready for execution (step 5).
+
+This is the offchain equivalent of the transaction queue used by public multisig contracts: instead of signers submitting their approvals onchain, they do it privately through the PSM server until the threshold is reached.
+
+### 4.3 Authentication layer
+
+Every account on Miden includes an authentication component that enforces its signature policy. It defines which keys can authorize transactions – and, in the case of our multisig, how many are required.
+
+During transaction execution, it validates all signatures before the proof is generated, ensuring the threshold is enforced as defined in the account policy.
+
+So authentication essentially occurs in different ways at different steps of the flow. To be more concrete, we can look back at the 2-of-3 example from section 3 again:
+
+In steps 3 and 4, the authentication layer’s role is to validate each cosigner’s signature against the current state commitment and transaction payload.
+
+In step 6, authentication runs again during local execution – this time inside the proving context – ensuring the threshold policy defined in the account is enforced before any state change is proven.  
+To be more precise about what’s happening under the hood: the component verifies each signature against the computed TransactionSummary (i.e. state deltas) and threshold value, preventing replay and allowing out-of-order execution. At this stage, it also verifies the PSM’s signature, which essentially acts as an additional cosigner of the multisig.  
+This step guarantees that the PSM has acknowledged the new account state (i.e. marked it as “candidate”) before it becomes “canonical.”
+
+## 5\. What this enables
+
+Private multisigs on Miden let teams coordinate securely in a private environment, without sacrificing liveness or flexibility.
+
+What does that look like in practice? Concretely, private multisigs support:
+
+- Programmable thresholds (for example, 3-of-5 for deposits and 4-of-5 for withdrawals)  
+- Multi-device control (hot and cold keys, or team setups)  
+- Continuous availability even if one signer is offline  
+- Compatibility with privacy-preserving applications built on Miden  
+- Backups for solo accounts – to recover an account state in case it is lost
+
+In payroll systems, private multisigs allow multiple cofounders, HR or finance approvers to authorize payments without exposing salaries or recipient data on a transparent ledger.
+
+In OTC trading, it enables shared control over settlement wallets between counterparties or custodians while keeping trade details confidential.
+
+For fund management, it allows portfolio teams or trustees to coordinate investments privately, also opening the door to verifiable control and auditability through proofs rather than public balances.
+
+These are just some examples showing how private multisigs can extend well beyond DAOs’ governance wallets, into real financial coordination that preserves both control and confidentiality.
+
+## 6\. Try now & conclusion
+
+[Safe](https://safe.global/) standardized shared control on Ethereum. [Squads](https://squads.so/) refined it for Solana’s performance layer. At a smaller scale, projects like [zkSafe](https://zksafe.1kx.io/) explored privacy within transparent systems.
+
+With private multisigs on Miden, we go a step further, making privacy the default and redefining how coordination works when no one can see the data.
+
+You can now explore an early public proof-of-concept of the Miden multisig at [multisig.miden.xyz](https://multisig.miden.xyz/login).  
+At the time of writing, it's a minimal, non-private version meant to demonstrate the workflow and UX while PSM is under active development by OpenZeppelin and Miden teams.  
+<div style={{ textAlign: 'center' }}>
+
+![](/images/private_multisig_4.jpg)
+*Initial step – Create or load a multisig account*
+<br/>
+</div>
+
+<div style={{ textAlign: 'center' }}>
+
+![](/images/private_multisig_5.jpg)
+*Dashboard – Review transactions and pending actions*
+<br/>
+</div>
+
+Miden’s private multisig is a foundational building block for the next generation of applications combining privacy, compliance, and control.  
+If that’s the kind of future you want to help shape, check out our [Pioneer program](https://miden.xyz/ecosystem/program/pioneers) – applications are open\!
+<br/>
+*Special thanks to Marcos Carlomagno (OpenZeppelin) for patiently walking through the technical details and helping refine key sections, and to Ben Schiller, Alexander Lee, Dominik Schmid and Marti Górny for their thoughtful feedback and sharp edits.*

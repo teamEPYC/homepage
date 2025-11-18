@@ -13,7 +13,7 @@ export function meta({ data }: Route.MetaArgs) {
   const canonical = data.url.origin + data.url.pathname;
   return buildMeta({
     title: "Miden Careers",
-    description: "Check our open roles and join the Miden team to help shape the future of the Edge Blockchain.",
+    description: "Check our open roles and join the Miden team to help shape the future of finance with practical privacy.",
     url: canonical,
     image: `${data.url.origin}/images/miden.webp`,
   });

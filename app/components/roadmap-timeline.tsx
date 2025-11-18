@@ -15,9 +15,9 @@ export function RoadmapTimeline({ versions }: RoadmapTimelineProps) {
   }
 
   return (
-    <div className="relative max-w-[977px] m-auto md:pt-5" role="list" aria-label="Miden development roadmap timeline">
+    <div className="relative max-w-[841px]" role="list" aria-label="Miden development roadmap timeline">
       <div
-        className="hidden lg:block absolute top-0 bottom-0 w-[1px] bg-black/20 left-[49.2%]"
+        className="hidden lg:block absolute top-4 bottom-0 w-[1px] bg-black/20 left-[38%]"
         aria-hidden="true"
       />
 
