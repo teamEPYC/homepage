@@ -64,7 +64,7 @@ export function RoadmapVersion({ version }: RoadmapVersionProps) {
         </p>
       </div>
 
-      <div className="hidden lg:block w-full max-w-[217px] relative top-4 after:absolute after:top-1/2 after:left-0 after:w-full after:h-[1px] after:bg-black/20 after:z-0 after:content-['']">
+      <div className="hidden lg:block w-full max-w-[180px] relative top-4 after:absolute after:top-1/2 after:left-0 after:w-full after:h-[1px] after:bg-black/20 after:z-0 after:content-['']">
         <div
           className="w-8 h-8 bg-primary rounded-[4px] m-auto relative z-[2]"
           aria-hidden="true"
@@ -77,9 +77,9 @@ export function RoadmapVersion({ version }: RoadmapVersionProps) {
             {displayFeatures.map((feature, index) => (
               <li
                 key={`${version.version}-feature-${index}-${feature.title}`}
-                className={` text-black text-sm md:text-base ${index !== displayFeatures.length - 1 ? "mb-4" : ""}`}
+                className={` text-black text-sm ${index !== displayFeatures.length - 1 ? "mb-4" : ""}`}
               >
-                <span className="font-bold text-sm md:text-base leading-none">
+                <span className="font-bold text-sm leading-none">
                   {feature.title}
                 </span>
                 {feature.description}
