@@ -1,3 +1,42 @@
+/* 
+
+  releaseState to use
+
+  * planned
+  * released
+  * upcoming
+
+  Features status
+
+  * complete
+  * in-progress
+  * not-begun
+
+*/
+
+export type FeatureStatus = 'complete' | 'in-progress' | 'not-begun';
+
+export type ReleaseState = 'released' | 'upcoming' | 'planned';
+
+export type RoadmapFeature = {
+  title: string;
+  description: string;
+  status: FeatureStatus;
+};
+
+export type RoadmapVersion = {
+  version: string;
+  releaseState: ReleaseState;
+  releaseDate: string;
+  features: RoadmapFeature[];
+  blogPostUrl?: string;
+};
+
+export type RoadmapData = {
+  versions: RoadmapVersion[];
+};
+
+
 export const roadmapData: RoadmapData = {
   versions: [
     {
@@ -26,7 +65,7 @@ export const roadmapData: RoadmapData = {
           status: "complete"
         }
       ]
-    },    
+    },
     {
       version: "v0.10",
       releaseState: "released",
@@ -86,7 +125,7 @@ export const roadmapData: RoadmapData = {
           status: "complete"
         }
       ]
-    },    
+    },
     {
       version: "v0.12",
       releaseState: "released",
