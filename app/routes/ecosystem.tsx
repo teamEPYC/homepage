@@ -13,7 +13,9 @@ import {
   LogoMassa,
   LogoReilabs,
   LogoLigero,
-  LogoMidenName
+  LogoMidenName,
+  LogoPara,
+  LogoGateway,
 } from "~/components/logo";
 import { PageEcosystem } from "~/pages/ecosystem";
 import { buildMeta } from "~/lib/meta";
@@ -75,7 +77,7 @@ const items = [
     icon: <LogoInicio className="size-6" />,
     label: "Inicio Labs",
     description: "Private Multisig Solution",
-    link: "https://github.com/0xMiden/MultiSig",
+    link: "https://multisig.miden.xyz/",
   },
   {
     icon: <LogoMidenName className="size-6" />,
@@ -98,8 +100,9 @@ const partners: Partner[] = [
   { icon: <LogoLigero />, label: "Ligero", size: "large", link: "https://ligero-inc.com/" },
   { icon: <LogoReilabs />, label: "Reilabs", size: "large", link: "https://reilabs.io/" },
   { icon: <LogoMassa />, label: "Massa Labs", size: "large", link: "https://massa.net/" },
+  { icon: <LogoPara />, label: "Para", size: "large", link: "https://www.getpara.com/" },
+  { icon: <LogoGateway />, label: "Gateway", size: "large", link: "https://gateway.fm/" },
   // { icon: <LogoLeo />, label: "Demox Labs", size: "large", link: "https://www.miden.fi/" },
-
 ];
 
 export default function RouteEcosystem() {
