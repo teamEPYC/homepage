@@ -46,6 +46,11 @@ This leads to another feature, built in partnership with [Nethermind](https://ww
 
 Remember the good old days when you were sending `NoteFiles` over Telegram, because the web apps and wallet prompted you to download the note (including our faucet, as some early users probably remember)?
 
+<div style={{ textAlign: 'center' }}>
+![](/images/testnet-november-2025-faucet_old.png)
+*This was the old faucet. Back then, the private note was downloaded as a file, and users had to manually upload it into their Miden wallet.*
+<br/>
+</div>
 These days are gone. We now have a *note transport layer* which can be integrated directly into your web app AND the user wallet.
 
 To send a private note over the transport layer, simply call:
@@ -61,6 +66,11 @@ More details here: [https://docs.miden.xyz/next/miden-client/web-client/note-tra
 It’s a WIP. In this first iteration of the transport layer, the notes are sent unencrypted, but very soon we will dogfood our encryption capabilities.
 
 This means notes can now flow via a defined, supported routing mechanism that ensures that private data remains encapsulated and correctly propagated in the network – a significant UX improvement.
+
+<div style={{ textAlign: 'center' }}>
+![](/images/testnet-november-2025-faucet_new.jpg)
+*This is the new faucet. Not only does it look better, but also, users do not have to manually upload the private note anymore – it's consumed automatically, privately.*
+</div>
 
 ### ECDSA Signatures
 
@@ -89,6 +99,13 @@ If you are building a wallet, SDK, or bridge, this is a significant improvement.
 We’ve added **basic guardrails** around the collection and storage of transaction data. In practice, the Miden node will be able to re-execute every transaction. That means users get privacy from each other, not against the node operator. You can think of it as “training wheels” while the network ramps up.
 
 This is needed because Miden introduces private execution and transactions in a world where privacy brings real technical risks (read [Justin Thaler’s article about zkVMs security](https://a16zcrypto.com/posts/article/secure-efficient-zkvms-progress/) for more details on the topic). 
+
+<div style={{ textAlign: 'center' }}>
+<a href="https://a16zcrypto.com/posts/article/secure-efficient-zkvms-progress/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', maxWidth: '500px' }}>
+<img src="/images/testnet-november-2025-a16z_article.jpg" alt="The path to secure and efficient zkVMs: How to track progress - Justin Thaler, a16z crypto" style={{ maxWidth: '100%', height: 'auto' }} />
+</a>
+<br/>
+</div>
 
 Any new chain can face bugs, but privacy adds another layer of challenges: if something goes wrong inside a private system, spotting the issue gets harder, if not impossible. Running with guardrails lets the operator detect and prevent malicious behavior early. This keeps the security profile at an acceptable level (close to a public network) as the system matures, while still avoiding the full transparency of such traditional chains.
 
@@ -121,6 +138,11 @@ What this enables:
 * We signal “this is your playground” – go wild, try new flows, break things, and provide feedback.
 
 If you are building early integrations, this is the time to jump in.
+
+<div style={{ textAlign: 'center' }}>
+![](/images/testnet-november-2025-devnet.jpg)
+*Devnet status dashboard*
+</div>
 
 ## VM Level Enhancements (v0.19 / v0.19.1)
 
