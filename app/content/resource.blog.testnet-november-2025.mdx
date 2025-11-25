@@ -25,8 +25,8 @@ We still need an `Address` (it conveys information useful for privately sharing 
 
 ```
 mm1arp0azyk9jugtgpnnhle8daav58nczzr_qpgqqwcfx0p
-               |                         |
-            account ID            routing parameters
+               |                                                              |
+            account ID                                              routing parameters
 ```
 
 Note that the block explorer will always show `AccountId`, but, if you search for a full-form `Address` with routing parameters, it will still find your account.
@@ -76,7 +76,7 @@ What this unlocks:
 
 Miden is introducing a modular precompile framework that provides safe, simple, and easy-to-use interfaces for high-level but expensive cryptographic operations. 
 
-Today, the network supports Keccak/ECDSA and SHA-512/EdDSA—two of the most common signature and hashing schemes in blockchain—by dispatching these costly computations outside the VM and verifying them with battle-tested, standardized implementations. This approach increases proof size and verification time but significantly reduces proving time, which aligns with our “training-wheels” focus on incremental safety and real-world robustness. 
+Today, the network supports Keccak/ECDSA and SHA-512/EdDSA – two of the most common signature and hashing schemes in blockchain – by dispatching these costly computations outside the VM and verifying them with battle-tested, standardized implementations. This approach increases proof size and verification time but significantly reduces proving time, which aligns with our “training-wheels” focus on incremental safety and real-world robustness. 
 
 Over the next 3-6 months, the team will add precompiles for widely used hash functions, signature schemes, and ZK-proof verification, enabling better hardware-wallet support, passkeys, light clients, state proofs (such as importing Ethereum data), and verification of proofs from other L2s. 
 
@@ -96,9 +96,9 @@ Regulation is another moving target. Full privacy from day one would create unne
 
 It provides room to evolve the protocol and introduce more safeguards over time without slowing adoption. Put differently: the goal stays the same, private transactions at scale, and the path there is phased practically so the network grows in a safe, credible way.
 
-### `midenup`: Toolchain Installer and Project Scaffolding
+### midenup: Toolchain Installer and Project Scaffolding
 
-We’re introducing **midenup**, our new toolchain installer and project scaffolding utility, which underpins the new Quick Start Guide. The Quick Start (see [docs](https://docs.miden.xyz/quick-start/) and [midenup repo](https://github.com/0xMiden/midenup)) gives you:
+We’re introducing `midenup`, our new toolchain installer and project scaffolding utility, which underpins the new Quick Start Guide. The Quick Start (see [docs](https://docs.miden.xyz/quick-start/) and [midenup repo](https://github.com/0xMiden/midenup)) gives you:
 
 * A one-step installer that sets up the local toolchain (client, VM, CLI, WASM bindings) for the Miden ecosystem.
 
@@ -110,8 +110,7 @@ For new devs onboarding to Miden, this is a major improvement in DevEx: you go f
 
 ### Devnet: Newly Available
 
-We now have a **Miden devnet** explicitly for experimentation.  
-See: [devnet.midenscan.com](https://devnet.midenscan.com/) & [status.devnet.miden.io](https://status.devnet.miden.io/)
+We now have a **Miden devnet** explicitly for experimentation – see [devnet.midenscan.com](https://devnet.midenscan.com/) & [status.devnet.miden.io](https://status.devnet.miden.io/).
 
 What this enables:
 
@@ -119,11 +118,11 @@ What this enables:
 
 * Early adopters can provision infrastructure (wallets, explorers, tooling) and iterate rapidly on the devnet rather than waiting for full-production stability.
 
-* We signal “this is your playground” — go wild, try new flows, break things, and provide feedback.
+* We signal “this is your playground” – go wild, try new flows, break things, and provide feedback.
 
 If you are building early integrations, this is the time to jump in.
 
-## VM Level Enhancements – v0.19 / v0.19.1
+## VM Level Enhancements (v0.19 / v0.19.1)
 
 In addition to the application- and SDK-level upgrades above, the core VM (`miden-vm`) has also seen important changes, which may require attention if you work at the assembler, runtime, or low-level layer:
 
@@ -138,11 +137,11 @@ In addition to the application- and SDK-level upgrades above, the core VM (`mide
 
 These VM-level changes make the runtime more predictable, easier to debug, and more expressive. But the breaking changes mean you should explicitly test your assembler/contract code when upgrading.
 
-## Other Notable Changes in `miden-base` & `miden-client`
+## Other Notable Changes in miden-base & miden-client
 
 Supporting the major features above, there are several smaller but important improvements in `miden-base` (and matched by `miden-client`):
 
-* In miden-base: new auth components added for ECDSA and Keccak (supporting the ECDSA-signature feature above).
+* In `miden-base`: new auth components added for ECDSA and Keccak (supporting the ECDSA-signature feature above).
 
 * `build_recipient` procedure added in `miden::note` – improves how recipient addresses/notes are built in note flows.
 
@@ -158,15 +157,14 @@ Supporting the major features above, there are several smaller but important imp
 
 * If you build wallets or integration tooling: leverage the new address format (public-key \+ interface info), ECDSA support, and private note routing.
 
-* If you’ve written contracts or assembler: check for deprecated instruction names (`mem_loadw`, `loc_storew`, etc) and test the new lazy-loading behaviour and FPI kernel support.
+* If you’ve written contracts or assembler: check for deprecated instruction names (`mem_loadw`, `loc_storew`, etc.) and test the new lazy-loading behaviour and FPI kernel support.
 
 * Developers onboarding now: use `midenup` to scaffold your project – it’s the easiest path to begin building.
 
-* Experiment in the **devnet** — this is the time to test private-note flows, new address types, and ECDSA signing without production constraints.
+* Experiment in the **devnet** – this is the time to test private-note flows, new address types, and ECDSA signing without production constraints.
 
 * If you operate tooling (explorer, debug UI, wallet UI): update to reflect address-metadata (interface info) and expose private-note routing semantics to users (with appropriate UX).
 
-* Monitor status/devnet dashboards (e.g., `status.devnet.miden.io`) for instability and provide feedback upstream.
+* Monitor status/devnet dashboards (e.g., [status.devnet.miden.io](status.devnet.miden.io)) for instability and provide feedback upstream.
 
-**New to Miden and ready to try things out? The Quick Start guide will walk you through setting up your environment and spinning up your first Miden project in no time:**  
-[https://docs.miden.xyz/quick-start/](https://docs.miden.xyz/quick-start/)
+**New to Miden and ready to try things out? The Quick Start guide will walk you through setting up your environment and spinning up your first Miden project in no time:** [https://docs.miden.xyz/quick-start/](https://docs.miden.xyz/quick-start/)
