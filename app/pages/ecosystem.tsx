@@ -55,6 +55,10 @@ export function PageEcosystem({
             >
               Apply to the Pioneer program →
             </Link>
+            <br/><br/>
+            <i>
+              Note: we’re at full capacity at the moment and not onboarding new teams for now.
+            </i>
           </li>
         </ul>
       </Header>
