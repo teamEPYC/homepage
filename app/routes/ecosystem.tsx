@@ -51,7 +51,7 @@ const items = [
   },
   {
     icon: <LogoZoro className="size-6" />,
-    label: "Zoro",
+    label: "ZoroSwap",
     description: "Public/Private Oracle-informed AMM",
     link: "https://zoroswap.com/",
   },
