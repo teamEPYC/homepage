@@ -46,7 +46,7 @@ const items = [
   {
     icon: <LogoQash className="size-6" />,
     label: "Qash",
-    description: "Programmable Private Payments",
+    description: "B2B Neobank for Payroll and Treasury Management",
     link: "https://www.qash.finance/",
   },
   {
@@ -64,8 +64,8 @@ const items = [
   {
     icon: <LogoDome className="size-6" />,
     label: "Dome",
-    description: "Compliant Onchain Mixer",
-    link: "https://github.com/arcane-finance-defi/miden-bridge-mono",
+    description: "Crosschain Platform for Private Financial Flows",
+    link: "https://dome.cash/",
   },
   {
     icon: <LogoMidenbrowserwallet className="size-6" />,
@@ -76,7 +76,7 @@ const items = [
   {
     icon: <LogoInicio className="size-6" />,
     label: "Inicio Labs",
-    description: "Private Multisig Solution",
+    description: "Multisig Solution for Miden",
     link: "https://multisig.miden.xyz/",
   },
   {
