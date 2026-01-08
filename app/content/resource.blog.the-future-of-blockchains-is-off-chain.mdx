@@ -31,7 +31,7 @@ This is the most important change in Miden. Users can execute smart contracts lo
 
 Not only does this reduce the computational burden on the operators, but it also makes such transactions inherently parallelizable. Even more exciting is that it lifts the limits on what can go into a smart contract. For example, anything that a user can execute and prove locally – no matter how complex – can be processed by the network with minimal costs. On Miden, it will be cheap to run even complex computations.
 
-Another important change in Miden is ensuring that most transactions do not need to touch the public state. We achieve this by making all interactions between smart contracts asynchronous. With Miden, token transfers, NFT swaps, and many others do not need to touch the public state. For actions that change the public state,Miden does allow regular network execution of transactions (same as most other blockchains). Still, because of the asynchronous execution model, interactions between locally executed transactions and network transactions are done seamlessly.
+Another important change in Miden is ensuring that most transactions do not need to touch the public state. We achieve this by making all interactions between smart contracts asynchronous. With Miden, token transfers, NFT swaps, and many others do not need to touch the public state. For actions that change the public state, Miden does allow regular network execution of transactions (same as most other blockchains). Still, because of the asynchronous execution model, interactions between locally executed transactions and network transactions are done seamlessly.
 
 ## Safety
 
