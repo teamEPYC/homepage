@@ -55,6 +55,10 @@ export function PageEcosystem({
             >
               Apply to the Pioneer program →
             </Link>
+            <br/><br/>
+            <i>
+              Note: we’re at full capacity at the moment and not onboarding new teams for now.
+            </i>
           </li>
         </ul>
       </Header>
@@ -90,7 +94,7 @@ export function PageEcosystem({
             Partners
           </h3>
         </Header>
-        <ul className="gap-4 grid grid-cols-2 md:grid-cols-3 mt-6">
+        <ul className="gap-4 grid grid-cols-2 md:grid-cols-4 mt-6">
           {partners.map((p) => (
             <li
               key={p.label}

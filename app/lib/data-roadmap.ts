@@ -130,6 +130,7 @@ export const roadmapData: RoadmapData = {
       version: "v0.12",
       releaseState: "released",
       releaseDate: "13 Nov 2025",
+      blogPostUrl: "/resource/blog/testnet-november-2025",
       features: [
         {
           title: "Private note routing: ",

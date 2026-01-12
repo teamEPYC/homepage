@@ -27,7 +27,7 @@ export function PageAboutUs() {
 
                 <div className="border-t !border-gray-300/60 py-4 md:py-8 text-black [&_p]:text-sm [&_h3]:text-xl [&_h2]:text-2xl [&_h1]:text-28">
                     <h3 className="mb-4">Media kit</h3>
-                    <p className="mb-4">A quick places for you to find brand and media assets.</p>
+                    <p className="mb-4">A quick place for you to find brand and media assets.</p>
 
                     <div className="mt-6">
                         <Link to="https://drive.google.com/drive/folders/1jRxP0LtQHwO389h5vfysigNTSkuuGBKa?usp=drive_link" target="_blank" className="text-primary/90 hover:text-primary underline text-sm font-medium">Click here</Link>
