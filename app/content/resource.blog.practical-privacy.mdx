@@ -1,0 +1,104 @@
+---
+title: Practical Privacy Is Key To Blockchain’s Next Era
+author: Bobbin Threadbare
+date: 12.01.2026
+featured: true
+---
+
+# Practical Privacy Is Key To Blockchain’s Next Era
+<br/>
+<i>Written by Bobbin Threadbare</i>
+
+![](/images/practical-privacy.jpg)
+
+## The problem with transparency
+
+Most blockchains today are not private. This is becoming increasingly known to the general public, but few recognize what it actually means.
+
+For example, most people don’t know that if Alice sends USDC to Bob on Ethereum, Solana, or almost any other blockchain, Bob can immediately check how much USDC Alice owns. If Alice sends USDC to Charlie, and Bob has interacted with Charlie in the past, Bob will know exactly how much USDC Alice sent to Charlie and when.
+
+These are simple examples, but they illustrate the problem well: every movement of assets on public chains is recorded on a ledger that anyone can inspect in perpetuity. These movements are not difficult to link to real-world identities. In fact, chain analytics firms already excel at this.
+
+The truth is that “pseudoanonymous” in blockchains just means “temporarily unnamed” \- the risk is not only what someone can infer today, but what can be inferred years later, under different political conditions or with better tools. With the advent of AI analytics tools, public chains will become unprecedented surveillance apparatus that will be used by criminals and other nefarious actors to identify and target their victims.
+
+This clearly isn’t workable in the long-term. For blockchains to expand beyond the very niche use cases they currently serve, they must provide a measure of privacy to their users. But we immediately run into two problems.
+
+## Why privacy is difficult in blockchains
+
+First, traditional blockchains require this absolute transparency to operate. To make sure all transactions are executed correctly, all nodes in the network must re-execute them – which means the nodes must know all the details of the underlying transactions.
+
+Up until very recently, there was no other way for blockchains to work. But, thankfully, with advancements in zero knowledge (ZK) proofs technology, we now have a good solution for this problem. Users can generate ZK proofs of their transactions on their devices, and the network just needs to verify these proofs without being privy to all the underlying details.
+
+Beyond this fundamental verification-by-re-execution problem, there are a myriad of other technical challenges that make privacy in blockchains extremely difficult to support at scale and with good UX. These include the speed and efficiency of client-side proving, the problem of infinitely growing nullifier sets, and the difficulty of efficient note discovery, to name just a few. Traditional blockchains don’t need to contend with these, but this also means that we can’t just add privacy to such chains because this would require fundamental protocol-level changes which are nearly impossible to enact on live networks with millions of users.
+
+The second problem is more social in nature. Privacy is a double-edged sword. While it is essential for honest users, it also complicates compliance requirements for businesses and can help criminals evade law enforcement. Blockchains allow moving digital assets with ease, speed, and irreversibility impossible in the traditional financial system or with any legacy financial instruments (cash, gold etc.). Doing so with absolute and unconditional privacy may create circumstances under which illicit usage overshadows legitimate use cases.
+
+So, how can we design a system that balances these conflicting goals? And what would such a system look like?
+
+It is clear that neither full transparency, nor absolute privacy are workable in the real world. We will necessarily need to make trade-offs which make privacy conditional in a limited number of cases to make the network difficult to exploit by criminals and make compliance easier for legitimate businesses. But here it is important to separate compliance from what we call “evasion-resistance”:  one should live at the application/asset level, while the other should be enforced by protocol-level rules.
+
+## The need for compliance in blockchains
+
+By “compliance,” we mean a set of rules and regulatory requirements adopted within specific jurisdictions: sanctions restrictions, AML/KYC requirements, securities regulations, consumer protection rules etc. These rules are messy, political, and unevenly distributed across the planet. 
+
+For example, a U.S. business cannot receive or send payments to sanctioned entities as defined by the OFAC. Or, under the recently enacted GENIUS Act, stablecoin issuers are required to have the technical ability to freeze, seize, and burn stablecoins to comply with lawful orders.
+
+Putting value judgements about such regulations aside, these are laws-of-the-land, and any entity which wishes to legally operate within its jurisdiction must comply with them.
+
+On traditional (public) chains, satisfying such regulations is not a difficult task. Because of the absolute transparency, anyone can check if the address they are interacting with is on the sanctions list, or is associated with other high-risk activities such as terrorist financing, human trafficking, and fraud. Similarly, public stablecoin contracts contain an exhaustive record of who owns what, and have built-in capabilities to freeze and confiscate coins from specific accounts.
+
+Compliance becomes more complicated in privacy-preserving chains. The whole point of such chains is to make it impossible for outside observers to figure out how users interact with each other or who owns what. On a privacy-focused chain, a stablecoin issuer would not know which account owns their coins. And, a business accepting payments on the blockchain may not be able to check if payments are coming from a sanctioned address or are associated with other types of high-risk activities.
+
+## ZK-enforced compliance at the application level
+
+Thankfully, here too zero knowledge proofs come to the rescue. They give users the ability to prove they’ve satisfied some set of requirements without revealing their personal data. This is extremely powerful.
+
+For instance, users themselves can prove they have not been involved in illicit finance before interacting with others or moving assets. And this is just one example: the breadth of what can be proven is nearly limitless and can include attributes like age, citizenship, income level, investor accreditation status, and many other characteristics.
+
+But who should ensure that such rules are enforced? It may be tempting to say the protocol itself. But that quickly leads us to a contradiction. Blockchains are global and permissionless systems, and they cannot simultaneously enforce regulatory and business requirements of all countries in the world. Attempting to do so will necessarily make the system either permissioned or jurisdiction-specific, nullifying the main value proposition of blockchains.
+
+The answer is that ZK-enforced compliance should happen at the application level. That is, every application and asset can enforce the rules of jurisdictions relevant to them. 
+
+For example, Circle can enforce U.S.-specific stablecoin rules that everyone who owns USDC would have to comply with. A hypothetical stablecoin issuer in Dubai or Korea could enforce a distinct set of rules applicable to their jurisdiction. U.S. businesses could require ZK-based AML/KYC checks from their partners, while these may not be relevant in other parts of the world.
+
+The responsibility of the protocol is to provide application developers with powerful privacy-preserving rule enforcement schemes. For example, the protocol should be powerful enough for developers to build a private but compliant stablecoin where nobody knows who owns what, but the issuer still has the ability to freeze accounts, impose daily transfer limits, and so on.
+
+An essential component of such a toolkit is high degree of programmability (or programmable privacy). In fact, without highly programmable privacy, it would be nearly impossible to encode the complexity of rules required by real world regulations. Thankfully, again, ZK-technology advances over the last several years make such general-purpose programmability accessible to regular developers.
+
+It is important to point out that ZK-enforced compliance is categorically better than audit-based compliance used in traditional financial systems. Audit-based compliance necessarily requires giving up privacy to third parties, and frequently leads to accumulation of personal data in “honeypots” that attract both criminals and state-level hackers. With ZK-based compliance applications can have the best of both worlds: they can enforce the legally required rules while being oblivious to users’ personal data.
+
+## Protocol-level evasion-resistance
+
+In contrast to compliance, we define evasion-resistance as a set of protocol-level features designed to minimize the ability of users to privately engage in illicit activities.
+
+Traditional (transparent) chains have very high evasion-resistance because, while users can still engage in illicit activities on such chains, they cannot do so privately. On the other hand, chains with absolute privacy have very low evasion-resistance, as transactions of all participants are equally private and indistinguishable from one another.
+
+A privacy-preserving protocol that aims to provide meaningful evasion-resistance would necessarily have to make privacy conditional in some set of cases. One option here is to use “transaction risk” as the guiding principle: transactions that have low risk of facilitating illicit activities have full privacy, while those with a high risk of facilitating illicit activities are subject to additional constraints.
+
+What is a low-risk vs. high-risk transaction and what additional constraints to impose on high risk transactions can be answered in many different ways, and these answers will define whether the protocol maintains meaningful privacy and how effective its evasion-resistance will be.
+
+For example, we could decide that we don’t want known bad actors to deposit funds into a privacy-preserving protocol. Thus, any deposit that originates from a sanctioned address would be deemed a “high-risk” transaction, and the protocol could simply reject it. 
+
+On the other hand, deposits not associated with sanctioned addresses would be accepted into the protocol unconditionally, and once accepted, users will be able to transact within the protocol with full privacy.
+
+Another approach could be to make privacy conditional on transaction amounts. The goal here would be to emulate some properties of physical cash: small transactions are easy and usually fully private, while large transactions require much more effort and are difficult to keep private. Or, said another way, privately moving $100 million USD should be much more difficult than moving $1000 USD.
+
+Making a digital protocol with such properties that actually works requires more research. For one, we’d need to solve the Sybil problem. That is, we want to make it really hard for a single user to move $100M USD by pretending to be thousands of individual users. One potential solution: a permissionless yet robust identity system. Such a system does not yet exist, but building it is an ongoing industry-wide effort.
+
+Another question: what kind of restrictions can and should the protocol impose on high-value transactions. Here too we have many options. 
+
+For example, the protocol can impose delays on large transfers, or require ZK-based proof of funds (e.g., proving that the funds didn’t originate from some recent hacks). Or, maybe large transfers could be encrypted in such a way that some subset of validators would be able to decrypt them if the need arises (e.g., via threshold-based viewing keys).
+
+Efficacy and technical feasibility of these and many other approaches require research and analysis, but it is important to make one thing clear: no protocol will be able to guarantee 100% evasion-resistance. We cannot build a protocol that provides real privacy for honest users, while also not providing some privacy for illicit activities. 
+
+However, a perfect solution should not be the goal. As a baseline, we just need to do better than the existing financial system, where up to 5% of GDP is said to be laundered, according to the UN estimates. A successful protocol will provide meaningful privacy for the vast majority of users, while having comparable (or better) evasion-resistance than the traditional financial system.
+
+## Path to practical privacy
+
+Our philosophy at Miden is that the real world does not function at extremes: neither absolute transparency nor absolute privacy are desirable solutions. The former is not acceptable because it results in a surveillance dystopia, and the latter shifts the balance of power too much in favor of illicit usage.
+
+Instead, we aim to build a protocol that is conceptually closer to how physical cash operates: full privacy for the vast majority of users, and conditional privacy for a small subset of high-risk activities. We call this approach “practical privacy.”
+
+Building a permissionless protocol with robust practical privacy is not easy. It requires ongoing industry-wide research on technical, social, and regulatory fronts. Thus, our approach is to enable privacy incrementally. Miden will launch in a mode where users will be private against each other but not against the operators. Over time, as we develop mechanisms for evasion-resistance in permissionless settings, we will enable stronger forms of privacy.
+
+Our ultimate goal is to build a foundation for the future of finance: a decentralized protocol where operators are fully blind to the vast majority of transactions flowing through the network, yet with evasion-resistance better than that of the traditional financial system.
